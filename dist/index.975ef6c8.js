@@ -533,14 +533,45 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"8lqZg":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _button = require("./components/button/button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-const Handlebars = require("handlebars");
-const root = document.querySelector(".main");
-// const template = Handlebars.compile("<b>Name: {{name}}</b>");
-root.innerHTML = (0, _buttonDefault.default)("heqwdllo");
+var _handlebars = require("handlebars");
+var _handlebarsDefault = parcelHelpers.interopDefault(_handlebars);
+var _signInJs = require("./pages/sign-in/sign-in.js");
+var _signInJsDefault = parcelHelpers.interopDefault(_signInJs);
+console.log((0, _signInJsDefault.default));
+const main = document.querySelector(".main");
+main.innerHTML = (0, _signInJsDefault.default);
 
-},{"handlebars":"i0QfX","./components/button/button":"15n4s","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"i0QfX":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"i0QfX":[function(require,module,exports) {
 // USAGE:
 // var handlebars = require('handlebars');
 /* eslint-disable no-var */ // var local = handlebars.create();
@@ -11858,67 +11889,32 @@ PrintVisitor.prototype.HashPair = function(pair) {
 },{"./visitor":"fk5sS"}],"jhUEF":[function(require,module,exports) {
 "use strict";
 
-},{}],"15n4s":[function(require,module,exports) {
+},{}],"f05MU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _handlebars = require("handlebars");
 var _handlebarsDefault = parcelHelpers.interopDefault(_handlebars);
-var _buttonTmplJs = require("./button.tmpl.js");
-var _buttonTmplJsDefault = parcelHelpers.interopDefault(_buttonTmplJs);
-var _buttonModuleCss = require("./button.module.css");
-var _buttonModuleCssDefault = parcelHelpers.interopDefault(_buttonModuleCss);
-exports.default = Button = (text)=>{
-    console.log((0, _buttonModuleCssDefault.default));
-    const render = (0, _handlebarsDefault.default).compile((0, _buttonTmplJsDefault.default));
-    const handleClick = ()=>{
-        console.log("wqdqw");
-    };
-    return render({
-        text,
-        handleClick,
-        rootClass: (0, _buttonModuleCssDefault.default).button
-    });
-};
+var _signInTmpl = require("./sign-in.tmpl");
+var _signInTmplDefault = parcelHelpers.interopDefault(_signInTmpl);
+var _signInModuleCss = require("./sign-in.module.css");
+var _signInModuleCssDefault = parcelHelpers.interopDefault(_signInModuleCss);
+const template = (0, _handlebarsDefault.default).compile((0, _signInTmplDefault.default));
+const render = template({
+    styles: (0, _signInModuleCssDefault.default)
+});
+console.log((0, _signInModuleCssDefault.default));
+exports.default = render;
 
-},{"handlebars":"i0QfX","./button.tmpl.js":"lPo9h","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./button.module.css":"ePRMF"}],"lPo9h":[function(require,module,exports) {
+},{"handlebars":"i0QfX","./sign-in.tmpl":"gcT0r","./sign-in.module.css":"gYtK9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gcT0r":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = `
-    <button class="{{rootClass}}" onclick="handleClick()">{{text}}</button>
+    <section class={{styles.container}}>
+    </section>
 `;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"ePRMF":[function(require,module,exports) {
-module.exports["button"] = `hbbnNa_button`;
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gYtK9":[function(require,module,exports) {
+module.exports["container"] = `_57R7Ra_container`;
 
 },{}]},["ShInH","8lqZg"], "8lqZg", "parcelRequire938d")
 

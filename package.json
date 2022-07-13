@@ -2,12 +2,21 @@
   "name": "messenger",
   "version": "1.0.0",
   "description": "figma - https://www.figma.com/file/I0ni58kYsEFtFYpAyQmGcx/Chat_external_link-(Copy)?node-id=0%3A1",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "",
     "dev": "parcel index.html",
     "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "targets": {
+    "default": {
+      "sourceMap": true,
+      "includeNodeModules": [
+        "handlebars"
+      ],
+      "context": "browser"
+    }
   },
   "repository": {
     "type": "git",
@@ -20,18 +29,12 @@
   },
   "homepage": "https://github.com/fennyflop/middle.messenger.praktikum.yandex#readme",
   "devDependencies": {
-    "assert": "^2.0.0",
-    "buffer": "^6.0.3",
-    "handlebars": "^4.7.7",
-    "os-browserify": "^0.3.0",
-    "parcel": "^2.6.2",
-    "path-browserify": "^1.0.1",
     "postcss": "^8.4.14",
-    "postcss-cli": "^10.0.0",
-    "process": "^0.11.10"
+    "postcss-cli": "^10.0.0"
   },
   "dependencies": {
-    "fs": "^0.0.1-security",
-    "pug": "^3.0.2"
+    "express": "^4.18.1",
+    "handlebars": "^4.7.7",
+    "parcel": "^2.6.2"
   }
 }

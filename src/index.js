@@ -1,7 +1,8 @@
-const Handlebars = require("handlebars");
-import Button from './components/button/button';
+import Handlebars from 'handlebars';
 
-const root = document.querySelector('.main');
+import SignInPage from './pages/sign-in/sign-in.js';
+console.log(SignInPage);
 
-// const template = Handlebars.compile("<b>Name: {{name}}</b>");
-root.innerHTML = Button('heqwdllo')
+const main = document.querySelector('.main');
+
+main.innerHTML = SignInPage;

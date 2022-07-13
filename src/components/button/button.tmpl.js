@@ -1,3 +1,3 @@
 export default `
-    <button class="{{rootClass}}" onclick="handleClick()">{{text}}</button>
+    <button class="{{rootClass}}">{{text}}</button>
 `;
