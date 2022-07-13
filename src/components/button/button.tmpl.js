@@ -1,3 +1,5 @@
+import styles from './button.module.css';
+
 export default `
-    <button class="{{rootClass}}">{{text}}</button>
+    <button class="${styles.button}">{{text}}</button>
 `;

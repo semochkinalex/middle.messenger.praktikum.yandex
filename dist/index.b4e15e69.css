@@ -4,4 +4,22 @@
   background-color: #000;
 }
 
+.hbbnNa_button {
+  color: #fff;
+  width: 280px;
+  box-sizing: border-box;
+  background-color: #3b5bdb;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  padding: 12px;
+  font-family: Inter;
+  transition: all .3s ease-in-out;
+}
+
+.hbbnNa_button:hover {
+  cursor: pointer;
+  background-color: #2d52e3;
+}
+
 /*# sourceMappingURL=index.b4e15e69.css.map */

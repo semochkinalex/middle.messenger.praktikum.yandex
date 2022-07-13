@@ -11894,27 +11894,43 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _handlebars = require("handlebars");
 var _handlebarsDefault = parcelHelpers.interopDefault(_handlebars);
+var _buttonTmpl = require("../../components/button/button.tmpl");
+var _buttonTmplDefault = parcelHelpers.interopDefault(_buttonTmpl);
 var _signInTmpl = require("./sign-in.tmpl");
 var _signInTmplDefault = parcelHelpers.interopDefault(_signInTmpl);
 var _signInModuleCss = require("./sign-in.module.css");
 var _signInModuleCssDefault = parcelHelpers.interopDefault(_signInModuleCss);
 const template = (0, _handlebarsDefault.default).compile((0, _signInTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("button", (0, _buttonTmplDefault.default));
 const render = template({
     styles: (0, _signInModuleCssDefault.default)
 });
 console.log((0, _signInModuleCssDefault.default));
 exports.default = render;
 
-},{"handlebars":"i0QfX","./sign-in.tmpl":"gcT0r","./sign-in.module.css":"gYtK9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gcT0r":[function(require,module,exports) {
+},{"handlebars":"i0QfX","./sign-in.tmpl":"gcT0r","./sign-in.module.css":"gYtK9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../components/button/button.tmpl":"lPo9h"}],"gcT0r":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = `
     <section class={{styles.container}}>
+        {{> button text="Авторизоваться"}}
     </section>
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gYtK9":[function(require,module,exports) {
 module.exports["container"] = `_57R7Ra_container`;
+
+},{}],"lPo9h":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _buttonModuleCss = require("./button.module.css");
+var _buttonModuleCssDefault = parcelHelpers.interopDefault(_buttonModuleCss);
+exports.default = `
+    <button class="${(0, _buttonModuleCssDefault.default).button}">{{text}}</button>
+`;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./button.module.css":"ePRMF"}],"ePRMF":[function(require,module,exports) {
+module.exports["button"] = `hbbnNa_button`;
 
 },{}]},["ShInH","8lqZg"], "8lqZg", "parcelRequire938d")
 

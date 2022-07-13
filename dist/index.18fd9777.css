@@ -1,0 +1,12 @@
+@font-face {
+  font-family: Inter;
+  src: url("Inter-Regular.9a2291bf.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+}
+
+/*# sourceMappingURL=index.18fd9777.css.map */
