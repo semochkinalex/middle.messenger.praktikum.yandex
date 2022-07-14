@@ -118,4 +118,38 @@
   display: flex;
 }
 
+.ZOqx9q_container {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.ZOqx9q_title {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.ZOqx9q_subtitle {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.WPUdUW_container {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.WPUdUW_title {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.WPUdUW_subtitle {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
 /*# sourceMappingURL=index.b4e15e69.css.map */

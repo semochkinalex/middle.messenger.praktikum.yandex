@@ -539,11 +539,14 @@ var _signInJs = require("./pages/sign-in/sign-in.js");
 var _signInJsDefault = parcelHelpers.interopDefault(_signInJs);
 var _signUpJs = require("./pages/sign-up/sign-up.js");
 var _signUpJsDefault = parcelHelpers.interopDefault(_signUpJs);
-console.log((0, _signInJsDefault.default));
+var _500Js = require("./pages/500/500.js");
+var _500JsDefault = parcelHelpers.interopDefault(_500Js);
+var _404Js = require("./pages/404/404.js");
+var _404JsDefault = parcelHelpers.interopDefault(_404Js);
 const main = document.querySelector(".main");
-main.innerHTML = (0, _signUpJsDefault.default);
+main.innerHTML = (0, _404JsDefault.default);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU","./pages/sign-up/sign-up.js":"hSPj4"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU","./pages/sign-up/sign-up.js":"hSPj4","./pages/500/500.js":"bJHPG","./pages/404/404.js":"3Glnj"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -12029,6 +12032,74 @@ module.exports["form"] = `H3DfFq_form`;
 module.exports["fieldset"] = `H3DfFq_fieldset`;
 module.exports["linker"] = `H3DfFq_linker`;
 module.exports["buttons"] = `H3DfFq_buttons`;
+
+},{}],"bJHPG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebars = require("handlebars");
+var _handlebarsDefault = parcelHelpers.interopDefault(_handlebars);
+var _linkTmpl = require("../../components/link/link.tmpl");
+var _linkTmplDefault = parcelHelpers.interopDefault(_linkTmpl);
+var _500Tmpl = require("./500.tmpl");
+var _500TmplDefault = parcelHelpers.interopDefault(_500Tmpl);
+var _500ModuleCss = require("./500.module.css");
+var _500ModuleCssDefault = parcelHelpers.interopDefault(_500ModuleCss);
+const template = (0, _handlebarsDefault.default).compile((0, _500TmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("link", (0, _linkTmplDefault.default));
+const render = template({
+    styles: (0, _500ModuleCssDefault.default)
+});
+exports.default = render;
+
+},{"handlebars":"i0QfX","../../components/link/link.tmpl":"jDvWl","./500.tmpl":"hgLGT","./500.module.css":"ea28E","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hgLGT":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = `
+    <main class={{styles.container}}>
+        <h1 class={{styles.title}}>500</h1>
+        <p class={{styles.subtitle}}>Мы уже фиксим</p>
+        {{> link anchor="/" text="Назад к чатам" }}
+    </main>
+`;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ea28E":[function(require,module,exports) {
+module.exports["container"] = `ZOqx9q_container`;
+module.exports["subtitle"] = `ZOqx9q_subtitle`;
+module.exports["title"] = `ZOqx9q_title`;
+
+},{}],"3Glnj":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebars = require("handlebars");
+var _handlebarsDefault = parcelHelpers.interopDefault(_handlebars);
+var _linkTmpl = require("../../components/link/link.tmpl");
+var _linkTmplDefault = parcelHelpers.interopDefault(_linkTmpl);
+var _404Tmpl = require("./404.tmpl");
+var _404TmplDefault = parcelHelpers.interopDefault(_404Tmpl);
+var _404ModuleCss = require("./404.module.css");
+var _404ModuleCssDefault = parcelHelpers.interopDefault(_404ModuleCss);
+const template = (0, _handlebarsDefault.default).compile((0, _404TmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("link", (0, _linkTmplDefault.default));
+const render = template({
+    styles: (0, _404ModuleCssDefault.default)
+});
+exports.default = render;
+
+},{"handlebars":"i0QfX","../../components/link/link.tmpl":"jDvWl","./404.tmpl":"l5kwb","./404.module.css":"kI8Ve","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l5kwb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = `
+    <main class={{styles.container}}>
+        <h1 class={{styles.title}}>404</h1>
+        <p class={{styles.subtitle}}>Не туда попали</p>
+        {{> link anchor="/" text="Назад к чатам" }}
+    </main>
+`;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kI8Ve":[function(require,module,exports) {
+module.exports["subtitle"] = `WPUdUW_subtitle`;
+module.exports["container"] = `WPUdUW_container`;
+module.exports["title"] = `WPUdUW_title`;
 
 },{}]},["ShInH","8lqZg"], "8lqZg", "parcelRequire938d")
 
