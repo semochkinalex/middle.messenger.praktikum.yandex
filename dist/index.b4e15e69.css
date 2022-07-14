@@ -1,12 +1,45 @@
-._57R7Ra_container {
-  width: 100px;
-  height: 100px;
-  background-color: #000;
+._57R7Ra_form {
+  width: 90%;
+  max-width: 340px;
+  min-height: 300px;
+  box-sizing: border-box;
+  align-items: center;
+  align-items: space-between;
+  flex-direction: column;
+  padding: 0 15px;
+  display: flex;
+}
+
+._57R7Ra_fieldset {
+  width: 100%;
+  border: none;
+  outline: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  display: flex;
+}
+
+._57R7Ra_linker {
+  margin-top: 14px;
+}
+
+._57R7Ra_title {
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+._57R7Ra_buttons {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  display: flex;
 }
 
 .hbbnNa_button {
   color: #fff;
-  width: 280px;
+  width: 100%;
   box-sizing: border-box;
   background-color: #3b5bdb;
   border: none;
@@ -20,6 +53,29 @@
 .hbbnNa_button:hover {
   cursor: pointer;
   background-color: #2d52e3;
+}
+
+._54Slta_link {
+  color: #3b5bdb;
+  width: fit-content;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+._54Slta_link:hover {
+  cursor: pointer;
+  color: #2d52e3;
+}
+
+._3yexHG_input {
+  color: #fff;
+  width: 100%;
+  background-color: #0000;
+  border: none;
+  border-bottom: 1px solid #3b5bdb;
+  outline: none;
+  padding-bottom: 3px;
 }
 
 /*# sourceMappingURL=index.b4e15e69.css.map */

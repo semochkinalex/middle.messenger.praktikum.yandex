@@ -11894,31 +11894,50 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _handlebars = require("handlebars");
 var _handlebarsDefault = parcelHelpers.interopDefault(_handlebars);
+var _linkTmpl = require("../../components/link/link.tmpl");
+var _linkTmplDefault = parcelHelpers.interopDefault(_linkTmpl);
 var _buttonTmpl = require("../../components/button/button.tmpl");
 var _buttonTmplDefault = parcelHelpers.interopDefault(_buttonTmpl);
+var _inputTmpl = require("../../components/input/input.tmpl");
+var _inputTmplDefault = parcelHelpers.interopDefault(_inputTmpl);
 var _signInTmpl = require("./sign-in.tmpl");
 var _signInTmplDefault = parcelHelpers.interopDefault(_signInTmpl);
 var _signInModuleCss = require("./sign-in.module.css");
 var _signInModuleCssDefault = parcelHelpers.interopDefault(_signInModuleCss);
 const template = (0, _handlebarsDefault.default).compile((0, _signInTmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("button", (0, _buttonTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("link", (0, _linkTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("input", (0, _inputTmplDefault.default));
 const render = template({
-    styles: (0, _signInModuleCssDefault.default)
+    styles: (0, _signInModuleCssDefault.default),
+    text: "qwdqwd"
 });
 console.log((0, _signInModuleCssDefault.default));
 exports.default = render;
 
-},{"handlebars":"i0QfX","./sign-in.tmpl":"gcT0r","./sign-in.module.css":"gYtK9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../components/button/button.tmpl":"lPo9h"}],"gcT0r":[function(require,module,exports) {
+},{"handlebars":"i0QfX","./sign-in.tmpl":"gcT0r","./sign-in.module.css":"gYtK9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../components/button/button.tmpl":"lPo9h","../../components/link/link.tmpl":"jDvWl","../../components/input/input.tmpl":"867JV"}],"gcT0r":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = `
-    <section class={{styles.container}}>
-        {{> button text="Авторизоваться"}}
-    </section>
+    <form class={{styles.form}}>
+        <h1 class={{styles.title}}>Вход</h1>
+        <fieldset class={{styles.fieldset}}>
+            {{> input placeholder="Логин" type="text" }}
+            {{> input placeholder="Пароль" type="password" }}
+        </fieldset>
+        <div class={{styles.buttons}}>
+            {{> button text="Авторизоваться"}}
+            {{> link text="Нет Аккаунта?" className=styles.linker }}
+        </div>
+    </form>
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gYtK9":[function(require,module,exports) {
-module.exports["container"] = `_57R7Ra_container`;
+module.exports["fieldset"] = `_57R7Ra_fieldset`;
+module.exports["linker"] = `_57R7Ra_linker`;
+module.exports["form"] = `_57R7Ra_form`;
+module.exports["title"] = `_57R7Ra_title`;
+module.exports["buttons"] = `_57R7Ra_buttons`;
 
 },{}],"lPo9h":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -11931,6 +11950,30 @@ exports.default = `
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./button.module.css":"ePRMF"}],"ePRMF":[function(require,module,exports) {
 module.exports["button"] = `hbbnNa_button`;
+
+},{}],"jDvWl":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _linkModuleCss = require("./link.module.css");
+var _linkModuleCssDefault = parcelHelpers.interopDefault(_linkModuleCss);
+exports.default = `
+    <a class="${(0, _linkModuleCssDefault.default).link} {{className}}" href="{{anchor}}">{{text}}</a>
+`;
+
+},{"./link.module.css":"kzFht","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kzFht":[function(require,module,exports) {
+module.exports["link"] = `_54Slta_link`;
+
+},{}],"867JV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _inputModuleCss = require("./input.module.css");
+var _inputModuleCssDefault = parcelHelpers.interopDefault(_inputModuleCss);
+exports.default = `
+    <input class="${(0, _inputModuleCssDefault.default).input}" placeholder="{{placeholder}}" type="{{type}}" />
+`;
+
+},{"./input.module.css":"gtdVD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gtdVD":[function(require,module,exports) {
+module.exports["input"] = `_3yexHG_input`;
 
 },{}]},["ShInH","8lqZg"], "8lqZg", "parcelRequire938d")
 
