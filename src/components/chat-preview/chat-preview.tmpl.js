@@ -7,9 +7,18 @@ export default `
         {{else}}
             <img class="${styles.avatar}" alt="{{username}} avatar" src="../../assets/default-avatar.png" />
         {{/if}} 
-        <div class="${styles.top}">
-            <p class="${styles.username}">{{username}}</p>
-            <p class="${styles.date}">{{date}}</p>
+        <div class="${styles.content}">
+            <div class="${styles.top}">
+                <p class="${styles.username}">{{username}}</p>
+                <p class="${styles.date}">{{date}}</p>
+            </div>
+            <p class="${styles.message}">
+            {{#if mine}}
+                <span class="${styles.self}">Вы: </span>
+            {{/if}}
+                What's good brotherWhat's good brotherWhat's good brotherWhat's good brotherWhat's good brother. What's good brother What's good brother What's good brother What's good brother
+            </p>
+            <p class="${styles.count}">4</p>
         </div>
     </li>
 `;

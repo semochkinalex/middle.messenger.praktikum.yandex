@@ -249,6 +249,12 @@
   gap: 8px;
   padding: 0 2.5%;
   display: flex;
+  position: relative;
+}
+
+.gR_sOW_content {
+  width: 100%;
+  max-height: 50px;
 }
 
 .gR_sOW_avatar {
@@ -275,6 +281,32 @@
   justify-content: space-between;
   align-items: center;
   display: flex;
+}
+
+.gR_sOW_message {
+  color: #d5d5d5;
+  width: 210px;
+  height: 50px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 21px;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.gR_sOW_count {
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  background-color: #3b5bdb;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 2.5%;
 }
 
 /*# sourceMappingURL=index.b4e15e69.css.map */

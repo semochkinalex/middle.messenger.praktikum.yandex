@@ -4,6 +4,12 @@
     padding: 0 2.5%;
     box-sizing: border-box;
     gap: 8px;
+    position: relative;
+}
+
+.content {
+    width: 100%;
+    max-height: 50px;
 }
 
 .avatar {
@@ -29,4 +35,30 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
+}
+
+.message {
+    color: #D5D5D5;
+    width: 210px;
+    height: 50px;
+    font-size: 12px;
+    margin-right: 21px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.count {
+    color: white;
+    font-size: 11px;
+    background-color: #3B5BDB;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    bottom: 0;
+    right: 2.5%;
 }

@@ -12163,19 +12163,31 @@ exports.default = `
         {{else}}
             <img class="${_chatPreviewModuleCss.avatar}" alt="{{username}} avatar" src="../../assets/default-avatar.png" />
         {{/if}} 
-        <div class="${_chatPreviewModuleCss.top}">
-            <p class="${_chatPreviewModuleCss.username}">{{username}}</p>
-            <p class="${_chatPreviewModuleCss.date}">{{date}}</p>
+        <div class="${_chatPreviewModuleCss.content}">
+            <div class="${_chatPreviewModuleCss.top}">
+                <p class="${_chatPreviewModuleCss.username}">{{username}}</p>
+                <p class="${_chatPreviewModuleCss.date}">{{date}}</p>
+            </div>
+            <p class="${_chatPreviewModuleCss.message}">
+            {{#if mine}}
+                <span class="${_chatPreviewModuleCss.self}">Вы: </span>
+            {{/if}}
+                What's good brotherWhat's good brotherWhat's good brotherWhat's good brotherWhat's good brother. What's good brother What's good brother What's good brother What's good brother
+            </p>
+            <p class="${_chatPreviewModuleCss.count}">4</p>
         </div>
     </li>
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./chat-preview.module.css":"icl0h"}],"icl0h":[function(require,module,exports) {
-module.exports["chat"] = `gR_sOW_chat`;
-module.exports["username"] = `gR_sOW_username`;
-module.exports["avatar"] = `gR_sOW_avatar`;
+module.exports["message"] = `gR_sOW_message`;
 module.exports["date"] = `gR_sOW_date`;
 module.exports["top"] = `gR_sOW_top`;
+module.exports["count"] = `gR_sOW_count`;
+module.exports["content"] = `gR_sOW_content`;
+module.exports["username"] = `gR_sOW_username`;
+module.exports["chat"] = `gR_sOW_chat`;
+module.exports["avatar"] = `gR_sOW_avatar`;
 
 },{}]},["ShInH","8lqZg"], "8lqZg", "parcelRequire938d")
 
