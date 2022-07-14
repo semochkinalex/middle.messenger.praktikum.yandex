@@ -1,5 +1,5 @@
-import styles from './input.module.css';
+import * as styles from './input.module.css';
 
 export default `
-    <input class="${styles.input}" placeholder="{{placeholder}}" type="{{type}}" />
+    <input name={{name}} class="${styles.input}" placeholder="{{placeholder}}" type="{{type}}" />
 `;

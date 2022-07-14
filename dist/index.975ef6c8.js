@@ -543,10 +543,12 @@ var _500Js = require("./pages/500/500.js");
 var _500JsDefault = parcelHelpers.interopDefault(_500Js);
 var _404Js = require("./pages/404/404.js");
 var _404JsDefault = parcelHelpers.interopDefault(_404Js);
+var _chatsJs = require("./pages/chats/chats.js");
+var _chatsJsDefault = parcelHelpers.interopDefault(_chatsJs);
 const main = document.querySelector(".main");
-main.innerHTML = (0, _404JsDefault.default);
+main.innerHTML = (0, _chatsJsDefault.default);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU","./pages/sign-up/sign-up.js":"hSPj4","./pages/500/500.js":"bJHPG","./pages/404/404.js":"3Glnj"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU","./pages/sign-up/sign-up.js":"hSPj4","./pages/500/500.js":"bJHPG","./pages/404/404.js":"3Glnj","./pages/chats/chats.js":"e9Ant"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -11908,13 +11910,12 @@ var _inputTmplDefault = parcelHelpers.interopDefault(_inputTmpl);
 var _signInTmpl = require("./sign-in.tmpl");
 var _signInTmplDefault = parcelHelpers.interopDefault(_signInTmpl);
 var _signInModuleCss = require("./sign-in.module.css");
-var _signInModuleCssDefault = parcelHelpers.interopDefault(_signInModuleCss);
 const template = (0, _handlebarsDefault.default).compile((0, _signInTmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("button", (0, _buttonTmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("link", (0, _linkTmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("input", (0, _inputTmplDefault.default));
 const render = template({
-    styles: (0, _signInModuleCssDefault.default)
+    styles: _signInModuleCss
 });
 // console.log(styles);
 exports.default = render;
@@ -11926,8 +11927,8 @@ exports.default = `
     <form class={{styles.form}}>
         <h1 class={{styles.title}}>Вход</h1>
         <fieldset class={{styles.fieldset}}>
-            {{> input placeholder="Логин" type="text" }}
-            {{> input placeholder="Пароль" type="password" }}
+            {{> input name="login" placeholder="Логин" type="text" }}
+            {{> input name="password" placeholder="Пароль" type="password" }}
         </fieldset>
         <div class={{styles.buttons}}>
             {{> button text="Авторизоваться"}}
@@ -11939,17 +11940,16 @@ exports.default = `
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gYtK9":[function(require,module,exports) {
 module.exports["fieldset"] = `_57R7Ra_fieldset`;
 module.exports["linker"] = `_57R7Ra_linker`;
-module.exports["form"] = `_57R7Ra_form`;
 module.exports["title"] = `_57R7Ra_title`;
+module.exports["form"] = `_57R7Ra_form`;
 module.exports["buttons"] = `_57R7Ra_buttons`;
 
 },{}],"lPo9h":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _buttonModuleCss = require("./button.module.css");
-var _buttonModuleCssDefault = parcelHelpers.interopDefault(_buttonModuleCss);
 exports.default = `
-    <button class="${(0, _buttonModuleCssDefault.default).button}">{{text}}</button>
+    <button class="${_buttonModuleCss.button}">{{text}}</button>
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./button.module.css":"ePRMF"}],"ePRMF":[function(require,module,exports) {
@@ -11959,9 +11959,8 @@ module.exports["button"] = `hbbnNa_button`;
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _linkModuleCss = require("./link.module.css");
-var _linkModuleCssDefault = parcelHelpers.interopDefault(_linkModuleCss);
 exports.default = `
-    <a class="${(0, _linkModuleCssDefault.default).link} {{className}}" href="{{anchor}}">{{text}}</a>
+    <a class="${_linkModuleCss.link} {{className}}" href="{{anchor}}">{{text}}</a>
 `;
 
 },{"./link.module.css":"kzFht","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kzFht":[function(require,module,exports) {
@@ -11971,9 +11970,8 @@ module.exports["link"] = `_54Slta_link`;
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _inputModuleCss = require("./input.module.css");
-var _inputModuleCssDefault = parcelHelpers.interopDefault(_inputModuleCss);
 exports.default = `
-    <input class="${(0, _inputModuleCssDefault.default).input}" placeholder="{{placeholder}}" type="{{type}}" />
+    <input name={{name}} class="${_inputModuleCss.input}" placeholder="{{placeholder}}" type="{{type}}" />
 `;
 
 },{"./input.module.css":"gtdVD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gtdVD":[function(require,module,exports) {
@@ -11993,14 +11991,13 @@ var _inputTmplDefault = parcelHelpers.interopDefault(_inputTmpl);
 var _signUpTmpl = require("./sign-up.tmpl");
 var _signUpTmplDefault = parcelHelpers.interopDefault(_signUpTmpl);
 var _signUpModuleCss = require("./sign-up.module.css");
-var _signUpModuleCssDefault = parcelHelpers.interopDefault(_signUpModuleCss);
 const template = (0, _handlebarsDefault.default).compile((0, _signUpTmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("button", (0, _buttonTmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("link", (0, _linkTmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("input", (0, _inputTmplDefault.default));
 console.log("qwdqwd");
 const render = template({
-    styles: (0, _signUpModuleCssDefault.default)
+    styles: _signUpModuleCss
 });
 exports.default = render;
 
@@ -12011,13 +12008,13 @@ exports.default = `
     <form class={{styles.form}}>
         <h1 class={{styles.title}}>Регистрация</h1>
         <fieldset class={{styles.fieldset}}>
-            {{> input placeholder="Почта" type="email" }}
-            {{> input placeholder="Логин" type="text" }}
-            {{> input placeholder="Имя" type="text" }}
-            {{> input placeholder="Фамилия" type="text" }}
-            {{> input placeholder="Телефон" type="text" }}
-            {{> input placeholder="Пароль" type="password" }}
-            {{> input placeholder="Пароль (ещё раз)" type="password" }}
+            {{> input name="email" placeholder="Почта" type="email" }}
+            {{> input name="login" placeholder="Логин" type="text" }}
+            {{> input name="first_name" placeholder="Имя" type="text" }}
+            {{> input name="second_name" placeholder="Фамилия" type="text" }}
+            {{> input name="phone" placeholder="Телефон" type="text" }}
+            {{> input name="password" placeholder="Пароль" type="password" }}
+            {{> input name="password_repeat" placeholder="Пароль (ещё раз)" type="password" }}
         </fieldset>
         <div class={{styles.buttons}}>
             {{> button text="Зарегистрироваться"}}
@@ -12027,11 +12024,11 @@ exports.default = `
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7RaEU":[function(require,module,exports) {
-module.exports["title"] = `H3DfFq_title`;
 module.exports["form"] = `H3DfFq_form`;
-module.exports["fieldset"] = `H3DfFq_fieldset`;
-module.exports["linker"] = `H3DfFq_linker`;
+module.exports["title"] = `H3DfFq_title`;
 module.exports["buttons"] = `H3DfFq_buttons`;
+module.exports["linker"] = `H3DfFq_linker`;
+module.exports["fieldset"] = `H3DfFq_fieldset`;
 
 },{}],"bJHPG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12043,11 +12040,10 @@ var _linkTmplDefault = parcelHelpers.interopDefault(_linkTmpl);
 var _500Tmpl = require("./500.tmpl");
 var _500TmplDefault = parcelHelpers.interopDefault(_500Tmpl);
 var _500ModuleCss = require("./500.module.css");
-var _500ModuleCssDefault = parcelHelpers.interopDefault(_500ModuleCss);
 const template = (0, _handlebarsDefault.default).compile((0, _500TmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("link", (0, _linkTmplDefault.default));
 const render = template({
-    styles: (0, _500ModuleCssDefault.default)
+    styles: _500ModuleCss
 });
 exports.default = render;
 
@@ -12064,8 +12060,8 @@ exports.default = `
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ea28E":[function(require,module,exports) {
 module.exports["container"] = `ZOqx9q_container`;
-module.exports["subtitle"] = `ZOqx9q_subtitle`;
 module.exports["title"] = `ZOqx9q_title`;
+module.exports["subtitle"] = `ZOqx9q_subtitle`;
 
 },{}],"3Glnj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12077,11 +12073,10 @@ var _linkTmplDefault = parcelHelpers.interopDefault(_linkTmpl);
 var _404Tmpl = require("./404.tmpl");
 var _404TmplDefault = parcelHelpers.interopDefault(_404Tmpl);
 var _404ModuleCss = require("./404.module.css");
-var _404ModuleCssDefault = parcelHelpers.interopDefault(_404ModuleCss);
 const template = (0, _handlebarsDefault.default).compile((0, _404TmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("link", (0, _linkTmplDefault.default));
 const render = template({
-    styles: (0, _404ModuleCssDefault.default)
+    styles: _404ModuleCss
 });
 exports.default = render;
 
@@ -12098,8 +12093,89 @@ exports.default = `
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kI8Ve":[function(require,module,exports) {
 module.exports["subtitle"] = `WPUdUW_subtitle`;
-module.exports["container"] = `WPUdUW_container`;
 module.exports["title"] = `WPUdUW_title`;
+module.exports["container"] = `WPUdUW_container`;
+
+},{}],"e9Ant":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebars = require("handlebars");
+var _handlebarsDefault = parcelHelpers.interopDefault(_handlebars);
+var _chatsTmpl = require("./chats.tmpl");
+var _chatsTmplDefault = parcelHelpers.interopDefault(_chatsTmpl);
+var _chatsModuleCss = require("./chats.module.css");
+var _chatPreviewTmpl = require("../../components/chat-preview/chat-preview.tmpl");
+var _chatPreviewTmplDefault = parcelHelpers.interopDefault(_chatPreviewTmpl);
+(0, _handlebarsDefault.default).registerPartial("chat", (0, _chatPreviewTmplDefault.default));
+const template = (0, _handlebarsDefault.default).compile((0, _chatsTmplDefault.default));
+const render = template({
+    styles: _chatsModuleCss,
+    username: "fennyflop",
+    avatar: "https://i.ytimg.com/vi/1Ne1hqOXKKI/maxresdefault.jpg"
+});
+exports.default = render;
+
+},{"handlebars":"i0QfX","./chats.tmpl":"32AZS","./chats.module.css":"eVOWT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../components/chat-preview/chat-preview.tmpl":"d4zdN"}],"32AZS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = `
+    <section class={{styles.chats}}>
+        <div class={{styles.profile}}>
+            <div class={{styles.credentials}}>
+                <img class={{styles.avatar}} alt="Profile Avatar" src={{avatar}} />
+                <p class={{styles.username}}>{{username}}</p>
+            </div>
+            <div class={{styles.button}}>
+                <button class="{{styles.actionIcon}} {{styles.settings}}"></button>
+                <button class="{{styles.actionIcon}} {{styles.exit}}"></button>
+            </div>
+        </div>
+        <input type="text" placeholder="Поиск" class={{styles.search}} />
+        <div class={{styles.divider}}></div>
+        <ul class={{styles.list}}>
+            {{> chat username="Alex" date="18:19" avatar="https://ichef.bbci.co.uk/news/976/cpsprodpb/17638/production/_124800859_gettyimages-817514614.jpg" }}
+        </ul>
+    </main>
+`;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eVOWT":[function(require,module,exports) {
+module.exports["divider"] = `P4zA0q_divider`;
+module.exports["credentials"] = `P4zA0q_credentials`;
+module.exports["avatar"] = `P4zA0q_avatar`;
+module.exports["profile"] = `P4zA0q_profile`;
+module.exports["search"] = `P4zA0q_search`;
+module.exports["username"] = `P4zA0q_username`;
+module.exports["list"] = `P4zA0q_list`;
+module.exports["exit"] = `P4zA0q_exit`;
+module.exports["settings"] = `P4zA0q_settings`;
+module.exports["buttons"] = `P4zA0q_buttons`;
+module.exports["chats"] = `P4zA0q_chats`;
+module.exports["actionIcon"] = `P4zA0q_actionIcon`;
+
+},{}],"d4zdN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _chatPreviewModuleCss = require("./chat-preview.module.css");
+exports.default = `
+    <li class="${_chatPreviewModuleCss.chat}">
+        {{#if avatar}}
+            <img class="${_chatPreviewModuleCss.avatar}" alt="{{username}} avatar" src={{avatar}} />
+        {{else}}
+            <img class="${_chatPreviewModuleCss.avatar}" alt="{{username}} avatar" src="../../assets/default-avatar.png" />
+        {{/if}} 
+        <div class="${_chatPreviewModuleCss.top}">
+            <p class="${_chatPreviewModuleCss.username}">{{username}}</p>
+            <p class="${_chatPreviewModuleCss.date}">{{date}}</p>
+        </div>
+    </li>
+`;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./chat-preview.module.css":"icl0h"}],"icl0h":[function(require,module,exports) {
+module.exports["chat"] = `gR_sOW_chat`;
+module.exports["username"] = `gR_sOW_username`;
+module.exports["avatar"] = `gR_sOW_avatar`;
+module.exports["date"] = `gR_sOW_date`;
+module.exports["top"] = `gR_sOW_top`;
 
 },{}]},["ShInH","8lqZg"], "8lqZg", "parcelRequire938d")
 

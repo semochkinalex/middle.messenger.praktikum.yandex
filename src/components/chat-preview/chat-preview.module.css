@@ -1,0 +1,32 @@
+.chat {
+    display: flex;
+    width: 100%;
+    padding: 0 2.5%;
+    box-sizing: border-box;
+    gap: 8px;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border: 1px solid white;
+}
+
+.username {
+    color: white;
+    font-size: 15px;
+}
+
+.date {
+    color: #D5D5D5;
+    font-size: 9px;
+}
+.top {
+    height: fit-content;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}

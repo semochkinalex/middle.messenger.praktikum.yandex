@@ -2,13 +2,13 @@ export default `
     <form class={{styles.form}}>
         <h1 class={{styles.title}}>Регистрация</h1>
         <fieldset class={{styles.fieldset}}>
-            {{> input placeholder="Почта" type="email" }}
-            {{> input placeholder="Логин" type="text" }}
-            {{> input placeholder="Имя" type="text" }}
-            {{> input placeholder="Фамилия" type="text" }}
-            {{> input placeholder="Телефон" type="text" }}
-            {{> input placeholder="Пароль" type="password" }}
-            {{> input placeholder="Пароль (ещё раз)" type="password" }}
+            {{> input name="email" placeholder="Почта" type="email" }}
+            {{> input name="login" placeholder="Логин" type="text" }}
+            {{> input name="first_name" placeholder="Имя" type="text" }}
+            {{> input name="second_name" placeholder="Фамилия" type="text" }}
+            {{> input name="phone" placeholder="Телефон" type="text" }}
+            {{> input name="password" placeholder="Пароль" type="password" }}
+            {{> input name="password_repeat" placeholder="Пароль (ещё раз)" type="password" }}
         </fieldset>
         <div class={{styles.buttons}}>
             {{> button text="Зарегистрироваться"}}

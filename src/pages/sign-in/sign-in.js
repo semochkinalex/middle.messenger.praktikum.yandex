@@ -3,7 +3,7 @@ import LinkTemplate from '../../components/link/link.tmpl';
 import ButtonTemplate from '../../components/button/button.tmpl';
 import InputTemplate from '../../components/input/input.tmpl';
 import SignInPageTemplate from './sign-in.tmpl';
-import styles from './sign-in.module.css';
+import * as styles from './sign-in.module.css';
 
 const template = Handlebars.compile(SignInPageTemplate);
 
