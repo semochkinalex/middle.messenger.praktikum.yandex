@@ -7,7 +7,7 @@ export default `
         </fieldset>
         <div class={{styles.buttons}}>
             {{> button text="Авторизоваться"}}
-            {{> link text="Нет Аккаунта?" className=styles.linker }}
+            {{> link text="Нет Аккаунта?" className=styles.linker anchor="/sign-up" }}
         </div>
     </form>
 `;

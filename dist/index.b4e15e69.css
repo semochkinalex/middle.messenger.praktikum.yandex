@@ -78,4 +78,44 @@
   padding-bottom: 3px;
 }
 
+.H3DfFq_form {
+  width: 90%;
+  max-width: 340px;
+  min-height: 300px;
+  box-sizing: border-box;
+  align-items: center;
+  align-items: space-between;
+  flex-direction: column;
+  padding: 0 15px;
+  display: flex;
+}
+
+.H3DfFq_fieldset {
+  width: 100%;
+  border: none;
+  outline: none;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 100px;
+  padding: 0;
+  display: flex;
+}
+
+.H3DfFq_linker {
+  margin-top: 14px;
+}
+
+.H3DfFq_title {
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.H3DfFq_buttons {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  display: flex;
+}
+
 /*# sourceMappingURL=index.b4e15e69.css.map */

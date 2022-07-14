@@ -537,11 +537,13 @@ var _handlebars = require("handlebars");
 var _handlebarsDefault = parcelHelpers.interopDefault(_handlebars);
 var _signInJs = require("./pages/sign-in/sign-in.js");
 var _signInJsDefault = parcelHelpers.interopDefault(_signInJs);
+var _signUpJs = require("./pages/sign-up/sign-up.js");
+var _signUpJsDefault = parcelHelpers.interopDefault(_signUpJs);
 console.log((0, _signInJsDefault.default));
 const main = document.querySelector(".main");
-main.innerHTML = (0, _signInJsDefault.default);
+main.innerHTML = (0, _signUpJsDefault.default);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU","./pages/sign-up/sign-up.js":"hSPj4"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -11909,10 +11911,9 @@ const template = (0, _handlebarsDefault.default).compile((0, _signInTmplDefault.
 (0, _handlebarsDefault.default).registerPartial("link", (0, _linkTmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("input", (0, _inputTmplDefault.default));
 const render = template({
-    styles: (0, _signInModuleCssDefault.default),
-    text: "qwdqwd"
+    styles: (0, _signInModuleCssDefault.default)
 });
-console.log((0, _signInModuleCssDefault.default));
+// console.log(styles);
 exports.default = render;
 
 },{"handlebars":"i0QfX","./sign-in.tmpl":"gcT0r","./sign-in.module.css":"gYtK9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../components/button/button.tmpl":"lPo9h","../../components/link/link.tmpl":"jDvWl","../../components/input/input.tmpl":"867JV"}],"gcT0r":[function(require,module,exports) {
@@ -11927,7 +11928,7 @@ exports.default = `
         </fieldset>
         <div class={{styles.buttons}}>
             {{> button text="Авторизоваться"}}
-            {{> link text="Нет Аккаунта?" className=styles.linker }}
+            {{> link text="Нет Аккаунта?" className=styles.linker anchor="/sign-up" }}
         </div>
     </form>
 `;
@@ -11974,6 +11975,60 @@ exports.default = `
 
 },{"./input.module.css":"gtdVD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gtdVD":[function(require,module,exports) {
 module.exports["input"] = `_3yexHG_input`;
+
+},{}],"hSPj4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebars = require("handlebars");
+var _handlebarsDefault = parcelHelpers.interopDefault(_handlebars);
+var _linkTmpl = require("../../components/link/link.tmpl");
+var _linkTmplDefault = parcelHelpers.interopDefault(_linkTmpl);
+var _buttonTmpl = require("../../components/button/button.tmpl");
+var _buttonTmplDefault = parcelHelpers.interopDefault(_buttonTmpl);
+var _inputTmpl = require("../../components/input/input.tmpl");
+var _inputTmplDefault = parcelHelpers.interopDefault(_inputTmpl);
+var _signUpTmpl = require("./sign-up.tmpl");
+var _signUpTmplDefault = parcelHelpers.interopDefault(_signUpTmpl);
+var _signUpModuleCss = require("./sign-up.module.css");
+var _signUpModuleCssDefault = parcelHelpers.interopDefault(_signUpModuleCss);
+const template = (0, _handlebarsDefault.default).compile((0, _signUpTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("button", (0, _buttonTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("link", (0, _linkTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("input", (0, _inputTmplDefault.default));
+console.log("qwdqwd");
+const render = template({
+    styles: (0, _signUpModuleCssDefault.default)
+});
+exports.default = render;
+
+},{"handlebars":"i0QfX","../../components/link/link.tmpl":"jDvWl","../../components/button/button.tmpl":"lPo9h","../../components/input/input.tmpl":"867JV","./sign-up.tmpl":"2LMJ0","./sign-up.module.css":"7RaEU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2LMJ0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = `
+    <form class={{styles.form}}>
+        <h1 class={{styles.title}}>Регистрация</h1>
+        <fieldset class={{styles.fieldset}}>
+            {{> input placeholder="Почта" type="email" }}
+            {{> input placeholder="Логин" type="text" }}
+            {{> input placeholder="Имя" type="text" }}
+            {{> input placeholder="Фамилия" type="text" }}
+            {{> input placeholder="Телефон" type="text" }}
+            {{> input placeholder="Пароль" type="password" }}
+            {{> input placeholder="Пароль (ещё раз)" type="password" }}
+        </fieldset>
+        <div class={{styles.buttons}}>
+            {{> button text="Зарегистрироваться"}}
+            {{> link text="Есть Аккаунт? Войти" className=styles.linker anchor="/sign-in" }}
+        </div>
+    </form>
+`;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7RaEU":[function(require,module,exports) {
+module.exports["title"] = `H3DfFq_title`;
+module.exports["form"] = `H3DfFq_form`;
+module.exports["fieldset"] = `H3DfFq_fieldset`;
+module.exports["linker"] = `H3DfFq_linker`;
+module.exports["buttons"] = `H3DfFq_buttons`;
 
 },{}]},["ShInH","8lqZg"], "8lqZg", "parcelRequire938d")
 
