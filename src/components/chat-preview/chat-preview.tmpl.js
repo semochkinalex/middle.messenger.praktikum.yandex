@@ -1,7 +1,11 @@
 import * as styles from './chat-preview.module.css';
 
 export default `
-    <li class="${styles.chat}">
+    {{#if isSelected}}
+        <li class="${styles.chat} ${styles.selected}">
+    {{else}}
+        <li class="${styles.chat}">
+    {{/if}}
         {{#if avatar}}
             <img class="${styles.avatar}" alt="{{username}} avatar" src={{avatar}} />
         {{else}}
@@ -10,15 +14,17 @@ export default `
         <div class="${styles.content}">
             <div class="${styles.top}">
                 <p class="${styles.username}">{{username}}</p>
-                <p class="${styles.date}">{{date}}</p>
+                <p class="${styles.date}">{{timestamp}}</p>
             </div>
             <p class="${styles.message}">
-            {{#if mine}}
+            {{#if repliedTo}}
                 <span class="${styles.self}">Вы: </span>
             {{/if}}
-                What's good brotherWhat's good brotherWhat's good brotherWhat's good brotherWhat's good brother. What's good brother What's good brother What's good brother What's good brother
+                {{latestMessage}}
             </p>
-            <p class="${styles.count}">4</p>
+            {{#if unreadMessagesCount}}
+                <p class="${styles.count}">{{unreadMessagesCount}}</p>
+            {{/if}}
         </div>
     </li>
 `;

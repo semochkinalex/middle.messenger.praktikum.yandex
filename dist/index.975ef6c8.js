@@ -545,10 +545,12 @@ var _404Js = require("./pages/404/404.js");
 var _404JsDefault = parcelHelpers.interopDefault(_404Js);
 var _chatsJs = require("./pages/chats/chats.js");
 var _chatsJsDefault = parcelHelpers.interopDefault(_chatsJs);
+var _profile = require("./pages/profile/profile");
+var _profileDefault = parcelHelpers.interopDefault(_profile);
 const main = document.querySelector(".main");
-main.innerHTML = (0, _chatsJsDefault.default);
+main.innerHTML = (0, _profileDefault.default);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU","./pages/sign-up/sign-up.js":"hSPj4","./pages/500/500.js":"bJHPG","./pages/404/404.js":"3Glnj","./pages/chats/chats.js":"e9Ant"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU","./pages/sign-up/sign-up.js":"hSPj4","./pages/500/500.js":"bJHPG","./pages/404/404.js":"3Glnj","./pages/chats/chats.js":"e9Ant","./pages/profile/profile":"d8Zom"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -12108,10 +12110,29 @@ var _chatPreviewTmpl = require("../../components/chat-preview/chat-preview.tmpl"
 var _chatPreviewTmplDefault = parcelHelpers.interopDefault(_chatPreviewTmpl);
 (0, _handlebarsDefault.default).registerPartial("chat", (0, _chatPreviewTmplDefault.default));
 const template = (0, _handlebarsDefault.default).compile((0, _chatsTmplDefault.default));
+const chats = [
+    {
+        avatar: "https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1.jpg.optimal.jpg",
+        username: "Homie",
+        latestMessage: "Okay, I pull up, hop out at the after party. Okay, I pull up, hop out at the after party. Okay, I pull up, hop out at the after party. Okay, I pull up, hop out at the after party.Okay, I pull up, hop out at the after partyOkay, I pull up, hop out at the after partyOkay, I pull up, hop out at the after party",
+        timestamp: "19:13",
+        isSelected: true,
+        unreadMessagesCount: 0
+    },
+    {
+        avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6YOvuinDaAUV_YLUnPSK-7YcOkUTu7qHhPw&usqp=CAU",
+        username: "+7 (916) 523-23-75",
+        latestMessage: "Baby, please don't leave me!!!",
+        unreadMessagesCount: 99,
+        timestamp: "19:13",
+        isSelected: false
+    }
+];
 const render = template({
     styles: _chatsModuleCss,
     username: "fennyflop",
-    avatar: "https://i.ytimg.com/vi/1Ne1hqOXKKI/maxresdefault.jpg"
+    avatar: "https://i.ytimg.com/vi/1Ne1hqOXKKI/maxresdefault.jpg",
+    chats
 });
 exports.default = render;
 
@@ -12119,45 +12140,59 @@ exports.default = render;
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = `
-    <section class={{styles.chats}}>
-        <div class={{styles.profile}}>
-            <div class={{styles.credentials}}>
-                <img class={{styles.avatar}} alt="Profile Avatar" src={{avatar}} />
-                <p class={{styles.username}}>{{username}}</p>
+    <main class={{styles.main}}>
+        <nav class={{styles.navbar}}>
+            <div class={{styles.profile}}>
+                <div class={{styles.credentials}}>
+                    <img class={{styles.avatar}} alt="Profile Avatar" src={{avatar}} />
+                    <p class={{styles.username}}>{{username}}</p>
+                </div>
+                <div class={{styles.button}}>
+                    <button class="{{styles.actionIcon}} {{styles.settings}}"></button>
+                    <button class="{{styles.actionIcon}} {{styles.exit}}"></button>
+                </div>
             </div>
-            <div class={{styles.button}}>
-                <button class="{{styles.actionIcon}} {{styles.settings}}"></button>
-                <button class="{{styles.actionIcon}} {{styles.exit}}"></button>
-            </div>
-        </div>
-        <input type="text" placeholder="Поиск" class={{styles.search}} />
-        <div class={{styles.divider}}></div>
-        <ul class={{styles.list}}>
-            {{> chat username="Alex" date="18:19" avatar="https://ichef.bbci.co.uk/news/976/cpsprodpb/17638/production/_124800859_gettyimages-817514614.jpg" }}
-        </ul>
+            <input type="text" placeholder="Поиск" class={{styles.search}} />
+            <div class={{styles.divider}}></div>
+            <ul class={{styles.list}}>
+                {{#each chats}}
+                    {{> chat}}
+                {{/each}}
+            </ul>
+        </nav>
+        <section class={{styles.chat}}>
+            <p class={{styles.empty}}>Выберите чат чтобы отправить сообщение</p>
+        </section>
     </main>
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eVOWT":[function(require,module,exports) {
-module.exports["divider"] = `P4zA0q_divider`;
-module.exports["credentials"] = `P4zA0q_credentials`;
-module.exports["avatar"] = `P4zA0q_avatar`;
-module.exports["profile"] = `P4zA0q_profile`;
-module.exports["search"] = `P4zA0q_search`;
-module.exports["username"] = `P4zA0q_username`;
-module.exports["list"] = `P4zA0q_list`;
-module.exports["exit"] = `P4zA0q_exit`;
-module.exports["settings"] = `P4zA0q_settings`;
+module.exports["empty"] = `P4zA0q_empty`;
 module.exports["buttons"] = `P4zA0q_buttons`;
-module.exports["chats"] = `P4zA0q_chats`;
+module.exports["chat"] = `P4zA0q_chat`;
 module.exports["actionIcon"] = `P4zA0q_actionIcon`;
+module.exports["profile"] = `P4zA0q_profile`;
+module.exports["settings"] = `P4zA0q_settings`;
+module.exports["exit"] = `P4zA0q_exit`;
+module.exports["divider"] = `P4zA0q_divider`;
+module.exports["avatar"] = `P4zA0q_avatar`;
+module.exports["credentials"] = `P4zA0q_credentials`;
+module.exports["list"] = `P4zA0q_list`;
+module.exports["username"] = `P4zA0q_username`;
+module.exports["search"] = `P4zA0q_search`;
+module.exports["navbar"] = `P4zA0q_navbar`;
+module.exports["main"] = `P4zA0q_main`;
 
 },{}],"d4zdN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _chatPreviewModuleCss = require("./chat-preview.module.css");
 exports.default = `
-    <li class="${_chatPreviewModuleCss.chat}">
+    {{#if isSelected}}
+        <li class="${_chatPreviewModuleCss.chat} ${_chatPreviewModuleCss.selected}">
+    {{else}}
+        <li class="${_chatPreviewModuleCss.chat}">
+    {{/if}}
         {{#if avatar}}
             <img class="${_chatPreviewModuleCss.avatar}" alt="{{username}} avatar" src={{avatar}} />
         {{else}}
@@ -12166,28 +12201,107 @@ exports.default = `
         <div class="${_chatPreviewModuleCss.content}">
             <div class="${_chatPreviewModuleCss.top}">
                 <p class="${_chatPreviewModuleCss.username}">{{username}}</p>
-                <p class="${_chatPreviewModuleCss.date}">{{date}}</p>
+                <p class="${_chatPreviewModuleCss.date}">{{timestamp}}</p>
             </div>
             <p class="${_chatPreviewModuleCss.message}">
-            {{#if mine}}
+            {{#if repliedTo}}
                 <span class="${_chatPreviewModuleCss.self}">Вы: </span>
             {{/if}}
-                What's good brotherWhat's good brotherWhat's good brotherWhat's good brotherWhat's good brother. What's good brother What's good brother What's good brother What's good brother
+                {{latestMessage}}
             </p>
-            <p class="${_chatPreviewModuleCss.count}">4</p>
+            {{#if unreadMessagesCount}}
+                <p class="${_chatPreviewModuleCss.count}">{{unreadMessagesCount}}</p>
+            {{/if}}
         </div>
     </li>
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./chat-preview.module.css":"icl0h"}],"icl0h":[function(require,module,exports) {
-module.exports["message"] = `gR_sOW_message`;
 module.exports["date"] = `gR_sOW_date`;
 module.exports["top"] = `gR_sOW_top`;
-module.exports["count"] = `gR_sOW_count`;
-module.exports["content"] = `gR_sOW_content`;
 module.exports["username"] = `gR_sOW_username`;
+module.exports["message"] = `gR_sOW_message`;
+module.exports["selected"] = `gR_sOW_selected`;
 module.exports["chat"] = `gR_sOW_chat`;
+module.exports["content"] = `gR_sOW_content`;
+module.exports["count"] = `gR_sOW_count`;
 module.exports["avatar"] = `gR_sOW_avatar`;
+
+},{}],"d8Zom":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebars = require("handlebars");
+var _handlebarsDefault = parcelHelpers.interopDefault(_handlebars);
+var _linkTmpl = require("../../components/link/link.tmpl");
+var _linkTmplDefault = parcelHelpers.interopDefault(_linkTmpl);
+var _editInputTmpl = require("../../components/edit-input/edit-input.tmpl");
+var _editInputTmplDefault = parcelHelpers.interopDefault(_editInputTmpl);
+var _profileTmpl = require("./profile.tmpl");
+var _profileTmplDefault = parcelHelpers.interopDefault(_profileTmpl);
+var _profileModuleCss = require("./profile.module.css");
+const template = (0, _handlebarsDefault.default).compile((0, _profileTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("link", (0, _linkTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("edit", (0, _editInputTmplDefault.default));
+const render = template({
+    styles: _profileModuleCss,
+    first_name: "Alex"
+});
+exports.default = render;
+
+},{"handlebars":"i0QfX","../../components/link/link.tmpl":"jDvWl","./profile.tmpl":"5NXVP","./profile.module.css":"a7ryd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../components/edit-input/edit-input.tmpl":"kBn7X"}],"5NXVP":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = `
+    <main class={{styles.container}}>
+        <div class={{styles.credentials}}>
+            <img class={{styles.avatar}} alt="{{first_name}} avatar" src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_3x2.jpg" />
+            <p class={{styles.name}}>{{first_name}}</p>
+        </div>
+        <form class={{styles.form}}>
+            {{> edit name="Почта" currentValue="pochta@gmail.ru" }}
+            {{> edit name="Логин" currentValue="ivanivanov" }}
+            {{> edit name="Имя" currentValue="Иван" }}
+            {{> edit name="Фамилия" currentValue="Иванов" }}
+            {{> edit name="Имя в чате" currentValue="Иван" }}
+            {{> edit name="Телефон" currentValue="7 (903) 967 30 30" }}
+            <div class={{styles.buttons}}>
+                <a class={{styles.link}}>Изменить данные</a>
+                <a class={{styles.link}}>Изменить пароль</a>
+                <button class={{styles.exit}}>Выйти</button>
+            </div>
+        </form>
+    </main>
+`;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a7ryd":[function(require,module,exports) {
+module.exports["container"] = `uIZihq_container`;
+module.exports["name"] = `uIZihq_name`;
+module.exports["buttons"] = `uIZihq_buttons`;
+module.exports["link"] = `uIZihq_link`;
+module.exports["exit"] = `uIZihq_exit`;
+module.exports["avatar"] = `uIZihq_avatar`;
+module.exports["form"] = `uIZihq_form`;
+
+},{}],"kBn7X":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _editInputModuleCss = require("./edit-input.module.css");
+exports.default = `
+    <fieldset class="${_editInputModuleCss.fieldset}">
+        <p class="${_editInputModuleCss.name}">{{name}}</p>
+        <div class="${_editInputModuleCss.group}">
+            <p class="${_editInputModuleCss.currentValue}">{{currentValue}}</p>
+            <button class="${_editInputModuleCss.edit}"></button>
+        </div>
+    </fieldset>
+`;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./edit-input.module.css":"9hnqc"}],"9hnqc":[function(require,module,exports) {
+module.exports["name"] = `msaBga_name`;
+module.exports["currentValue"] = `msaBga_currentValue`;
+module.exports["group"] = `msaBga_group`;
+module.exports["edit"] = `msaBga_edit`;
+module.exports["fieldset"] = `msaBga_fieldset`;
 
 },{}]},["ShInH","8lqZg"], "8lqZg", "parcelRequire938d")
 
