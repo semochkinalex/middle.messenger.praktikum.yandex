@@ -375,10 +375,9 @@
   display: flex;
 }
 
-.uIZihq_buttons {
+.uIZihq_links {
   border-top: 1px solid #343434;
-  justify-content: space-between;
-  margin-top: 10px;
+  justify-content: flex-end;
   padding: 10px 0;
   display: flex;
 }
@@ -399,6 +398,8 @@
 
 .uIZihq_exit {
   color: red;
+  width: 100%;
+  text-align: center;
   background-color: #0000;
   border: none;
   outline: none;
@@ -433,6 +434,12 @@
 
 .msaBga_currentValue {
   color: #d5d5d5;
+  text-align: right;
+  background-color: #0000;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
 }
 
 .msaBga_group {

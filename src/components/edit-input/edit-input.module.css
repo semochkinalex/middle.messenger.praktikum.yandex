@@ -18,7 +18,13 @@
     color: white;
 }
 .currentValue {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
     color: #D5D5D5;
+    text-align: right;
 }
 
 .group {

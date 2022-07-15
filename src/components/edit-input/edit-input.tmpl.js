@@ -4,7 +4,7 @@ export default `
     <fieldset class="${styles.fieldset}">
         <p class="${styles.name}">{{name}}</p>
         <div class="${styles.group}">
-            <p class="${styles.currentValue}">{{currentValue}}</p>
+            <input class="${styles.currentValue}" placeholder={{currentValue}}>
             <button class="${styles.edit}"></button>
         </div>
     </fieldset>

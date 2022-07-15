@@ -12256,6 +12256,7 @@ exports.default = `
         <div class={{styles.credentials}}>
             <img class={{styles.avatar}} alt="{{first_name}} avatar" src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_3x2.jpg" />
             <p class={{styles.name}}>{{first_name}}</p>
+            <button class={{styles.exit}}>Выйти</button>
         </div>
         <form class={{styles.form}}>
             {{> edit name="Почта" currentValue="pochta@gmail.ru" }}
@@ -12263,11 +12264,9 @@ exports.default = `
             {{> edit name="Имя" currentValue="Иван" }}
             {{> edit name="Фамилия" currentValue="Иванов" }}
             {{> edit name="Имя в чате" currentValue="Иван" }}
-            {{> edit name="Телефон" currentValue="7 (903) 967 30 30" }}
-            <div class={{styles.buttons}}>
-                <a class={{styles.link}}>Изменить данные</a>
+            {{> edit name="Телефон" currentValue="7(903)-967-30-30" }}
+            <div class={{styles.links}}>
                 <a class={{styles.link}}>Изменить пароль</a>
-                <button class={{styles.exit}}>Выйти</button>
             </div>
         </form>
     </main>
@@ -12275,12 +12274,12 @@ exports.default = `
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a7ryd":[function(require,module,exports) {
 module.exports["container"] = `uIZihq_container`;
-module.exports["name"] = `uIZihq_name`;
-module.exports["buttons"] = `uIZihq_buttons`;
+module.exports["links"] = `uIZihq_links`;
 module.exports["link"] = `uIZihq_link`;
-module.exports["exit"] = `uIZihq_exit`;
-module.exports["avatar"] = `uIZihq_avatar`;
 module.exports["form"] = `uIZihq_form`;
+module.exports["avatar"] = `uIZihq_avatar`;
+module.exports["name"] = `uIZihq_name`;
+module.exports["exit"] = `uIZihq_exit`;
 
 },{}],"kBn7X":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12290,18 +12289,18 @@ exports.default = `
     <fieldset class="${_editInputModuleCss.fieldset}">
         <p class="${_editInputModuleCss.name}">{{name}}</p>
         <div class="${_editInputModuleCss.group}">
-            <p class="${_editInputModuleCss.currentValue}">{{currentValue}}</p>
+            <input class="${_editInputModuleCss.currentValue}" placeholder={{currentValue}}>
             <button class="${_editInputModuleCss.edit}"></button>
         </div>
     </fieldset>
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./edit-input.module.css":"9hnqc"}],"9hnqc":[function(require,module,exports) {
-module.exports["name"] = `msaBga_name`;
 module.exports["currentValue"] = `msaBga_currentValue`;
 module.exports["group"] = `msaBga_group`;
 module.exports["edit"] = `msaBga_edit`;
 module.exports["fieldset"] = `msaBga_fieldset`;
+module.exports["name"] = `msaBga_name`;
 
 },{}]},["ShInH","8lqZg"], "8lqZg", "parcelRequire938d")
 
