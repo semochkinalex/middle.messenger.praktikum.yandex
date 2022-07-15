@@ -269,6 +269,78 @@
 }
 
 .P4zA0q_chat {
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 20px;
+  display: flex;
+}
+
+.P4zA0q_recipient {
+  width: 100%;
+  border-bottom: 1px solid #343434;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 10px;
+  display: flex;
+}
+
+.P4zA0q_recipientAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.P4zA0q_recipientName {
+  color: #fff;
+}
+
+.P4zA0q_more {
+  width: 24px;
+  height: 24px;
+  background: url("three-dots-icon.a55307f3.svg") center no-repeat;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  transition: all .2s ease-in-out;
+}
+
+.P4zA0q_more:hover {
+  cursor: pointer;
+  background-color: #343434;
+}
+
+.P4zA0q_handlebar {
+  width: 100%;
+  border-top: 1px solid #343434;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 0 5px;
+  display: flex;
+}
+
+.P4zA0q_attatch {
+  width: 24px;
+  height: 24px;
+  background: url("clip.553127ec.svg") center no-repeat;
+  border: none;
+  outline: none;
+}
+
+.P4zA0q_send {
+  width: 32px;
+  height: 32px;
+  background: url("arrow-left.a8e41a5c.svg") center no-repeat;
+  border: none;
+  outline: none;
+  transform: rotate(180deg);
+}
+
+.P4zA0q_input {
+  width: 100%;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  margin: 0 10px;
   padding: 10px 20px;
 }
 
@@ -350,9 +422,13 @@
 .AZoO-a_list {
   width: 100%;
   max-width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
   margin: 0;
-  padding: 0;
+  padding: 0 0 30px;
   list-style-type: none;
+  display: flex;
 }
 
 ._9x2kmq_message {

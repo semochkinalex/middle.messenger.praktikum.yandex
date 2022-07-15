@@ -20,8 +20,20 @@ export default `
             </ul>
         </nav>
         <section class={{styles.chat}}>
-            {{#if selectedChat}}
+        {{#if selectedChat}}
+                <div class={{styles.recipient}}>
+                    <div class={{styles.credentials}}>
+                        <img class={{styles.recipientAvatar}} src={{selectedChat.recipient.avatar}} alt="" />
+                        <p class={{styles.recipientName}}>{{selectedChat.recipient.displayName}}</p>
+                    </div>
+                    <button class={{styles.more}}></button>
+                </div>
                 {{> chatbox chat=selectedChat}}
+                <div class={{styles.handlebar}}>
+                    <button class={{styles.attatch}}></button>
+                    <input class={{styles.input}} name="message" placeholder="Сообщение" />
+                    <button class={{styles.send}}></button>
+                </div>
             {{else}}
                 <p class={{styles.empty}}>Выберите чат чтобы отправить сообщение</p>
             {{/if}}

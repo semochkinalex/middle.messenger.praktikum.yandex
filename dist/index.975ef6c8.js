@@ -12137,6 +12137,10 @@ const chats = [
     }
 ];
 const selectedChat = {
+    recipient: {
+        displayName: "Oleg",
+        avatar: "https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1.jpg.optimal.jpg"
+    },
     messages: [
         {
             message: `Okay, I pull up, hop out at the after party
@@ -12191,8 +12195,20 @@ exports.default = `
             </ul>
         </nav>
         <section class={{styles.chat}}>
-            {{#if selectedChat}}
+        {{#if selectedChat}}
+                <div class={{styles.recipient}}>
+                    <div class={{styles.credentials}}>
+                        <img class={{styles.recipientAvatar}} src={{selectedChat.recipient.avatar}} alt="" />
+                        <p class={{styles.recipientName}}>{{selectedChat.recipient.displayName}}</p>
+                    </div>
+                    <button class={{styles.more}}></button>
+                </div>
                 {{> chatbox chat=selectedChat}}
+                <div class={{styles.handlebar}}>
+                    <button class={{styles.attatch}}></button>
+                    <input class={{styles.input}} name="message" placeholder="Сообщение" />
+                    <button class={{styles.send}}></button>
+                </div>
             {{else}}
                 <p class={{styles.empty}}>Выберите чат чтобы отправить сообщение</p>
             {{/if}}
@@ -12201,21 +12217,29 @@ exports.default = `
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eVOWT":[function(require,module,exports) {
+module.exports["main"] = `P4zA0q_main`;
+module.exports["divider"] = `P4zA0q_divider`;
+module.exports["recipient"] = `P4zA0q_recipient`;
+module.exports["attatch"] = `P4zA0q_attatch`;
 module.exports["actionIcon"] = `P4zA0q_actionIcon`;
-module.exports["search"] = `P4zA0q_search`;
-module.exports["navbar"] = `P4zA0q_navbar`;
-module.exports["profile"] = `P4zA0q_profile`;
+module.exports["send"] = `P4zA0q_send`;
 module.exports["chat"] = `P4zA0q_chat`;
-module.exports["buttons"] = `P4zA0q_buttons`;
 module.exports["list"] = `P4zA0q_list`;
-module.exports["credentials"] = `P4zA0q_credentials`;
+module.exports["recipientName"] = `P4zA0q_recipientName`;
+module.exports["input"] = `P4zA0q_input`;
+module.exports["more"] = `P4zA0q_more`;
+module.exports["avatar"] = `P4zA0q_avatar`;
+module.exports["exit"] = `P4zA0q_exit`;
+module.exports["handlebar"] = `P4zA0q_handlebar`;
+module.exports["recipientAvatar"] = `P4zA0q_recipientAvatar`;
 module.exports["empty"] = `P4zA0q_empty`;
+module.exports["buttons"] = `P4zA0q_buttons`;
+module.exports["navbar"] = `P4zA0q_navbar`;
+module.exports["credentials"] = `P4zA0q_credentials`;
+module.exports["search"] = `P4zA0q_search`;
 module.exports["settings"] = `P4zA0q_settings`;
 module.exports["username"] = `P4zA0q_username`;
-module.exports["exit"] = `P4zA0q_exit`;
-module.exports["avatar"] = `P4zA0q_avatar`;
-module.exports["divider"] = `P4zA0q_divider`;
-module.exports["main"] = `P4zA0q_main`;
+module.exports["profile"] = `P4zA0q_profile`;
 
 },{}],"d4zdN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
