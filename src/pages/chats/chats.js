@@ -2,9 +2,13 @@ import Handlebars from 'handlebars';
 import ChatsTemplate from './chats.tmpl';
 import * as styles from './chats.module.css';
 
+import ChatboxTemplate from '../../components/chatbox/chatbox.tmpl';
 import ChatPreviewTemplate from '../../components/chat-preview/chat-preview.tmpl';
+import ChatMessageTemplate from '../../components/message/message.tmpl';
 
+Handlebars.registerPartial('chatbox', ChatboxTemplate);
 Handlebars.registerPartial('chat', ChatPreviewTemplate);
+Handlebars.registerPartial('message', ChatMessageTemplate);
 
 const template = Handlebars.compile(ChatsTemplate);
 
@@ -27,7 +31,29 @@ const chats = [
     }
 ]
 
+const selectedChat = {
+    messages: [
+        {
+            message: `Okay, I pull up, hop out at the after party
+            You and all your friends, yeah, they love to get naughty
+            Sippin' on that Henn', I know you love that Bacardi
+            1942, I take you back in that 'Rari`,
+            timestamp: "18:19",
+            isRecieved: true,
+        },
+        {
+            message: `Okay, I pull up, hop out at the after party
+            You and all your friends, yeah, they love to get naughty
+            Sippin' on that Henn', I know you love that Bacardi
+            1942, I take you back in that 'Rari`,
+            timestamp: "18:19",
+            isRecieved: false,
+            isSeen: true,
+        }
+    ]
+}
 
-const render = template({styles, username: "fennyflop", avatar: 'https://i.ytimg.com/vi/1Ne1hqOXKKI/maxresdefault.jpg', chats});
+
+const render = template({styles, username: "fennyflop", avatar: 'https://i.ytimg.com/vi/1Ne1hqOXKKI/maxresdefault.jpg', chats, selectedChat});
 
 export default render;

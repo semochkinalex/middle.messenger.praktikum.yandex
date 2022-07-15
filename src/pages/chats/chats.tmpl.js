@@ -20,7 +20,11 @@ export default `
             </ul>
         </nav>
         <section class={{styles.chat}}>
-            <p class={{styles.empty}}>Выберите чат чтобы отправить сообщение</p>
+            {{#if selectedChat}}
+                {{> chatbox chat=selectedChat}}
+            {{else}}
+                <p class={{styles.empty}}>Выберите чат чтобы отправить сообщение</p>
+            {{/if}}
         </section>
     </main>
 `;

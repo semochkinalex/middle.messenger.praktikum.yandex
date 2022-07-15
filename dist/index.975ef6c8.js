@@ -550,7 +550,7 @@ var _profileDefault = parcelHelpers.interopDefault(_profile);
 var _changePassword = require("./pages/change-password/change-password");
 var _changePasswordDefault = parcelHelpers.interopDefault(_changePassword);
 const main = document.querySelector(".main");
-main.innerHTML = (0, _profileDefault.default);
+main.innerHTML = (0, _chatsJsDefault.default);
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU","./pages/sign-up/sign-up.js":"hSPj4","./pages/500/500.js":"bJHPG","./pages/404/404.js":"3Glnj","./pages/chats/chats.js":"e9Ant","./pages/profile/profile":"d8Zom","./pages/change-password/change-password":"bi4pn"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -12108,9 +12108,15 @@ var _handlebarsDefault = parcelHelpers.interopDefault(_handlebars);
 var _chatsTmpl = require("./chats.tmpl");
 var _chatsTmplDefault = parcelHelpers.interopDefault(_chatsTmpl);
 var _chatsModuleCss = require("./chats.module.css");
+var _chatboxTmpl = require("../../components/chatbox/chatbox.tmpl");
+var _chatboxTmplDefault = parcelHelpers.interopDefault(_chatboxTmpl);
 var _chatPreviewTmpl = require("../../components/chat-preview/chat-preview.tmpl");
 var _chatPreviewTmplDefault = parcelHelpers.interopDefault(_chatPreviewTmpl);
+var _messageTmpl = require("../../components/message/message.tmpl");
+var _messageTmplDefault = parcelHelpers.interopDefault(_messageTmpl);
+(0, _handlebarsDefault.default).registerPartial("chatbox", (0, _chatboxTmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("chat", (0, _chatPreviewTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("message", (0, _messageTmplDefault.default));
 const template = (0, _handlebarsDefault.default).compile((0, _chatsTmplDefault.default));
 const chats = [
     {
@@ -12130,15 +12136,37 @@ const chats = [
         isSelected: false
     }
 ];
+const selectedChat = {
+    messages: [
+        {
+            message: `Okay, I pull up, hop out at the after party
+            You and all your friends, yeah, they love to get naughty
+            Sippin' on that Henn', I know you love that Bacardi
+            1942, I take you back in that 'Rari`,
+            timestamp: "18:19",
+            isRecieved: true
+        },
+        {
+            message: `Okay, I pull up, hop out at the after party
+            You and all your friends, yeah, they love to get naughty
+            Sippin' on that Henn', I know you love that Bacardi
+            1942, I take you back in that 'Rari`,
+            timestamp: "18:19",
+            isRecieved: false,
+            isSeen: true
+        }
+    ]
+};
 const render = template({
     styles: _chatsModuleCss,
     username: "fennyflop",
     avatar: "https://i.ytimg.com/vi/1Ne1hqOXKKI/maxresdefault.jpg",
-    chats
+    chats,
+    selectedChat
 });
 exports.default = render;
 
-},{"handlebars":"i0QfX","./chats.tmpl":"32AZS","./chats.module.css":"eVOWT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../components/chat-preview/chat-preview.tmpl":"d4zdN"}],"32AZS":[function(require,module,exports) {
+},{"handlebars":"i0QfX","./chats.tmpl":"32AZS","./chats.module.css":"eVOWT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../components/chat-preview/chat-preview.tmpl":"d4zdN","../../components/chatbox/chatbox.tmpl":"ineF2","../../components/message/message.tmpl":"ae9f4"}],"32AZS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = `
@@ -12163,26 +12191,30 @@ exports.default = `
             </ul>
         </nav>
         <section class={{styles.chat}}>
-            <p class={{styles.empty}}>Выберите чат чтобы отправить сообщение</p>
+            {{#if selectedChat}}
+                {{> chatbox chat=selectedChat}}
+            {{else}}
+                <p class={{styles.empty}}>Выберите чат чтобы отправить сообщение</p>
+            {{/if}}
         </section>
     </main>
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eVOWT":[function(require,module,exports) {
-module.exports["empty"] = `P4zA0q_empty`;
-module.exports["buttons"] = `P4zA0q_buttons`;
-module.exports["chat"] = `P4zA0q_chat`;
 module.exports["actionIcon"] = `P4zA0q_actionIcon`;
-module.exports["profile"] = `P4zA0q_profile`;
-module.exports["settings"] = `P4zA0q_settings`;
-module.exports["exit"] = `P4zA0q_exit`;
-module.exports["divider"] = `P4zA0q_divider`;
-module.exports["avatar"] = `P4zA0q_avatar`;
-module.exports["credentials"] = `P4zA0q_credentials`;
-module.exports["list"] = `P4zA0q_list`;
-module.exports["username"] = `P4zA0q_username`;
 module.exports["search"] = `P4zA0q_search`;
 module.exports["navbar"] = `P4zA0q_navbar`;
+module.exports["profile"] = `P4zA0q_profile`;
+module.exports["chat"] = `P4zA0q_chat`;
+module.exports["buttons"] = `P4zA0q_buttons`;
+module.exports["list"] = `P4zA0q_list`;
+module.exports["credentials"] = `P4zA0q_credentials`;
+module.exports["empty"] = `P4zA0q_empty`;
+module.exports["settings"] = `P4zA0q_settings`;
+module.exports["username"] = `P4zA0q_username`;
+module.exports["exit"] = `P4zA0q_exit`;
+module.exports["avatar"] = `P4zA0q_avatar`;
+module.exports["divider"] = `P4zA0q_divider`;
 module.exports["main"] = `P4zA0q_main`;
 
 },{}],"d4zdN":[function(require,module,exports) {
@@ -12228,6 +12260,57 @@ module.exports["chat"] = `gR_sOW_chat`;
 module.exports["content"] = `gR_sOW_content`;
 module.exports["count"] = `gR_sOW_count`;
 module.exports["avatar"] = `gR_sOW_avatar`;
+
+},{}],"ineF2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _chatboxModuleCss = require("./chatbox.module.css");
+exports.default = `
+    <ul class="${_chatboxModuleCss.list}">
+        {{#each chat.messages}}
+            {{> message}}
+        {{/each}}
+    </ul>
+`;
+
+},{"./chatbox.module.css":"bGypF","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bGypF":[function(require,module,exports) {
+module.exports["list"] = `AZoO-a_list`;
+
+},{}],"ae9f4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _messageModuleCss = require("./message.module.css");
+exports.default = `
+
+    {{#if isRecieved}}
+        <li class="${_messageModuleCss.message}">
+    {{else}}
+        <li class="${_messageModuleCss.message} ${_messageModuleCss.sent}">
+    {{/if}}
+    
+        {{#if message}}
+            <p class="${_messageModuleCss.content}">{{message}}</p>
+        {{else}}
+            <img class="${_messageModuleCss.image}" alt="" src={{image}} />
+        {{/if}}
+
+        <div class="${_messageModuleCss.info}">
+            {{#if isSeen}}
+                <div class="${_messageModuleCss.seen}"></div>
+            {{/if}}
+            <p class="${_messageModuleCss.timestamp}">{{timestamp}}</p>
+        </div>
+        
+    </li>
+`;
+
+},{"./message.module.css":"fewtg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fewtg":[function(require,module,exports) {
+module.exports["seen"] = `_9x2kmq_seen`;
+module.exports["sent"] = `_9x2kmq_sent`;
+module.exports["content"] = `_9x2kmq_content`;
+module.exports["timestamp"] = `_9x2kmq_timestamp`;
+module.exports["message"] = `_9x2kmq_message`;
+module.exports["info"] = `_9x2kmq_info`;
 
 },{}],"d8Zom":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
