@@ -350,6 +350,13 @@
   justify-content: center;
   align-items: center;
   display: flex;
+  position: relative;
+}
+
+.uIZihq_credentials {
+  flex-direction: column;
+  display: flex;
+  position: relative;
 }
 
 .uIZihq_avatar {
@@ -357,6 +364,33 @@
   height: 130px;
   object-fit: cover;
   border-radius: 50%;
+  position: relative;
+}
+
+.uIZihq_change {
+  z-index: 100;
+  width: 132px;
+  height: 132px;
+  color: #0000;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+  transition: all .2s ease-in-out;
+  display: flex;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+}
+
+.uIZihq_change:hover {
+  cursor: pointer;
+  z-index: 100;
+  color: #fff;
+  background-color: #000c;
 }
 
 .uIZihq_name {
@@ -398,11 +432,11 @@
 
 .uIZihq_exit {
   color: red;
-  width: 100%;
   text-align: center;
   background-color: #0000;
   border: none;
   outline: none;
+  margin: 5px auto;
   padding: 5px;
   transition: all .2s ease-in-out;
 }
@@ -411,6 +445,35 @@
   cursor: pointer;
   background-color: #343434;
   border-radius: 4px;
+}
+
+.uIZihq_sidebar {
+  height: 100%;
+  width: 40px;
+  border-right: 1px solid #343434;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s ease-in-out;
+  display: flex;
+  position: absolute;
+  left: 0;
+}
+
+.uIZihq_sidebar:hover {
+  cursor: pointer;
+  background-color: #343434;
+}
+
+.uIZihq_return {
+  width: 30px;
+  height: 30px;
+  background: url("arrow-left.a8e41a5c.svg") center no-repeat;
+  border: none;
+  outline: none;
+}
+
+.uIZihq_return:hover {
+  cursor: pointer;
 }
 
 .msaBga_fieldset {
@@ -455,6 +518,45 @@
   background: url("edit-icon.cd32f11b.svg");
   border: none;
   outline: none;
+}
+
+.kAJDTa_form {
+  width: 90%;
+  max-width: 340px;
+  min-height: 300px;
+  box-sizing: border-box;
+  align-items: center;
+  align-items: space-between;
+  flex-direction: column;
+  padding: 0 15px;
+  display: flex;
+}
+
+.kAJDTa_fieldset {
+  width: 100%;
+  border: none;
+  outline: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  display: flex;
+}
+
+.kAJDTa_title {
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.kAJDTa_buttons {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  display: flex;
+}
+
+.kAJDTa_linker {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=index.b4e15e69.css.map */

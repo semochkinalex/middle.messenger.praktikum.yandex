@@ -547,10 +547,12 @@ var _chatsJs = require("./pages/chats/chats.js");
 var _chatsJsDefault = parcelHelpers.interopDefault(_chatsJs);
 var _profile = require("./pages/profile/profile");
 var _profileDefault = parcelHelpers.interopDefault(_profile);
+var _changePassword = require("./pages/change-password/change-password");
+var _changePasswordDefault = parcelHelpers.interopDefault(_changePassword);
 const main = document.querySelector(".main");
 main.innerHTML = (0, _profileDefault.default);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU","./pages/sign-up/sign-up.js":"hSPj4","./pages/500/500.js":"bJHPG","./pages/404/404.js":"3Glnj","./pages/chats/chats.js":"e9Ant","./pages/profile/profile":"d8Zom"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU","./pages/sign-up/sign-up.js":"hSPj4","./pages/500/500.js":"bJHPG","./pages/404/404.js":"3Glnj","./pages/chats/chats.js":"e9Ant","./pages/profile/profile":"d8Zom","./pages/change-password/change-password":"bi4pn"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -12254,32 +12256,42 @@ parcelHelpers.defineInteropFlag(exports);
 exports.default = `
     <main class={{styles.container}}>
         <div class={{styles.credentials}}>
+            <button class={{styles.change}}>
+                Поменять аватар
+            </button>
             <img class={{styles.avatar}} alt="{{first_name}} avatar" src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_3x2.jpg" />
             <p class={{styles.name}}>{{first_name}}</p>
             <button class={{styles.exit}}>Выйти</button>
         </div>
         <form class={{styles.form}}>
-            {{> edit name="Почта" currentValue="pochta@gmail.ru" }}
-            {{> edit name="Логин" currentValue="ivanivanov" }}
-            {{> edit name="Имя" currentValue="Иван" }}
-            {{> edit name="Фамилия" currentValue="Иванов" }}
-            {{> edit name="Имя в чате" currentValue="Иван" }}
-            {{> edit name="Телефон" currentValue="7(903)-967-30-30" }}
+            {{> edit name="Почта" currentValue="pochta@gmail.ru" fieldName="email" }}
+            {{> edit name="Логин" currentValue="ivanivanov" fieldName="login" }}
+            {{> edit name="Имя" currentValue="Иван" fieldName="first_name" }}
+            {{> edit name="Фамилия" currentValue="Иванов" fieldName="second_name" }}
+            {{> edit name="Имя в чате" currentValue="Иван" fieldName="display_name" }}
+            {{> edit name="Телефон" currentValue="7(903)-967-30-30" fieldName="phone" }}
             <div class={{styles.links}}>
                 <a class={{styles.link}}>Изменить пароль</a>
             </div>
         </form>
+        <div class={{styles.sidebar}}>
+            <button class={{styles.return}}></button>
+        </div>
     </main>
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a7ryd":[function(require,module,exports) {
 module.exports["container"] = `uIZihq_container`;
-module.exports["links"] = `uIZihq_links`;
-module.exports["link"] = `uIZihq_link`;
-module.exports["form"] = `uIZihq_form`;
-module.exports["avatar"] = `uIZihq_avatar`;
 module.exports["name"] = `uIZihq_name`;
+module.exports["link"] = `uIZihq_link`;
+module.exports["change"] = `uIZihq_change`;
 module.exports["exit"] = `uIZihq_exit`;
+module.exports["return"] = `uIZihq_return`;
+module.exports["credentials"] = `uIZihq_credentials`;
+module.exports["avatar"] = `uIZihq_avatar`;
+module.exports["sidebar"] = `uIZihq_sidebar`;
+module.exports["form"] = `uIZihq_form`;
+module.exports["links"] = `uIZihq_links`;
 
 },{}],"kBn7X":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12289,7 +12301,7 @@ exports.default = `
     <fieldset class="${_editInputModuleCss.fieldset}">
         <p class="${_editInputModuleCss.name}">{{name}}</p>
         <div class="${_editInputModuleCss.group}">
-            <input class="${_editInputModuleCss.currentValue}" placeholder={{currentValue}}>
+            <input class="${_editInputModuleCss.currentValue}" placeholder={{currentValue}} name={{fieldName}}>
             <button class="${_editInputModuleCss.edit}"></button>
         </div>
     </fieldset>
@@ -12301,6 +12313,55 @@ module.exports["group"] = `msaBga_group`;
 module.exports["edit"] = `msaBga_edit`;
 module.exports["fieldset"] = `msaBga_fieldset`;
 module.exports["name"] = `msaBga_name`;
+
+},{}],"bi4pn":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _handlebars = require("handlebars");
+var _handlebarsDefault = parcelHelpers.interopDefault(_handlebars);
+var _buttonTmpl = require("../../components/button/button.tmpl");
+var _buttonTmplDefault = parcelHelpers.interopDefault(_buttonTmpl);
+var _inputTmpl = require("../../components/input/input.tmpl");
+var _inputTmplDefault = parcelHelpers.interopDefault(_inputTmpl);
+var _changePasswordTmpl = require("./change-password.tmpl");
+var _changePasswordTmplDefault = parcelHelpers.interopDefault(_changePasswordTmpl);
+var _linkTmpl = require("../../components/link/link.tmpl");
+var _linkTmplDefault = parcelHelpers.interopDefault(_linkTmpl);
+var _changePasswordModuleCss = require("./change-password.module.css");
+const template = (0, _handlebarsDefault.default).compile((0, _changePasswordTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("link", (0, _linkTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("button", (0, _buttonTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("input", (0, _inputTmplDefault.default));
+const render = template({
+    styles: _changePasswordModuleCss
+});
+// console.log(styles);
+exports.default = render;
+
+},{"handlebars":"i0QfX","../../components/button/button.tmpl":"lPo9h","../../components/input/input.tmpl":"867JV","./change-password.tmpl":"kR4lp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./change-password.module.css":"6eVhM","../../components/link/link.tmpl":"jDvWl"}],"kR4lp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = `
+    <form class={{styles.form}}>
+        <h1 class={{styles.title}}>Сменить пароль</h1>
+        <fieldset class={{styles.fieldset}}>
+            {{> input name="old_password" placeholder="Старый пароль" type="password" }}
+            {{> input name="password" placeholder="Новый пароль" type="password" }}
+            {{> input name="repeat_password" placeholder="Повторите новый пароль" type="password" }}
+        </fieldset>
+        <div class={{styles.buttons}}>
+            {{> button text="Поменять пароль"}}
+            {{> link text="Вернуться в профиль" className=styles.linker anchor="/profile" }}
+        </div>
+    </form>
+`;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6eVhM":[function(require,module,exports) {
+module.exports["fieldset"] = `kAJDTa_fieldset`;
+module.exports["form"] = `kAJDTa_form`;
+module.exports["buttons"] = `kAJDTa_buttons`;
+module.exports["linker"] = `kAJDTa_linker`;
+module.exports["title"] = `kAJDTa_title`;
 
 },{}]},["ShInH","8lqZg"], "8lqZg", "parcelRequire938d")
 
