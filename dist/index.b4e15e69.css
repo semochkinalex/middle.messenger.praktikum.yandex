@@ -658,6 +658,49 @@
   outline: none;
 }
 
+.ex6PQG_popup {
+  width: 100%;
+  height: 100%;
+  background-color: #000c;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+}
+
+.ex6PQG_content {
+  width: 90%;
+  max-width: 340px;
+  box-sizing: border-box;
+  background-color: #141414;
+  border-radius: 12px;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  display: flex;
+  position: relative;
+}
+
+.ex6PQG_title {
+  color: #fff;
+  text-align: center;
+}
+
+.ex6PQG_close {
+  width: 30px;
+  height: 30px;
+  background: url("close-icon.284bfe24.svg") center no-repeat;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+.ex6PQG_close:hover {
+  cursor: pointer;
+}
+
 .kAJDTa_form {
   width: 90%;
   max-width: 340px;

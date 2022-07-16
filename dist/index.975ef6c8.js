@@ -550,7 +550,7 @@ var _profileDefault = parcelHelpers.interopDefault(_profile);
 var _changePassword = require("./pages/change-password/change-password");
 var _changePasswordDefault = parcelHelpers.interopDefault(_changePassword);
 const main = document.querySelector(".main");
-main.innerHTML = (0, _chatsJsDefault.default);
+main.innerHTML = (0, _profileDefault.default);
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU","./pages/sign-up/sign-up.js":"hSPj4","./pages/500/500.js":"bJHPG","./pages/404/404.js":"3Glnj","./pages/chats/chats.js":"e9Ant","./pages/profile/profile":"d8Zom","./pages/change-password/change-password":"bi4pn"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -12347,17 +12347,23 @@ var _editInputTmpl = require("../../components/edit-input/edit-input.tmpl");
 var _editInputTmplDefault = parcelHelpers.interopDefault(_editInputTmpl);
 var _profileTmpl = require("./profile.tmpl");
 var _profileTmplDefault = parcelHelpers.interopDefault(_profileTmpl);
+var _popupTmpl = require("../../components/popup/popup.tmpl");
+var _popupTmplDefault = parcelHelpers.interopDefault(_popupTmpl);
+var _buttonTmpl = require("../../components/button/button.tmpl");
+var _buttonTmplDefault = parcelHelpers.interopDefault(_buttonTmpl);
 var _profileModuleCss = require("./profile.module.css");
 const template = (0, _handlebarsDefault.default).compile((0, _profileTmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("link", (0, _linkTmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("edit", (0, _editInputTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("popup", (0, _popupTmplDefault.default));
+(0, _handlebarsDefault.default).registerPartial("button", (0, _buttonTmplDefault.default));
 const render = template({
     styles: _profileModuleCss,
     first_name: "Alex"
 });
 exports.default = render;
 
-},{"handlebars":"i0QfX","../../components/link/link.tmpl":"jDvWl","./profile.tmpl":"5NXVP","./profile.module.css":"a7ryd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../components/edit-input/edit-input.tmpl":"kBn7X"}],"5NXVP":[function(require,module,exports) {
+},{"handlebars":"i0QfX","../../components/link/link.tmpl":"jDvWl","./profile.tmpl":"5NXVP","./profile.module.css":"a7ryd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../components/edit-input/edit-input.tmpl":"kBn7X","../../components/popup/popup.tmpl":"5q46W","../../components/button/button.tmpl":"lPo9h"}],"5NXVP":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = `
@@ -12384,6 +12390,7 @@ exports.default = `
         <div class={{styles.sidebar}}>
             <button class={{styles.return}}></button>
         </div>
+        {{> popup title="Сохранить изменения" button="Сохранить"}}
     </main>
 `;
 
@@ -12420,6 +12427,26 @@ module.exports["group"] = `msaBga_group`;
 module.exports["edit"] = `msaBga_edit`;
 module.exports["fieldset"] = `msaBga_fieldset`;
 module.exports["name"] = `msaBga_name`;
+
+},{}],"5q46W":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _popupModuleCss = require("./popup.module.css");
+exports.default = `
+    <section class="${_popupModuleCss.popup}">
+        <div class="${_popupModuleCss.content}">
+            <h3 class="${_popupModuleCss.title}">{{title}}</h3>
+            {{> button text=button  }}
+            <button class="${_popupModuleCss.close}"></button>
+        </div>
+    </section>
+`;
+
+},{"./popup.module.css":"cpczv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cpczv":[function(require,module,exports) {
+module.exports["title"] = `ex6PQG_title`;
+module.exports["content"] = `ex6PQG_content`;
+module.exports["close"] = `ex6PQG_close`;
+module.exports["popup"] = `ex6PQG_popup`;
 
 },{}],"bi4pn":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
