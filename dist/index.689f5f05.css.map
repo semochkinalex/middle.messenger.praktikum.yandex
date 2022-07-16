@@ -1,1 +1,0 @@
-{"mappings":"AAAA","sources":["global.css"],"sourcesContent":["* {\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.button-template {\r\n    /* color: white;\r\n    background-color: #3B5BDB;\r\n    width: 280px; */\r\n}"],"names":[],"version":3,"file":"index.689f5f05.css.map","sourceRoot":"/__parcel_source_root/"}

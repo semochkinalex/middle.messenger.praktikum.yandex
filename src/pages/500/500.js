@@ -1,7 +1,7 @@
 import Handlebars from 'handlebars';
 import LinkTemplate from '../../components/link/link.tmpl';
 import ServerErrorPage from './500.tmpl';
-import * as styles from './500.module.css';
+import * as styles from './500.module.scss';
 
 const template = Handlebars.compile(ServerErrorPage);
 

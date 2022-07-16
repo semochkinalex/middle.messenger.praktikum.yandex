@@ -1,0 +1,140 @@
+@import '../../vendor//variables';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.credentials {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+}
+
+.change {
+    position: absolute;
+    
+    display: flex;
+    justify-content: center;
+
+    z-index: 100;
+    top: -1px;
+    right: -1px;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background: none;
+
+    transition: all .2s ease-in-out;
+    color: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+
+}
+
+.change:hover  {
+    cursor: pointer;
+    z-index: 100;
+    color: white;
+    background-color: rgba(0,0,0, .8);
+}
+
+.name {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 21px;
+}
+
+.form {
+    margin: 50px 0 0;
+    max-width: 500px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.links {
+    border-top: 1px solid $light-gray;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+}
+
+.link {
+    font-size: 13px;
+    color: #3B5BDB;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+}
+.link:hover {
+    cursor: pointer;
+    color: #2D52E3;
+    background-color: $light-gray;
+}
+
+.exit {
+    color: #FF0000;
+    border: none;
+    margin: 5px auto;
+    /* width: 100%; */
+    outline: none;
+    padding: 5px;
+    background-color: transparent;
+    transition: all .2s ease-in-out;
+    text-align: center;
+}
+
+.exit:hover {
+    cursor: pointer;
+    background-color: $light-gray;
+    border-radius: 4px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 40px;
+    position: absolute;
+    left: 0;
+    border-right: 1px solid $light-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s ease-in-out;
+}
+
+.sidebar:hover {
+    cursor: pointer;
+    background-color: $light-gray;
+}
+
+.return {
+    outline: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    background: url('../../assets/arrow-left.svg') no-repeat center;
+}
+
+.return:hover {
+    cursor: pointer;
+}

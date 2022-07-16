@@ -1,6 +1,6 @@
 import Handlebars from 'handlebars';
 import ChatsTemplate from './chats.tmpl';
-import * as styles from './chats.module.css';
+import * as styles from './chats.module.scss';
 
 import ChatboxTemplate from '../../components/chatbox/chatbox.tmpl';
 import ChatPreviewTemplate from '../../components/chat-preview/chat-preview.tmpl';

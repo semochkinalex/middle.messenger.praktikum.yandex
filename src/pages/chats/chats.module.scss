@@ -1,0 +1,192 @@
+@import "../../vendor/variables";
+
+.main {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.chat {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty {
+    color: $light-white;
+}
+
+.navbar {
+    min-width: 310px;
+    max-width: 350px;
+    width: 30%;
+    height: 100%;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding: 20px 0 0;
+    border-right: 1px solid $light-gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile {
+    display: flex;
+    width: 95%;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.credentials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 46px;
+    height: 46px;
+    border: 1px solid #FFFFFF;
+}
+.username {
+    color: white;
+    font-size: 15px;
+}
+
+.actionIcon {
+    width: 24px;
+    height: 24px;
+    border: none;
+    outline: none;
+    box-sizing: content-box;
+    padding: 3px;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+}
+
+
+.actionIcon:hover {
+    cursor: pointer;
+    background-color: $light-gray;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.settings {
+    background: url('../../assets/settings-icon.svg') no-repeat center;
+}
+.exit {
+    background: url('../../assets/exit-icon.svg') no-repeat center;
+}
+
+.search {
+    width: 95%;
+    margin-top: 10px;
+    background-color: $light-gray;
+    color: $light-white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 6px 10px; 
+}
+
+.divider {
+    height: 1px;
+    width: 95%;
+    background-color: $light-gray;
+    margin: 10px 0;
+}
+
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.recipient {
+    width: 100%;
+    padding: 0 0 10px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $light-gray;
+}
+
+.recipientAvatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.recipientName {
+    color: white;
+}
+
+.more {
+    width: 24px;
+    height: 24px;
+    background: url('../../assets/three-dots-icon.svg') center no-repeat;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+}
+
+.more:hover {
+    cursor: pointer;
+    background-color: $light-gray;
+}
+
+.handlebar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid $light-gray;
+    padding: 11px 0 5px;
+}
+
+.attatch {
+    width: 24px;
+    height: 24px;
+    background: url('../../assets/clip.svg') center no-repeat;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.send {
+    width: 32px;
+    height: 32px;
+    background: url('../../assets/arrow-left.svg') center no-repeat;
+    transform: rotate(180deg);
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.input {
+    margin: 0 10px;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    width: 100%;
+}

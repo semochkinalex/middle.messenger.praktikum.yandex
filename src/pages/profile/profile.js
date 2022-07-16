@@ -4,7 +4,7 @@ import EditTemplate from '../../components/edit-input/edit-input.tmpl';
 import ProfileTemplate from './profile.tmpl';
 import PopupTemplate from '../../components/popup/popup.tmpl';
 import ButtonTemplate from '../../components/button/button.tmpl';
-import * as styles from './profile.module.css';
+import * as styles from './profile.module.scss';
 
 const template = Handlebars.compile(ProfileTemplate);
 

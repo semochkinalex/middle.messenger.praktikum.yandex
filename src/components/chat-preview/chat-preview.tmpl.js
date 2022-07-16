@@ -1,4 +1,4 @@
-import * as styles from './chat-preview.module.css';
+import * as styles from './chat-preview.module.scss';
 
 export default `
     {{#if isSelected}}
@@ -18,7 +18,7 @@ export default `
             </div>
             <p class="${styles.message}">
             {{#if repliedTo}}
-                <span class="${styles.self}">Вы: </span>
+                <span>Вы: </span>
             {{/if}}
                 {{latestMessage}}
             </p>

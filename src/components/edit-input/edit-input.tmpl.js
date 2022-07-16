@@ -1,4 +1,4 @@
-import * as styles from './edit-input.module.css';
+import * as styles from './edit-input.module.scss';
 
 export default `
     <fieldset class="${styles.fieldset}">

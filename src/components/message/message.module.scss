@@ -1,0 +1,56 @@
+@import "../../vendor/variables";
+
+.message {
+    list-style-type: none;
+    max-width: 40%;
+    width: fit-content;
+    background-color: $light-gray;
+    padding: 11px 11px 19px 11px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.sent {
+    margin-left: auto;
+    background-color: $blue;
+}
+
+.content {
+    color: white;
+    font-size: 12px;
+    white-space: pre-line;
+    line-height: 16px;
+}
+
+.sent .timestamp {
+    color: white;
+}
+
+.timestamp {
+    color: #D5D5D5;
+    font-size: 9px;
+    right: 5px;
+    bottom: 5px;
+    padding: 2px;
+    border-radius: 4px;
+    /* background-color: rgba(82, 82, 82, 0.5); */
+}
+
+.info {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.seen {
+    right: 28px;
+    width: 11px;
+    height: 9px;
+    background: url('../../assets/seen.svg') center no-repeat;
+}
+
+.image {
+    width: 100%;
+}

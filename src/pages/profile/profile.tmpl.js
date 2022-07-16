@@ -22,6 +22,6 @@ export default `
         <div class={{styles.sidebar}}>
             <button class={{styles.return}}></button>
         </div>
-        {{> popup title="Сохранить изменения" button="Сохранить"}}
-    </main>
+        </main>
 `;
+// {{> popup title="Сохранить изменения" button="Сохранить"}}
