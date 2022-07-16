@@ -15,12 +15,13 @@
       "includeNodeModules": [
         "handlebars"
       ],
-      "context": "browser"
+      "context": "browser",
+      "distDir": "./dist"
     }
   },
   "@parcel/transformer-css": {
     "cssModules": {
-      "dashedIdents": true
+      "pattern": "app-[hash]-[local]"
     }
   },
   "repository": {
@@ -34,11 +35,12 @@
   },
   "homepage": "https://github.com/fennyflop/middle.messenger.praktikum.yandex#readme",
   "devDependencies": {
+    "@parcel/transformer-css": "^2.6.2",
+    "cssnano": "^5.1.12",
     "postcss": "^8.4.14",
     "postcss-cli": "^10.0.0"
   },
   "dependencies": {
-    "@parcel/transformer-css": "^2.6.2",
     "express": "^4.18.1",
     "handlebars": "^4.7.7",
     "parcel": "^2.6.2"

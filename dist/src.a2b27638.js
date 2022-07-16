@@ -10081,7 +10081,7 @@ PrintVisitor.prototype.HashPair = function (pair) {
   return pair.key + '=' + this.accept(pair.value);
 };
 /* eslint-enable new-cap */
-},{"./visitor":"node_modules/handlebars/dist/cjs/handlebars/compiler/visitor.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/_empty.js":[function(require,module,exports) {
+},{"./visitor":"node_modules/handlebars/dist/cjs/handlebars/compiler/visitor.js"}],"node_modules/parcel-bundler/src/builtins/_empty.js":[function(require,module,exports) {
 
 },{}],"node_modules/handlebars/lib/index.js":[function(require,module,exports) {
 // USAGE:
@@ -10110,16 +10110,7 @@ if (typeof require !== 'undefined' && require.extensions) {
   require.extensions['.handlebars'] = extension;
   require.extensions['.hbs'] = extension;
 }
-},{"../dist/cjs/handlebars":"node_modules/handlebars/dist/cjs/handlebars.js","../dist/cjs/handlebars/compiler/printer":"node_modules/handlebars/dist/cjs/handlebars/compiler/printer.js","fs":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/_empty.js"}],"src/pages/sign-in/sign-in.tmpl.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = "\n    <section class={{styles.container}}>\n    </section>\n";
-exports.default = _default;
-},{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"../dist/cjs/handlebars":"node_modules/handlebars/dist/cjs/handlebars.js","../dist/cjs/handlebars/compiler/printer":"node_modules/handlebars/dist/cjs/handlebars/compiler/printer.js","fs":"node_modules/parcel-bundler/src/builtins/_empty.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -10151,7 +10142,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -10186,12 +10177,87 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/pages/sign-in/sign-in.module.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/components/link/link.module.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/sign-in/sign-in.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/link/link.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var styles = _interopRequireWildcard(require("./link.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var _default = "\n    <a class=\"".concat(styles.link, " {{className}}\" href=\"{{anchor}}\">{{text}}</a>\n");
+
+exports.default = _default;
+},{"./link.module.css":"src/components/link/link.module.css"}],"src/components/button/button.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/button/button.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var styles = _interopRequireWildcard(require("./button.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var _default = "\n    <button class=\"".concat(styles.button, "\">{{text}}</button>\n");
+
+exports.default = _default;
+},{"./button.module.css":"src/components/button/button.module.css"}],"src/components/input/input.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/input/input.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var styles = _interopRequireWildcard(require("./input.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var _default = "\n    <input name={{name}} class=\"".concat(styles.input, "\" placeholder=\"{{placeholder}}\" type=\"{{type}}\" />\n");
+
+exports.default = _default;
+},{"./input.module.css":"src/components/input/input.module.css"}],"src/pages/sign-in/sign-in.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = "\n    <form class={{styles.form}}>\n        <h1 class={{styles.title}}>\u0412\u0445\u043E\u0434</h1>\n        <fieldset class={{styles.fieldset}}>\n            {{> input name=\"login\" placeholder=\"\u041B\u043E\u0433\u0438\u043D\" type=\"text\" }}\n            {{> input name=\"password\" placeholder=\"\u041F\u0430\u0440\u043E\u043B\u044C\" type=\"password\" }}\n        </fieldset>\n        <div class={{styles.buttons}}>\n            {{> button text=\"\u0412\u0445\u043E\u0434\"}}\n            {{> link text=\"\u041D\u0435\u0442 \u0410\u043A\u043A\u0430\u0443\u043D\u0442\u0430?\" className=styles.linker anchor=\"/sign-up\" }}\n        </div>\n    </form>\n";
+exports.default = _default;
+},{}],"src/pages/sign-in/sign-in.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/sign-in/sign-in.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10201,32 +10267,515 @@ exports.default = void 0;
 
 var _handlebars = _interopRequireDefault(require("handlebars"));
 
+var _link = _interopRequireDefault(require("../../components/link/link.tmpl"));
+
+var _button = _interopRequireDefault(require("../../components/button/button.tmpl"));
+
+var _input = _interopRequireDefault(require("../../components/input/input.tmpl"));
+
 var _signIn = _interopRequireDefault(require("./sign-in.tmpl"));
 
-var _signInModule = _interopRequireDefault(require("./sign-in.module.css"));
+var styles = _interopRequireWildcard(require("./sign-in.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+console.log(styles);
+
 var template = _handlebars.default.compile(_signIn.default);
 
+_handlebars.default.registerPartial('button', _button.default);
+
+_handlebars.default.registerPartial('link', _link.default);
+
+_handlebars.default.registerPartial('input', _input.default);
+
 var render = template({
-  styles: _signInModule.default
+  styles: styles
 });
-console.log(_signInModule.default);
 var _default = render;
 exports.default = _default;
-},{"handlebars":"node_modules/handlebars/lib/index.js","./sign-in.tmpl":"src/pages/sign-in/sign-in.tmpl.js","./sign-in.module.css":"src/pages/sign-in/sign-in.module.css"}],"src/index.js":[function(require,module,exports) {
+},{"handlebars":"node_modules/handlebars/lib/index.js","../../components/link/link.tmpl":"src/components/link/link.tmpl.js","../../components/button/button.tmpl":"src/components/button/button.tmpl.js","../../components/input/input.tmpl":"src/components/input/input.tmpl.js","./sign-in.tmpl":"src/pages/sign-in/sign-in.tmpl.js","./sign-in.module.css":"src/pages/sign-in/sign-in.module.css"}],"src/pages/sign-up/sign-up.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = "\n    <form class={{styles.form}}>\n        <h1 class={{styles.title}}>\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F</h1>\n        <fieldset class={{styles.fieldset}}>\n            {{> input name=\"email\" placeholder=\"\u041F\u043E\u0447\u0442\u0430\" type=\"email\" }}\n            {{> input name=\"login\" placeholder=\"\u041B\u043E\u0433\u0438\u043D\" type=\"text\" }}\n            {{> input name=\"first_name\" placeholder=\"\u0418\u043C\u044F\" type=\"text\" }}\n            {{> input name=\"second_name\" placeholder=\"\u0424\u0430\u043C\u0438\u043B\u0438\u044F\" type=\"text\" }}\n            {{> input name=\"phone\" placeholder=\"\u0422\u0435\u043B\u0435\u0444\u043E\u043D\" type=\"text\" }}\n            {{> input name=\"password\" placeholder=\"\u041F\u0430\u0440\u043E\u043B\u044C\" type=\"password\" }}\n            {{> input name=\"password_repeat\" placeholder=\"\u041F\u0430\u0440\u043E\u043B\u044C (\u0435\u0449\u0451 \u0440\u0430\u0437)\" type=\"password\" }}\n        </fieldset>\n        <div class={{styles.buttons}}>\n            {{> button text=\"\u0417\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0441\u044F\"}}\n            {{> link text=\"\u0415\u0441\u0442\u044C \u0410\u043A\u043A\u0430\u0443\u043D\u0442? \u0412\u043E\u0439\u0442\u0438\" className=styles.linker anchor=\"/sign-in\" }}\n        </div>\n    </form>\n";
+exports.default = _default;
+},{}],"src/pages/sign-up/sign-up.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/sign-up/sign-up.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _handlebars = _interopRequireDefault(require("handlebars"));
+
+var _link = _interopRequireDefault(require("../../components/link/link.tmpl"));
+
+var _button = _interopRequireDefault(require("../../components/button/button.tmpl"));
+
+var _input = _interopRequireDefault(require("../../components/input/input.tmpl"));
+
+var _signUp = _interopRequireDefault(require("./sign-up.tmpl"));
+
+var styles = _interopRequireWildcard(require("./sign-up.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var template = _handlebars.default.compile(_signUp.default);
+
+_handlebars.default.registerPartial('button', _button.default);
+
+_handlebars.default.registerPartial('link', _link.default);
+
+_handlebars.default.registerPartial('input', _input.default);
+
+console.log('qwdqwd');
+var render = template({
+  styles: styles
+});
+var _default = render;
+exports.default = _default;
+},{"handlebars":"node_modules/handlebars/lib/index.js","../../components/link/link.tmpl":"src/components/link/link.tmpl.js","../../components/button/button.tmpl":"src/components/button/button.tmpl.js","../../components/input/input.tmpl":"src/components/input/input.tmpl.js","./sign-up.tmpl":"src/pages/sign-up/sign-up.tmpl.js","./sign-up.module.css":"src/pages/sign-up/sign-up.module.css"}],"src/pages/500/500.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = "\n    <main class={{styles.container}}>\n        <h1 class={{styles.title}}>500</h1>\n        <p class={{styles.subtitle}}>\u041C\u044B \u0443\u0436\u0435 \u0444\u0438\u043A\u0441\u0438\u043C</p>\n        {{> link anchor=\"/\" text=\"\u041D\u0430\u0437\u0430\u0434 \u043A \u0447\u0430\u0442\u0430\u043C\" }}\n    </main>\n";
+exports.default = _default;
+},{}],"src/pages/500/500.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/500/500.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _handlebars = _interopRequireDefault(require("handlebars"));
+
+var _link = _interopRequireDefault(require("../../components/link/link.tmpl"));
+
+var _ = _interopRequireDefault(require("./500.tmpl"));
+
+var styles = _interopRequireWildcard(require("./500.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var template = _handlebars.default.compile(_.default);
+
+_handlebars.default.registerPartial('link', _link.default);
+
+var render = template({
+  styles: styles
+});
+var _default = render;
+exports.default = _default;
+},{"handlebars":"node_modules/handlebars/lib/index.js","../../components/link/link.tmpl":"src/components/link/link.tmpl.js","./500.tmpl":"src/pages/500/500.tmpl.js","./500.module.css":"src/pages/500/500.module.css"}],"src/pages/404/404.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = "\n    <main class={{styles.container}}>\n        <h1 class={{styles.title}}>404</h1>\n        <p class={{styles.subtitle}}>\u041D\u0435 \u0442\u0443\u0434\u0430 \u043F\u043E\u043F\u0430\u043B\u0438</p>\n        {{> link anchor=\"/\" text=\"\u041D\u0430\u0437\u0430\u0434 \u043A \u0447\u0430\u0442\u0430\u043C\" }}\n    </main>\n";
+exports.default = _default;
+},{}],"src/pages/404/404.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/404/404.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _handlebars = _interopRequireDefault(require("handlebars"));
+
+var _link = _interopRequireDefault(require("../../components/link/link.tmpl"));
+
+var _ = _interopRequireDefault(require("./404.tmpl"));
+
+var styles = _interopRequireWildcard(require("./404.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var template = _handlebars.default.compile(_.default);
+
+_handlebars.default.registerPartial('link', _link.default);
+
+var render = template({
+  styles: styles
+});
+var _default = render;
+exports.default = _default;
+},{"handlebars":"node_modules/handlebars/lib/index.js","../../components/link/link.tmpl":"src/components/link/link.tmpl.js","./404.tmpl":"src/pages/404/404.tmpl.js","./404.module.css":"src/pages/404/404.module.css"}],"src/pages/chats/chats.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = "\n    <main class={{styles.main}}>\n        <nav class={{styles.navbar}}>\n            <div class={{styles.profile}}>\n                <div class={{styles.credentials}}>\n                    <img class={{styles.avatar}} alt=\"Profile Avatar\" src={{avatar}} />\n                    <p class={{styles.username}}>{{username}}</p>\n                </div>\n                <div class={{styles.button}}>\n                    <button class=\"{{styles.actionIcon}} {{styles.settings}}\"></button>\n                    <button class=\"{{styles.actionIcon}} {{styles.exit}}\"></button>\n                </div>\n            </div>\n            <input type=\"text\" placeholder=\"\u041F\u043E\u0438\u0441\u043A\" class={{styles.search}} />\n            <div class={{styles.divider}}></div>\n            <ul class={{styles.list}}>\n                {{#each chats}}\n                    {{> chat}}\n                {{/each}}\n            </ul>\n        </nav>\n        <section class={{styles.chat}}>\n        {{#if selectedChat}}\n                <div class={{styles.recipient}}>\n                    <div class={{styles.credentials}}>\n                        <img class={{styles.recipientAvatar}} src={{selectedChat.recipient.avatar}} alt=\"\" />\n                        <p class={{styles.recipientName}}>{{selectedChat.recipient.displayName}}</p>\n                    </div>\n                    <button class={{styles.more}}></button>\n                </div>\n                {{> chatbox chat=selectedChat}}\n                <div class={{styles.handlebar}}>\n                    <button class={{styles.attatch}}></button>\n                    <input class={{styles.input}} name=\"message\" placeholder=\"\u0421\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435\" />\n                    <button class={{styles.send}}></button>\n                </div>\n            {{else}}\n                <p class={{styles.empty}}>\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0447\u0430\u0442 \u0447\u0442\u043E\u0431\u044B \u043E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435</p>\n            {{/if}}\n        </section>\n    </main>\n";
+exports.default = _default;
+},{}],"src/pages/chats/chats.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./..\\..\\assets\\settings-icon.svg":[["settings-icon.b38b5166.svg","src/assets/settings-icon.svg"],"src/assets/settings-icon.svg"],"./..\\..\\assets\\exit-icon.svg":[["exit-icon.0961efc1.svg","src/assets/exit-icon.svg"],"src/assets/exit-icon.svg"],"./..\\..\\assets\\three-dots-icon.svg":[["three-dots-icon.3df40035.svg","src/assets/three-dots-icon.svg"],"src/assets/three-dots-icon.svg"],"./..\\..\\assets\\clip.svg":[["clip.aa915b8e.svg","src/assets/clip.svg"],"src/assets/clip.svg"],"./..\\..\\assets\\arrow-left.svg":[["arrow-left.40867913.svg","src/assets/arrow-left.svg"],"src/assets/arrow-left.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/chatbox/chatbox.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/chatbox/chatbox.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var styles = _interopRequireWildcard(require("./chatbox.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var _default = "\n    <ul class=\"".concat(styles.list, "\">\n        {{#each chat.messages}}\n            {{> message}}\n        {{/each}}\n    </ul>\n");
+
+exports.default = _default;
+},{"./chatbox.module.css":"src/components/chatbox/chatbox.module.css"}],"src/components/chat-preview/chat-preview.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/chat-preview/chat-preview.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var styles = _interopRequireWildcard(require("./chat-preview.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var _default = "\n    {{#if isSelected}}\n        <li class=\"".concat(styles.chat, " ").concat(styles.selected, "\">\n    {{else}}\n        <li class=\"").concat(styles.chat, "\">\n    {{/if}}\n        {{#if avatar}}\n            <img class=\"").concat(styles.avatar, "\" alt=\"{{username}} avatar\" src={{avatar}} />\n        {{else}}\n            <img class=\"").concat(styles.avatar, "\" alt=\"{{username}} avatar\" src=\"../../assets/default-avatar.png\" />\n        {{/if}} \n        <div class=\"").concat(styles.content, "\">\n            <div class=\"").concat(styles.top, "\">\n                <p class=\"").concat(styles.username, "\">{{username}}</p>\n                <p class=\"").concat(styles.date, "\">{{timestamp}}</p>\n            </div>\n            <p class=\"").concat(styles.message, "\">\n            {{#if repliedTo}}\n                <span class=\"").concat(styles.self, "\">\u0412\u044B: </span>\n            {{/if}}\n                {{latestMessage}}\n            </p>\n            {{#if unreadMessagesCount}}\n                <p class=\"").concat(styles.count, "\">{{unreadMessagesCount}}</p>\n            {{/if}}\n        </div>\n    </li>\n");
+
+exports.default = _default;
+},{"./chat-preview.module.css":"src/components/chat-preview/chat-preview.module.css"}],"src/components/message/message.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./..\\..\\assets\\seen.svg":[["seen.c45ad2d6.svg","src/assets/seen.svg"],"src/assets/seen.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/message/message.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var styles = _interopRequireWildcard(require("./message.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var _default = "\n\n    {{#if isRecieved}}\n        <li class=\"".concat(styles.message, "\">\n    {{else}}\n        <li class=\"").concat(styles.message, " ").concat(styles.sent, "\">\n    {{/if}}\n    \n        {{#if message}}\n            <p class=\"").concat(styles.content, "\">{{message}}</p>\n        {{else}}\n            <img class=\"").concat(styles.image, "\" alt=\"\" src={{image}} />\n        {{/if}}\n\n        <div class=\"").concat(styles.info, "\">\n            {{#if isSeen}}\n                <div class=\"").concat(styles.seen, "\"></div>\n            {{/if}}\n            <p class=\"").concat(styles.timestamp, "\">{{timestamp}}</p>\n        </div>\n        \n    </li>\n");
+
+exports.default = _default;
+},{"./message.module.css":"src/components/message/message.module.css"}],"src/pages/chats/chats.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _handlebars = _interopRequireDefault(require("handlebars"));
+
+var _chats = _interopRequireDefault(require("./chats.tmpl"));
+
+var styles = _interopRequireWildcard(require("./chats.module.css"));
+
+var _chatbox = _interopRequireDefault(require("../../components/chatbox/chatbox.tmpl"));
+
+var _chatPreview = _interopRequireDefault(require("../../components/chat-preview/chat-preview.tmpl"));
+
+var _message = _interopRequireDefault(require("../../components/message/message.tmpl"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_handlebars.default.registerPartial('chatbox', _chatbox.default);
+
+_handlebars.default.registerPartial('chat', _chatPreview.default);
+
+_handlebars.default.registerPartial('message', _message.default);
+
+var template = _handlebars.default.compile(_chats.default);
+
+var chats = [{
+  avatar: 'https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1.jpg.optimal.jpg',
+  username: "Homie",
+  latestMessage: "Okay, I pull up, hop out at the after party. Okay, I pull up, hop out at the after party. Okay, I pull up, hop out at the after party. Okay, I pull up, hop out at the after party.Okay, I pull up, hop out at the after partyOkay, I pull up, hop out at the after partyOkay, I pull up, hop out at the after party",
+  timestamp: '19:13',
+  isSelected: true,
+  unreadMessagesCount: 0
+}, {
+  avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6YOvuinDaAUV_YLUnPSK-7YcOkUTu7qHhPw&usqp=CAU',
+  username: "+7 (916) 523-23-75",
+  latestMessage: "Baby, please don't leave me!!!",
+  unreadMessagesCount: 99,
+  timestamp: '19:13',
+  isSelected: false
+}];
+var selectedChat = {
+  recipient: {
+    displayName: "Oleg",
+    avatar: 'https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1.jpg.optimal.jpg'
+  },
+  messages: [{
+    message: "Okay, I pull up, hop out at the after party\n            You and all your friends, yeah, they love to get naughty\n            Sippin' on that Henn', I know you love that Bacardi\n            1942, I take you back in that 'Rari",
+    timestamp: "18:19",
+    isRecieved: true
+  }, {
+    message: "Okay, I pull up, hop out at the after party\n            You and all your friends, yeah, they love to get naughty\n            Sippin' on that Henn', I know you love that Bacardi\n            1942, I take you back in that 'Rari",
+    timestamp: "18:19",
+    isRecieved: false,
+    isSeen: true
+  }]
+};
+var render = template({
+  styles: styles,
+  username: "fennyflop",
+  avatar: 'https://i.ytimg.com/vi/1Ne1hqOXKKI/maxresdefault.jpg',
+  chats: chats,
+  selectedChat: selectedChat
+});
+var _default = render;
+exports.default = _default;
+},{"handlebars":"node_modules/handlebars/lib/index.js","./chats.tmpl":"src/pages/chats/chats.tmpl.js","./chats.module.css":"src/pages/chats/chats.module.css","../../components/chatbox/chatbox.tmpl":"src/components/chatbox/chatbox.tmpl.js","../../components/chat-preview/chat-preview.tmpl":"src/components/chat-preview/chat-preview.tmpl.js","../../components/message/message.tmpl":"src/components/message/message.tmpl.js"}],"src/components/edit-input/edit-input.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./..\\..\\assets\\edit-icon.svg":[["edit-icon.42b81b5b.svg","src/assets/edit-icon.svg"],"src/assets/edit-icon.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/edit-input/edit-input.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var styles = _interopRequireWildcard(require("./edit-input.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var _default = "\n    <fieldset class=\"".concat(styles.fieldset, "\">\n        <p class=\"").concat(styles.name, "\">{{name}}</p>\n        <div class=\"").concat(styles.group, "\">\n            <input class=\"").concat(styles.currentValue, "\" placeholder={{currentValue}} name={{fieldName}}>\n            <button class=\"").concat(styles.edit, "\"></button>\n        </div>\n    </fieldset>\n");
+
+exports.default = _default;
+},{"./edit-input.module.css":"src/components/edit-input/edit-input.module.css"}],"src/pages/profile/profile.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = "\n    <main class={{styles.container}}>\n        <div class={{styles.credentials}}>\n            <button class={{styles.change}}>\n                \u041F\u043E\u043C\u0435\u043D\u044F\u0442\u044C \u0430\u0432\u0430\u0442\u0430\u0440\n            </button>\n            <img class={{styles.avatar}} alt=\"{{first_name}} avatar\" src=\"https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_3x2.jpg\" />\n            <p class={{styles.name}}>{{first_name}}</p>\n            <button class={{styles.exit}}>\u0412\u044B\u0439\u0442\u0438</button>\n        </div>\n        <form class={{styles.form}}>\n            {{> edit name=\"\u041F\u043E\u0447\u0442\u0430\" currentValue=\"pochta@gmail.ru\" fieldName=\"email\" }}\n            {{> edit name=\"\u041B\u043E\u0433\u0438\u043D\" currentValue=\"ivanivanov\" fieldName=\"login\" }}\n            {{> edit name=\"\u0418\u043C\u044F\" currentValue=\"\u0418\u0432\u0430\u043D\" fieldName=\"first_name\" }}\n            {{> edit name=\"\u0424\u0430\u043C\u0438\u043B\u0438\u044F\" currentValue=\"\u0418\u0432\u0430\u043D\u043E\u0432\" fieldName=\"second_name\" }}\n            {{> edit name=\"\u0418\u043C\u044F \u0432 \u0447\u0430\u0442\u0435\" currentValue=\"\u0418\u0432\u0430\u043D\" fieldName=\"display_name\" }}\n            {{> edit name=\"\u0422\u0435\u043B\u0435\u0444\u043E\u043D\" currentValue=\"7(903)-967-30-30\" fieldName=\"phone\" }}\n            <div class={{styles.links}}>\n                <a class={{styles.link}}>\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u043F\u0430\u0440\u043E\u043B\u044C</a>\n            </div>\n        </form>\n        <div class={{styles.sidebar}}>\n            <button class={{styles.return}}></button>\n        </div>\n        {{> popup title=\"\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F\" button=\"\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C\"}}\n    </main>\n";
+exports.default = _default;
+},{}],"src/components/popup/popup.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./..\\..\\assets\\close-icon.svg":[["close-icon.1f59ba88.svg","src/assets/close-icon.svg"],"src/assets/close-icon.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/popup/popup.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var styles = _interopRequireWildcard(require("./popup.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var _default = "\n    <section class=\"".concat(styles.popup, "\">\n        <div class=\"").concat(styles.content, "\">\n            <h3 class=\"").concat(styles.title, "\">{{title}}</h3>\n            {{> button text=button  }}\n            <button class=\"").concat(styles.close, "\"></button>\n        </div>\n    </section>\n");
+
+exports.default = _default;
+},{"./popup.module.css":"src/components/popup/popup.module.css"}],"src/pages/profile/profile.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./..\\..\\assets\\arrow-left.svg":[["arrow-left.40867913.svg","src/assets/arrow-left.svg"],"src/assets/arrow-left.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/profile/profile.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _handlebars = _interopRequireDefault(require("handlebars"));
+
+var _link = _interopRequireDefault(require("../../components/link/link.tmpl"));
+
+var _editInput = _interopRequireDefault(require("../../components/edit-input/edit-input.tmpl"));
+
+var _profile = _interopRequireDefault(require("./profile.tmpl"));
+
+var _popup = _interopRequireDefault(require("../../components/popup/popup.tmpl"));
+
+var _button = _interopRequireDefault(require("../../components/button/button.tmpl"));
+
+var styles = _interopRequireWildcard(require("./profile.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var template = _handlebars.default.compile(_profile.default);
+
+_handlebars.default.registerPartial('link', _link.default);
+
+_handlebars.default.registerPartial('edit', _editInput.default);
+
+_handlebars.default.registerPartial('popup', _popup.default);
+
+_handlebars.default.registerPartial('button', _button.default);
+
+var render = template({
+  styles: styles,
+  first_name: "Alex"
+});
+var _default = render;
+exports.default = _default;
+},{"handlebars":"node_modules/handlebars/lib/index.js","../../components/link/link.tmpl":"src/components/link/link.tmpl.js","../../components/edit-input/edit-input.tmpl":"src/components/edit-input/edit-input.tmpl.js","./profile.tmpl":"src/pages/profile/profile.tmpl.js","../../components/popup/popup.tmpl":"src/components/popup/popup.tmpl.js","../../components/button/button.tmpl":"src/components/button/button.tmpl.js","./profile.module.css":"src/pages/profile/profile.module.css"}],"src/pages/change-password/change-password.tmpl.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = "\n    <form class={{styles.form}}>\n        <h1 class={{styles.title}}>\u0421\u043C\u0435\u043D\u0438\u0442\u044C \u043F\u0430\u0440\u043E\u043B\u044C</h1>\n        <fieldset class={{styles.fieldset}}>\n            {{> input name=\"old_password\" placeholder=\"\u0421\u0442\u0430\u0440\u044B\u0439 \u043F\u0430\u0440\u043E\u043B\u044C\" type=\"password\" }}\n            {{> input name=\"password\" placeholder=\"\u041D\u043E\u0432\u044B\u0439 \u043F\u0430\u0440\u043E\u043B\u044C\" type=\"password\" }}\n            {{> input name=\"repeat_password\" placeholder=\"\u041F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435 \u043D\u043E\u0432\u044B\u0439 \u043F\u0430\u0440\u043E\u043B\u044C\" type=\"password\" }}\n        </fieldset>\n        <div class={{styles.buttons}}>\n            {{> button text=\"\u041F\u043E\u043C\u0435\u043D\u044F\u0442\u044C \u043F\u0430\u0440\u043E\u043B\u044C\"}}\n            {{> link text=\"\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u0432 \u043F\u0440\u043E\u0444\u0438\u043B\u044C\" className=styles.linker anchor=\"/profile\" }}\n        </div>\n    </form>\n";
+exports.default = _default;
+},{}],"src/pages/change-password/change-password.module.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/pages/change-password/change-password.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _handlebars = _interopRequireDefault(require("handlebars"));
+
+var _button = _interopRequireDefault(require("../../components/button/button.tmpl"));
+
+var _input = _interopRequireDefault(require("../../components/input/input.tmpl"));
+
+var _changePassword = _interopRequireDefault(require("./change-password.tmpl"));
+
+var _link = _interopRequireDefault(require("../../components/link/link.tmpl"));
+
+var styles = _interopRequireWildcard(require("./change-password.module.css"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var template = _handlebars.default.compile(_changePassword.default);
+
+_handlebars.default.registerPartial('link', _link.default);
+
+_handlebars.default.registerPartial('button', _button.default);
+
+_handlebars.default.registerPartial('input', _input.default);
+
+var render = template({
+  styles: styles
+}); // console.log(styles);
+
+var _default = render;
+exports.default = _default;
+},{"handlebars":"node_modules/handlebars/lib/index.js","../../components/button/button.tmpl":"src/components/button/button.tmpl.js","../../components/input/input.tmpl":"src/components/input/input.tmpl.js","./change-password.tmpl":"src/pages/change-password/change-password.tmpl.js","../../components/link/link.tmpl":"src/components/link/link.tmpl.js","./change-password.module.css":"src/pages/change-password/change-password.module.css"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _handlebars = _interopRequireDefault(require("handlebars"));
 
 var _signIn = _interopRequireDefault(require("./pages/sign-in/sign-in.js"));
 
+var _signUp = _interopRequireDefault(require("./pages/sign-up/sign-up.js"));
+
+var _ = _interopRequireDefault(require("./pages/500/500.js"));
+
+var _2 = _interopRequireDefault(require("./pages/404/404.js"));
+
+var _chats = _interopRequireDefault(require("./pages/chats/chats.js"));
+
+var _profile = _interopRequireDefault(require("./pages/profile/profile"));
+
+var _changePassword = _interopRequireDefault(require("./pages/change-password/change-password"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log(_signIn.default);
-var main = document.querySelector('.main'); // main.innerHTML = signIn;
-},{"handlebars":"node_modules/handlebars/lib/index.js","./pages/sign-in/sign-in.js":"src/pages/sign-in/sign-in.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var main = document.querySelector('.main');
+main.innerHTML = _signIn.default;
+},{"handlebars":"node_modules/handlebars/lib/index.js","./pages/sign-in/sign-in.js":"src/pages/sign-in/sign-in.js","./pages/sign-up/sign-up.js":"src/pages/sign-up/sign-up.js","./pages/500/500.js":"src/pages/500/500.js","./pages/404/404.js":"src/pages/404/404.js","./pages/chats/chats.js":"src/pages/chats/chats.js","./pages/profile/profile":"src/pages/profile/profile.js","./pages/change-password/change-password":"src/pages/change-password/change-password.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -10254,7 +10803,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54491" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62126" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -10430,5 +10979,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.js"], null)
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.js"], null)
 //# sourceMappingURL=/src.a2b27638.js.map

@@ -3,7 +3,10 @@ import LinkTemplate from '../../components/link/link.tmpl';
 import ButtonTemplate from '../../components/button/button.tmpl';
 import InputTemplate from '../../components/input/input.tmpl';
 import SignInPageTemplate from './sign-in.tmpl';
+
 import * as styles from './sign-in.module.css';
+
+console.log(styles);
 
 const template = Handlebars.compile(SignInPageTemplate);
 
@@ -12,6 +15,5 @@ Handlebars.registerPartial('link', LinkTemplate);
 Handlebars.registerPartial('input', InputTemplate);
 
 const render = template({styles});
-// console.log(styles);
 
 export default render;

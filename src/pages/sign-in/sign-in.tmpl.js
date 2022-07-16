@@ -6,7 +6,7 @@ export default `
             {{> input name="password" placeholder="Пароль" type="password" }}
         </fieldset>
         <div class={{styles.buttons}}>
-            {{> button text="Авторизоваться"}}
+            {{> button text="Вход"}}
             {{> link text="Нет Аккаунта?" className=styles.linker anchor="/sign-up" }}
         </div>
     </form>

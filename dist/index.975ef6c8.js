@@ -550,7 +550,7 @@ var _profileDefault = parcelHelpers.interopDefault(_profile);
 var _changePassword = require("./pages/change-password/change-password");
 var _changePasswordDefault = parcelHelpers.interopDefault(_changePassword);
 const main = document.querySelector(".main");
-main.innerHTML = (0, _profileDefault.default);
+main.innerHTML = (0, _signUpJsDefault.default);
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","handlebars":"i0QfX","./pages/sign-in/sign-in.js":"f05MU","./pages/sign-up/sign-up.js":"hSPj4","./pages/500/500.js":"bJHPG","./pages/404/404.js":"3Glnj","./pages/chats/chats.js":"e9Ant","./pages/profile/profile":"d8Zom","./pages/change-password/change-password":"bi4pn"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -11914,6 +11914,7 @@ var _inputTmplDefault = parcelHelpers.interopDefault(_inputTmpl);
 var _signInTmpl = require("./sign-in.tmpl");
 var _signInTmplDefault = parcelHelpers.interopDefault(_signInTmpl);
 var _signInModuleCss = require("./sign-in.module.css");
+console.log(_signInModuleCss);
 const template = (0, _handlebarsDefault.default).compile((0, _signInTmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("button", (0, _buttonTmplDefault.default));
 (0, _handlebarsDefault.default).registerPartial("link", (0, _linkTmplDefault.default));
@@ -11921,7 +11922,6 @@ const template = (0, _handlebarsDefault.default).compile((0, _signInTmplDefault.
 const render = template({
     styles: _signInModuleCss
 });
-// console.log(styles);
 exports.default = render;
 
 },{"handlebars":"i0QfX","./sign-in.tmpl":"gcT0r","./sign-in.module.css":"gYtK9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../components/button/button.tmpl":"lPo9h","../../components/link/link.tmpl":"jDvWl","../../components/input/input.tmpl":"867JV"}],"gcT0r":[function(require,module,exports) {
@@ -11935,18 +11935,18 @@ exports.default = `
             {{> input name="password" placeholder="Пароль" type="password" }}
         </fieldset>
         <div class={{styles.buttons}}>
-            {{> button text="Авторизоваться"}}
+            {{> button text="Вход"}}
             {{> link text="Нет Аккаунта?" className=styles.linker anchor="/sign-up" }}
         </div>
     </form>
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gYtK9":[function(require,module,exports) {
-module.exports["fieldset"] = `_57R7Ra_fieldset`;
-module.exports["linker"] = `_57R7Ra_linker`;
-module.exports["title"] = `_57R7Ra_title`;
-module.exports["form"] = `_57R7Ra_form`;
-module.exports["buttons"] = `_57R7Ra_buttons`;
+module.exports["form"] = `app-57R7Ra-form`;
+module.exports["title"] = `app-57R7Ra-title`;
+module.exports["linker"] = `app-57R7Ra-linker`;
+module.exports["fieldset"] = `app-57R7Ra-fieldset`;
+module.exports["buttons"] = `app-57R7Ra-buttons`;
 
 },{}],"lPo9h":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -11957,7 +11957,7 @@ exports.default = `
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./button.module.css":"ePRMF"}],"ePRMF":[function(require,module,exports) {
-module.exports["button"] = `hbbnNa_button`;
+module.exports["button"] = `app-hbbnNa-button`;
 
 },{}],"jDvWl":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -11968,7 +11968,7 @@ exports.default = `
 `;
 
 },{"./link.module.css":"kzFht","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kzFht":[function(require,module,exports) {
-module.exports["link"] = `_54Slta_link`;
+module.exports["link"] = `app-54Slta-link`;
 
 },{}],"867JV":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -11979,7 +11979,7 @@ exports.default = `
 `;
 
 },{"./input.module.css":"gtdVD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gtdVD":[function(require,module,exports) {
-module.exports["input"] = `_3yexHG_input`;
+module.exports["input"] = `app-3yexHG-input`;
 
 },{}],"hSPj4":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12028,11 +12028,11 @@ exports.default = `
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7RaEU":[function(require,module,exports) {
-module.exports["form"] = `H3DfFq_form`;
-module.exports["title"] = `H3DfFq_title`;
-module.exports["buttons"] = `H3DfFq_buttons`;
-module.exports["linker"] = `H3DfFq_linker`;
-module.exports["fieldset"] = `H3DfFq_fieldset`;
+module.exports["form"] = `app-H3DfFq-form`;
+module.exports["fieldset"] = `app-H3DfFq-fieldset`;
+module.exports["title"] = `app-H3DfFq-title`;
+module.exports["buttons"] = `app-H3DfFq-buttons`;
+module.exports["linker"] = `app-H3DfFq-linker`;
 
 },{}],"bJHPG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12063,9 +12063,9 @@ exports.default = `
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ea28E":[function(require,module,exports) {
-module.exports["container"] = `ZOqx9q_container`;
-module.exports["title"] = `ZOqx9q_title`;
-module.exports["subtitle"] = `ZOqx9q_subtitle`;
+module.exports["container"] = `app-ZOqx9q-container`;
+module.exports["title"] = `app-ZOqx9q-title`;
+module.exports["subtitle"] = `app-ZOqx9q-subtitle`;
 
 },{}],"3Glnj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12096,9 +12096,9 @@ exports.default = `
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kI8Ve":[function(require,module,exports) {
-module.exports["subtitle"] = `WPUdUW_subtitle`;
-module.exports["title"] = `WPUdUW_title`;
-module.exports["container"] = `WPUdUW_container`;
+module.exports["subtitle"] = `app-WPUdUW-subtitle`;
+module.exports["container"] = `app-WPUdUW-container`;
+module.exports["title"] = `app-WPUdUW-title`;
 
 },{}],"e9Ant":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12217,29 +12217,29 @@ exports.default = `
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eVOWT":[function(require,module,exports) {
-module.exports["main"] = `P4zA0q_main`;
-module.exports["divider"] = `P4zA0q_divider`;
-module.exports["recipient"] = `P4zA0q_recipient`;
-module.exports["attatch"] = `P4zA0q_attatch`;
-module.exports["actionIcon"] = `P4zA0q_actionIcon`;
-module.exports["send"] = `P4zA0q_send`;
-module.exports["chat"] = `P4zA0q_chat`;
-module.exports["list"] = `P4zA0q_list`;
-module.exports["recipientName"] = `P4zA0q_recipientName`;
-module.exports["input"] = `P4zA0q_input`;
-module.exports["more"] = `P4zA0q_more`;
-module.exports["avatar"] = `P4zA0q_avatar`;
-module.exports["exit"] = `P4zA0q_exit`;
-module.exports["handlebar"] = `P4zA0q_handlebar`;
-module.exports["recipientAvatar"] = `P4zA0q_recipientAvatar`;
-module.exports["empty"] = `P4zA0q_empty`;
-module.exports["buttons"] = `P4zA0q_buttons`;
-module.exports["navbar"] = `P4zA0q_navbar`;
-module.exports["credentials"] = `P4zA0q_credentials`;
-module.exports["search"] = `P4zA0q_search`;
-module.exports["settings"] = `P4zA0q_settings`;
-module.exports["username"] = `P4zA0q_username`;
-module.exports["profile"] = `P4zA0q_profile`;
+module.exports["buttons"] = `app-P4zA0q-buttons`;
+module.exports["navbar"] = `app-P4zA0q-navbar`;
+module.exports["settings"] = `app-P4zA0q-settings`;
+module.exports["actionIcon"] = `app-P4zA0q-actionIcon`;
+module.exports["recipient"] = `app-P4zA0q-recipient`;
+module.exports["list"] = `app-P4zA0q-list`;
+module.exports["chat"] = `app-P4zA0q-chat`;
+module.exports["search"] = `app-P4zA0q-search`;
+module.exports["recipientAvatar"] = `app-P4zA0q-recipientAvatar`;
+module.exports["handlebar"] = `app-P4zA0q-handlebar`;
+module.exports["recipientName"] = `app-P4zA0q-recipientName`;
+module.exports["empty"] = `app-P4zA0q-empty`;
+module.exports["credentials"] = `app-P4zA0q-credentials`;
+module.exports["send"] = `app-P4zA0q-send`;
+module.exports["main"] = `app-P4zA0q-main`;
+module.exports["avatar"] = `app-P4zA0q-avatar`;
+module.exports["input"] = `app-P4zA0q-input`;
+module.exports["more"] = `app-P4zA0q-more`;
+module.exports["attatch"] = `app-P4zA0q-attatch`;
+module.exports["exit"] = `app-P4zA0q-exit`;
+module.exports["username"] = `app-P4zA0q-username`;
+module.exports["divider"] = `app-P4zA0q-divider`;
+module.exports["profile"] = `app-P4zA0q-profile`;
 
 },{}],"d4zdN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12275,15 +12275,15 @@ exports.default = `
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./chat-preview.module.css":"icl0h"}],"icl0h":[function(require,module,exports) {
-module.exports["date"] = `gR_sOW_date`;
-module.exports["top"] = `gR_sOW_top`;
-module.exports["username"] = `gR_sOW_username`;
-module.exports["message"] = `gR_sOW_message`;
-module.exports["selected"] = `gR_sOW_selected`;
-module.exports["chat"] = `gR_sOW_chat`;
-module.exports["content"] = `gR_sOW_content`;
-module.exports["count"] = `gR_sOW_count`;
-module.exports["avatar"] = `gR_sOW_avatar`;
+module.exports["count"] = `app-gR_sOW-count`;
+module.exports["top"] = `app-gR_sOW-top`;
+module.exports["avatar"] = `app-gR_sOW-avatar`;
+module.exports["username"] = `app-gR_sOW-username`;
+module.exports["message"] = `app-gR_sOW-message`;
+module.exports["selected"] = `app-gR_sOW-selected`;
+module.exports["date"] = `app-gR_sOW-date`;
+module.exports["chat"] = `app-gR_sOW-chat`;
+module.exports["content"] = `app-gR_sOW-content`;
 
 },{}],"ineF2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12298,7 +12298,7 @@ exports.default = `
 `;
 
 },{"./chatbox.module.css":"bGypF","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bGypF":[function(require,module,exports) {
-module.exports["list"] = `AZoO-a_list`;
+module.exports["list"] = `app-AZoO-a-list`;
 
 },{}],"ae9f4":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12329,12 +12329,12 @@ exports.default = `
 `;
 
 },{"./message.module.css":"fewtg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fewtg":[function(require,module,exports) {
-module.exports["seen"] = `_9x2kmq_seen`;
-module.exports["sent"] = `_9x2kmq_sent`;
-module.exports["content"] = `_9x2kmq_content`;
-module.exports["timestamp"] = `_9x2kmq_timestamp`;
-module.exports["message"] = `_9x2kmq_message`;
-module.exports["info"] = `_9x2kmq_info`;
+module.exports["timestamp"] = `app-9x2kmq-timestamp`;
+module.exports["info"] = `app-9x2kmq-info`;
+module.exports["seen"] = `app-9x2kmq-seen`;
+module.exports["content"] = `app-9x2kmq-content`;
+module.exports["message"] = `app-9x2kmq-message`;
+module.exports["sent"] = `app-9x2kmq-sent`;
 
 },{}],"d8Zom":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12395,17 +12395,17 @@ exports.default = `
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a7ryd":[function(require,module,exports) {
-module.exports["container"] = `uIZihq_container`;
-module.exports["name"] = `uIZihq_name`;
-module.exports["link"] = `uIZihq_link`;
-module.exports["change"] = `uIZihq_change`;
-module.exports["exit"] = `uIZihq_exit`;
-module.exports["return"] = `uIZihq_return`;
-module.exports["credentials"] = `uIZihq_credentials`;
-module.exports["avatar"] = `uIZihq_avatar`;
-module.exports["sidebar"] = `uIZihq_sidebar`;
-module.exports["form"] = `uIZihq_form`;
-module.exports["links"] = `uIZihq_links`;
+module.exports["name"] = `app-uIZihq-name`;
+module.exports["change"] = `app-uIZihq-change`;
+module.exports["container"] = `app-uIZihq-container`;
+module.exports["return"] = `app-uIZihq-return`;
+module.exports["form"] = `app-uIZihq-form`;
+module.exports["links"] = `app-uIZihq-links`;
+module.exports["avatar"] = `app-uIZihq-avatar`;
+module.exports["credentials"] = `app-uIZihq-credentials`;
+module.exports["link"] = `app-uIZihq-link`;
+module.exports["exit"] = `app-uIZihq-exit`;
+module.exports["sidebar"] = `app-uIZihq-sidebar`;
 
 },{}],"kBn7X":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12422,11 +12422,11 @@ exports.default = `
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./edit-input.module.css":"9hnqc"}],"9hnqc":[function(require,module,exports) {
-module.exports["currentValue"] = `msaBga_currentValue`;
-module.exports["group"] = `msaBga_group`;
-module.exports["edit"] = `msaBga_edit`;
-module.exports["fieldset"] = `msaBga_fieldset`;
-module.exports["name"] = `msaBga_name`;
+module.exports["edit"] = `app-msaBga-edit`;
+module.exports["currentValue"] = `app-msaBga-currentValue`;
+module.exports["fieldset"] = `app-msaBga-fieldset`;
+module.exports["name"] = `app-msaBga-name`;
+module.exports["group"] = `app-msaBga-group`;
 
 },{}],"5q46W":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12443,10 +12443,10 @@ exports.default = `
 `;
 
 },{"./popup.module.css":"cpczv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cpczv":[function(require,module,exports) {
-module.exports["title"] = `ex6PQG_title`;
-module.exports["content"] = `ex6PQG_content`;
-module.exports["close"] = `ex6PQG_close`;
-module.exports["popup"] = `ex6PQG_popup`;
+module.exports["popup"] = `app-ex6PQG-popup`;
+module.exports["title"] = `app-ex6PQG-title`;
+module.exports["close"] = `app-ex6PQG-close`;
+module.exports["content"] = `app-ex6PQG-content`;
 
 },{}],"bi4pn":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -12491,11 +12491,11 @@ exports.default = `
 `;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6eVhM":[function(require,module,exports) {
-module.exports["fieldset"] = `kAJDTa_fieldset`;
-module.exports["form"] = `kAJDTa_form`;
-module.exports["buttons"] = `kAJDTa_buttons`;
-module.exports["linker"] = `kAJDTa_linker`;
-module.exports["title"] = `kAJDTa_title`;
+module.exports["title"] = `app-kAJDTa-title`;
+module.exports["fieldset"] = `app-kAJDTa-fieldset`;
+module.exports["buttons"] = `app-kAJDTa-buttons`;
+module.exports["form"] = `app-kAJDTa-form`;
+module.exports["linker"] = `app-kAJDTa-linker`;
 
 },{}]},["ShInH","8lqZg"], "8lqZg", "parcelRequire938d")
 

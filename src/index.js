@@ -10,4 +10,4 @@ import ChangePassword from './pages/change-password/change-password';
 
 const main = document.querySelector('.main');
 
-main.innerHTML = Profile;
+main.innerHTML = SignUpPage;
