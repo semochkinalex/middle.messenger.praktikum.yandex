@@ -16,7 +16,7 @@ export default `
             {{> edit name="Имя в чате" currentValue="Иван" fieldName="display_name" }}
             {{> edit name="Телефон" currentValue="7(903)-967-30-30" fieldName="phone" }}
             <div class={{styles.links}}>
-                <a class={{styles.link}}>Изменить пароль</a>
+                <a class={{styles.link}} href="/change-password">Изменить пароль</a>
             </div>
         </form>
         <div class={{styles.sidebar}}>

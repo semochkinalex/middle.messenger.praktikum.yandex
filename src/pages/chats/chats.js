@@ -1,10 +1,10 @@
-import Handlebars from 'handlebars';
-import ChatsTemplate from './chats.tmpl';
-import * as styles from './chats.module.scss';
+const Handlebars = require('handlebars');
+import ChatsTemplate from './chats.tmpl.js';
+import * as styles from './chats.module.css';
 
-import ChatboxTemplate from '../../components/chatbox/chatbox.tmpl';
-import ChatPreviewTemplate from '../../components/chat-preview/chat-preview.tmpl';
-import ChatMessageTemplate from '../../components/message/message.tmpl';
+import ChatboxTemplate from '../../components/chatbox/chatbox.tmpl.js';
+import ChatPreviewTemplate from '../../components/chat-preview/chat-preview.tmpl.js';
+import ChatMessageTemplate from '../../components/message/message.tmpl.js';
 
 Handlebars.registerPartial('chatbox', ChatboxTemplate);
 Handlebars.registerPartial('chat', ChatPreviewTemplate);

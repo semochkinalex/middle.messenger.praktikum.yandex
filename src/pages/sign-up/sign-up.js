@@ -1,9 +1,9 @@
-import Handlebars from 'handlebars';
-import LinkTemplate from '../../components/link/link.tmpl';
-import ButtonTemplate from '../../components/button/button.tmpl';
-import InputTemplate from '../../components/input/input.tmpl';
-import SignUpPageTemplate from './sign-up.tmpl';
-import * as styles from './sign-up.module.scss';
+const Handlebars = require('handlebars');
+import LinkTemplate from '../../components/link/link.tmpl.js';
+import ButtonTemplate from '../../components/button/button.tmpl.js';
+import InputTemplate from '../../components/input/input.tmpl.js';
+import SignUpPageTemplate from './sign-up.tmpl.js';
+import * as styles from './sign-up.module.css';
 
 const template = Handlebars.compile(SignUpPageTemplate);
 

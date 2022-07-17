@@ -1,7 +1,7 @@
-import Handlebars from 'handlebars';
-import LinkTemplate from '../../components/link/link.tmpl';
-import ServerErrorPage from './500.tmpl';
-import * as styles from './500.module.scss';
+const Handlebars = require('handlebars');
+import LinkTemplate from '../../components/link/link.tmpl.js';
+import ServerErrorPage from './500.tmpl.js';
+import * as styles from './500.module.css';
 
 const template = Handlebars.compile(ServerErrorPage);
 

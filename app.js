@@ -6,10 +6,10 @@ const port = 3000;
 
 const DIRNAME = process.cwd();  
 
-app.use("/", express.static(DIRNAME + "/dist"));
+app.use("/", express.static(DIRNAME + "/"));
 
 app.get('/*', (req, res, next) => {
-  res.sendFile(DIRNAME +"/static/index.html");
+  res.sendFile(DIRNAME +"/dist/index.html");
 });
 
 app.listen(port, () => {
