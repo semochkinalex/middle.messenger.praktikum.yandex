@@ -1,3 +1,4 @@
+// страница логина
 const Handlebars = require('handlebars');
 import LinkTemplate from '../../components/link/link.tmpl.js';
 import ButtonTemplate from '../../components/button/button.tmpl.js';
@@ -13,5 +14,7 @@ Handlebars.registerPartial('link', LinkTemplate);
 Handlebars.registerPartial('input', InputTemplate);
 
 const render = template({styles});
+// для страниц
 
 export default render;
+

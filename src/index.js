@@ -6,6 +6,8 @@ import Chats from './pages/chats/chats.js';
 import Profile from './pages/profile/profile.js';
 import ChangePassword from './pages/change-password/change-password.js';
 
+import './vendor/styles.css';
+
 const main = document.querySelector('.main');
 
 const routes = {
@@ -20,11 +22,8 @@ const routes = {
 
 window.onload = function(evt) {
     const path = window.location.pathname;
-    console.log(path);
     if (Object.keys(routes).find((el) => el === path)) {
         main.innerHTML = routes[path];
-    } else if (path == '/dist/index.html'){
-        main.innerHTML = SignInPage;
     } else {
         main.innerHTML = PageNotFound;
     }
