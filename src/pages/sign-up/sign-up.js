@@ -11,7 +11,6 @@ Handlebars.registerPartial('button', ButtonTemplate);
 Handlebars.registerPartial('link', LinkTemplate);
 Handlebars.registerPartial('input', InputTemplate);
 
-console.log('qwdqwd');
 const render = template({styles});
 
 export default render;

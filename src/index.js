@@ -10,6 +10,8 @@ import './vendor/styles.css';
 
 const main = document.querySelector('.main');
 
+const IS_PRODUCTION = true;
+
 const routes = {
     '/sign-in': SignInPage,
     '/sign-up': SignUpPage,
@@ -20,12 +22,18 @@ const routes = {
     '/': `<a href="/sign-up">signup</a>---<a href="/sign-in">signin</a>---<a href="/chats">chats</a>---<a href="/profile">profile</a>---<a href="/change-password">change password</a>---<a href="/500">server error</a>`,
 }
 
-window.onload = function(evt) {
-    const path = window.location.pathname;
-    if (Object.keys(routes).find((el) => el === path)) {
-        main.innerHTML = routes[path];
-    } else {
-        main.innerHTML = PageNotFound;
+
+// netlify не позволяет сделать подобный роутинг, ведь каждый route это index.html в папке, а тут мы всё это вызываем искуственно
+if (IS_PRODUCTION) {
+    main.innerHTML = SignInPage;
+} else {
+    window.onload = function(evt) {
+        const path = window.location.pathname;
+        if (Object.keys(routes).find((el) => el === path)) {
+            main.innerHTML = routes[path];
+        } else {
+            main.innerHTML = PageNotFound;
+        }
     }
 }
 
