@@ -39,15 +39,15 @@
   },
   "homepage": "https://github.com/fennyflop/middle.messenger.praktikum.yandex#readme",
   "devDependencies": {
-    "@parcel/transformer-css": "^2.6.2",
-    "@parcel/transformer-sass": "^2.6.2",
-    "cssnano": "^5.1.12",
-    "parcel": "^2.6.2",
-    "postcss": "^8.4.14",
-    "postcss-cli": "^10.0.0"
+    "@parcel/transformer-css": "2.6.2",
+    "@parcel/transformer-sass": "2.6.2",
+    "cssnano": "5.1.12",
+    "parcel": "2.6.2",
+    "postcss": "8.4.14",
+    "postcss-cli": "10.0.0"
   },
   "dependencies": {
-    "express": "^4.18.1",
-    "handlebars": "^4.7.7"
+    "express": "4.18.1",
+    "handlebars": "4.7.7"
   }
 }
