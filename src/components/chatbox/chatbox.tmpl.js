@@ -1,4 +1,4 @@
-import * as styles from './chatbox.module.scss';
+import * as styles from "./chatbox.module.scss";
 
 export default `
     <ul class="${styles.list}">
