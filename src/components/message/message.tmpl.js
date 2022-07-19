@@ -1,4 +1,4 @@
-import * as styles from './message.module.css';
+import * as styles from './message.module.scss';
 
 export default `
 

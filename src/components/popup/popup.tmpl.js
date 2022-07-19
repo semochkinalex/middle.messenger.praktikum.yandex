@@ -1,4 +1,4 @@
-import * as styles from './popup.module.css';
+import * as styles from './popup.module.scss';
 
 export default `
     <section class="${styles.popup}">

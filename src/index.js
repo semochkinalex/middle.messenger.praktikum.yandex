@@ -6,7 +6,7 @@ import Chats from './pages/chats/chats.js';
 import Profile from './pages/profile/profile.js';
 import ChangePassword from './pages/change-password/change-password.js';
 
-import './vendor/styles.css';
+import './vendor/styles.scss';
 
 const main = document.querySelector('.main');
 

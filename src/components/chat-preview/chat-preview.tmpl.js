@@ -1,4 +1,4 @@
-import * as styles from './chat-preview.module.css';
+import * as styles from './chat-preview.module.scss';
 
 export default `
     {{#if isSelected}}

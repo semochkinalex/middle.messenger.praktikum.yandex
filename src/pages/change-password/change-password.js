@@ -3,7 +3,7 @@ import ButtonTemplate from '../../components/button/button.tmpl.js';
 import InputTemplate from '../../components/input/input.tmpl.js';
 import ChangePasswordTemplate from './change-password.tmpl.js';
 import LinkTemplate from '../../components/link/link.tmpl.js';
-import * as styles from './change-password.module.css';
+import * as styles from './change-password.module.scss';
 
 const template = Handlebars.compile(ChangePasswordTemplate);
 

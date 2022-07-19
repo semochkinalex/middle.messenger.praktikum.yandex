@@ -5,7 +5,7 @@ import ButtonTemplate from '../../components/button/button.tmpl.js';
 import InputTemplate from '../../components/input/input.tmpl.js';
 import SignInPageTemplate from './sign-in.tmpl.js';
 
-import * as styles from './sign-in.module.css';
+import * as styles from './sign-in.module.scss';
 
 const template = Handlebars.compile(SignInPageTemplate);
 
