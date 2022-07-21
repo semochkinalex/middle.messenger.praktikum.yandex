@@ -1,0 +1,47 @@
+@import "../../vendor/variables";
+
+.fieldset {
+  width: 100%;
+  padding: 0 0 5px;
+  margin: 0;
+  border: none;
+  outline: none;
+
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $light-gray;
+}
+
+.fieldset:last-of-type {
+  border: none;
+}
+
+.name {
+  color: white;
+}
+.currentValue {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  color: $light-white;
+  text-align: right;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit {
+  width: 22px;
+  height: 22px;
+  background: url("../../assets/edit-icon.svg");
+  border: none;
+  outline: none;
+}
+.edit {
+  cursor: pointer;
+}

@@ -1,0 +1,13 @@
+@import "../../vendor/variables";
+
+.link {
+  font-size: 14px;
+  text-decoration: none;
+  color: $blue;
+  width: fit-content;
+  transition: all 0.3s ease-in-out;
+}
+.link:hover {
+  cursor: pointer;
+  color: $blue-hover;
+}
