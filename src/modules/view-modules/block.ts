@@ -1,4 +1,4 @@
-import EventBus from '../../modules/event-bus/event-bus';
+import EventBus from './event-bus';
 
 import type { IBlockChild, IBlockMeta, IBlockProps } from '../types/types';
 

@@ -1,6 +1,6 @@
 import Handlebars from 'handlebars';
 import Template from './button.tmpl';
-import Block from "../../modules/block/block";
+import Block from "../../modules/view-modules/block";
 
 // @ts-ignore
 import * as styles from "./button.module.scss";

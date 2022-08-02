@@ -1,4 +1,4 @@
-import Block from "../block/block";
+import Block from "../view-modules/block";
 
 export type IBlockChild = Block | Array<Block>;
 
@@ -20,3 +20,10 @@ export interface IBlockProps {
 export interface IPageChildren {
     [key: string]: Block | Block[];
 }
+
+export interface IValidationProperties {
+    [key: string]: (value: string | number) => string;
+}
+
+export type TFormValues = {[key: string]: string | number};
+export type TFormErrors = {[key: string]: string};

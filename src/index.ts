@@ -1,15 +1,17 @@
 // import SignInPage from "./pages/sign-in/sign-in.js";
 
-import {Page} from './modules/page/page';
+import {Page} from './modules/view-modules/page';
 
+import ServerError from './pages/500/500';
 import PageNotFound from './pages/404/404';
-import ServerError from './pages/500/500'
+import SignInPage from './pages/sign-in/sign-in';
 
 import "./vendor/styles.scss";
 
 const routes: {[key: string]: Page} = {
     "/500": ServerError,
-    "/404": PageNotFound
+    "/404": PageNotFound,
+    "/sign-in": SignInPage,
 };
   
 window.onload = function (evt) {

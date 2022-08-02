@@ -1,4 +1,4 @@
-import Block from "../block/block";
+import Block from "./block";
 import { IPageChildren } from "../types/types";
 
 export class Page {
