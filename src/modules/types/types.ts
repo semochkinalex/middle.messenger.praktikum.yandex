@@ -16,3 +16,7 @@ export interface IBlockProps {
     [key: string]: unknown;
     events?: IBlockEvents;
 }
+
+export interface IPageChildren {
+    [key: string]: Block | Block[];
+}

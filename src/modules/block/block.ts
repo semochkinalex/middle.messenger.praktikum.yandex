@@ -50,6 +50,13 @@ export default class Block {
     private _createResources() {
         const { tagName, className } = this._meta;
         this._element = this._createDocumentElement(tagName, className);
+
+        if (this.props.attributes && Object.keys(this.props.attributes).length > 0) {
+            for (const [attribute, value] of Object.entries(this.props.attributes)) {
+                this._element.setAttribute(attribute, value);
+            }
+        }
+        
     }
 
     private _init() {
