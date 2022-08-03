@@ -19,11 +19,11 @@ interface IInput extends IBlockProps {
 
 export default class Input extends Block {
     constructor(props: IInput) {
-        super('div', styles.container, props);
+        super('fieldset', styles.container, props);
     }
 
     render() {
-        return Handlebars.compile(Template)(this.props);
+        return Handlebars.compile(Template)({...this.props, styles, error: "qwdqwd"});
     }
 }
 

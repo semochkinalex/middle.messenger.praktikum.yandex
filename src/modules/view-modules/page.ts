@@ -6,10 +6,11 @@ export class Page {
     private _children?: IPageChildren;
     private _selector: string = '.body';
 
-    constructor(parent: Block, children?: IPageChildren) {
+    constructor(parent: Block, children?: IPageChildren, selector: string = '.body') {
         this._parent = parent;
         this._children = children;
-    }
+        this._selector = selector;
+    }  
 
 
     public render() {
