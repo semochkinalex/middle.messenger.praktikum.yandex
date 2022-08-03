@@ -12,6 +12,7 @@ import Form from "../../modules/form/form";
 import { IBlockProps } from "../../modules/types/types";
 import Button from "../../components/button/button";
 import Link from "../../components/link/link";
+import Errors from "../../components/errors/errors";
 
 class SignInBlock extends Block {
     constructor(props: IBlockProps) {
@@ -22,8 +23,16 @@ class SignInBlock extends Block {
         return Handlebars.compile(SignInTemplate)(this.props);
     }
 }
+const ErrorComponent = new Errors({
+    errors: [],
+})
 
-const form = new Form({
+const form = new Form((values, errors) => {
+    console.log(errors);
+    ErrorComponent.setProps({
+        errors: Object.values(errors)
+    })
+}, {
     login: (value) => {
 
         // /^[А-Я][а-яА-Я]{2,19}/
@@ -48,18 +57,20 @@ const block = new SignInBlock({
 });
 
 
+
 const SignInPage = new Page(block, {
     '.inputs': [
         new Input({
-            events: {'input': form.handleChange},
+            events: {'input': form.handleChange, 'focus': form.isCurrentFieldValid, 'blur': form.isCurrentFieldValid},
             attributes: { name: 'login', value: '', placeholder: 'Логин', required: true, }
         }),
 
         new Input({
-            events: {'input': form.handleChange},
+            events: {'input': form.handleChange, 'focus': form.isCurrentFieldValid, 'blur': form.isCurrentFieldValid},
             attributes: { name: 'password', value: '', placeholder: 'Пароль', type: "password", required: true, }
         }),
     ],
+    '.errors': ErrorComponent,
     '.buttons': [new Button({text: "Войти", attributs: {type: "submit"}}), new Link({text: "Нет аккаунта?", attributes: {href: "/sign-up"}})]
 })
 

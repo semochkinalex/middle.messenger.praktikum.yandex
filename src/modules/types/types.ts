@@ -1,5 +1,7 @@
 import Block from "../view-modules/block";
 
+export type TFormHandler = (a: TFormValues, b: TFormErrors) => void;
+
 export type IBlockChild = Block | Array<Block>;
 
 export interface IBlockEvents {
