@@ -51,12 +51,21 @@ export default class Block {
         const { tagName, className } = this._meta;
         this._element = this._createDocumentElement(tagName, className);
 
+        this._setAttributes();
+        
+    }
+
+    private _setAttributes() {
         if (this.props.attributes && Object.keys(this.props.attributes).length > 0) {
             for (const [attribute, value] of Object.entries(this.props.attributes)) {
-                this._element.setAttribute(attribute, value);
+                if(value === false) {
+                    // console.log(value);
+                    this._element.removeAttribute(attribute);    
+                } else {
+                    this._element.setAttribute(attribute, value);
+                }
             }
         }
-        
     }
 
     private _init() {
@@ -83,9 +92,12 @@ export default class Block {
             return;
         }
         const newProps = Object.assign({}, this.props, nextProps);
-
+        
         if (!isEqual(this.props, newProps)) {
             Object.assign(this.props, nextProps);
+            if (newProps.attributes) {
+                this._setAttributes();
+            }
         }
     };
 

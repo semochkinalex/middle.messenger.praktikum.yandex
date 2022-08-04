@@ -17,3 +17,10 @@
   cursor: pointer;
   background-color: $blue-hover;
 }
+
+.button:disabled {
+  background-color: $blue-disabled;
+}
+.button:disabled:hover {
+  cursor:not-allowed;
+}
