@@ -1,4 +1,4 @@
-import * as styles from './errors.module.scss';
+import * as styles from "./errors.module.scss";
 
 export default `
     <ul class="${styles.errors}">

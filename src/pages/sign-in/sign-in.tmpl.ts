@@ -8,8 +8,8 @@ export default `
         <div class="{{styles.buttons}} buttons"></div>
         
         `;
-        // {{> input name="login" placeholder="Логин" type="text" }}
-        // {{> input name="password" placeholder="Пароль" type="password" }}
-        
-        // {{> button text="Вход"}}
-        // {{> link text="Нет Аккаунта?" className=styles.linker anchor="/sign-up" }}
+// {{> input name="login" placeholder="Логин" type="text" }}
+// {{> input name="password" placeholder="Пароль" type="password" }}
+
+// {{> button text="Вход"}}
+// {{> link text="Нет Аккаунта?" className=styles.linker anchor="/sign-up" }}

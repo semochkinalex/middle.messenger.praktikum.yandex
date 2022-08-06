@@ -67,36 +67,38 @@ interface IChatProps extends IBlockProps {
 
 class Chats extends Block {
   constructor(props: IChatProps) {
-      super('main', styles.main, {styles, ...props}, '.handlebar')
+    super("main", styles.main, { styles, ...props }, ".handlebar");
   }
 
   render() {
-      return Handlebars.compile(ChatsTemplate)(this.props);
+    return Handlebars.compile(ChatsTemplate)(this.props);
   }
 }
 
 const ChatsBlock = new Chats({
-  username: 'fennyflop',
-  avatar: 'https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_3x2.jpg',
+  username: "fennyflop",
+  avatar:
+    "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_3x2.jpg",
   chats,
   selectedChat,
   events: {
-    'submit': (evt) => {
+    submit: (evt) => {
       evt.preventDefault();
-      const message = (<HTMLInputElement>document?.querySelector('.input')).value;
+      const message = (<HTMLInputElement>document?.querySelector(".input"))
+        .value;
       if (!message) return;
       console.log(message);
-    }
-  }
-})
+    },
+  },
+});
 
 const ChatsPage = new Page(ChatsBlock, {
-  '.list': chats.map((chat) => {
-    return new ChatPreview(chat)
+  ".list": chats.map((chat) => {
+    return new ChatPreview(chat);
   }),
-  '.messages': selectedChat.messages.map((message) => {
+  ".messages": selectedChat.messages.map((message) => {
     return new Message(message);
-  })
+  }),
 });
 
 export default ChatsPage;

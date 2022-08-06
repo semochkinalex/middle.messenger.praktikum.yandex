@@ -21,11 +21,11 @@ export default `
         </div>
         </main>
 `;
-        // {{> popup title="Сохранить изменения" button="Сохранить"}}
-        
-        // {{> edit name="Почта" currentValue="pochta@gmail.ru" fieldName="email" }}
-        // {{> edit name="Логин" currentValue="ivanivanov" fieldName="login" }}
-        // {{> edit name="Имя" currentValue="Иван" fieldName="first_name" }}
-        // {{> edit name="Фамилия" currentValue="Иванов" fieldName="second_name" }}
-        // {{> edit name="Имя в чате" currentValue="Иван" fieldName="display_name" }}
-        // {{> edit name="Телефон" currentValue="7(903)-967-30-30" fieldName="phone" }}
+// {{> popup title="Сохранить изменения" button="Сохранить"}}
+
+// {{> edit name="Почта" currentValue="pochta@gmail.ru" fieldName="email" }}
+// {{> edit name="Логин" currentValue="ivanivanov" fieldName="login" }}
+// {{> edit name="Имя" currentValue="Иван" fieldName="first_name" }}
+// {{> edit name="Фамилия" currentValue="Иванов" fieldName="second_name" }}
+// {{> edit name="Имя в чате" currentValue="Иван" fieldName="display_name" }}
+// {{> edit name="Телефон" currentValue="7(903)-967-30-30" fieldName="phone" }}
