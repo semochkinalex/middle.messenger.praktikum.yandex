@@ -9,7 +9,7 @@ import { IBlockProps } from "../../modules/types/types";
 
 export default class Button extends Block {
     constructor(props: IBlockProps) {
-        super('button', styles.button, props)
+        super('button', `${styles.button} ${props.className}`, props)
     }
 
     render() {

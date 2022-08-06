@@ -16,11 +16,12 @@ export default class Block {
     private _element: HTMLElement;
     private _meta: IBlockMeta;
     private _children: Map<IBlockChild, string>;
+    private _drillTo: string;
 
     public props: IBlockProps;
     public eventBus: () => EventBus;
 
-    constructor(tagName = 'div', className = '', props: IBlockProps = {}) {
+    constructor(tagName = 'div', className = '', props: IBlockProps = {}, drillTo?: string) {
         const eventBus = new EventBus();
         
         this._children = new Map();
@@ -30,6 +31,8 @@ export default class Block {
             className,
             props
         };
+        
+        this._drillTo = drillTo ?? ''; 
 
         this.props = this._makePropsProxy(props);
 
@@ -56,13 +59,15 @@ export default class Block {
     }
 
     private _setAttributes() {
+        const targetedElement = this._drillTo ? this._element.querySelector(this._drillTo) : this._element;
+
         if (this.props?.attributes && Object.keys(this.props?.attributes).length > 0) {
             for (const [attribute, value] of Object.entries(this.props.attributes)) {
                 if(value === false) {
                     // console.log(value);
-                    this._element.removeAttribute(attribute);    
+                    targetedElement?.removeAttribute(attribute);    
                 } else {
-                    this._element.setAttribute(attribute, value.toString());
+                    targetedElement?.setAttribute(attribute, value.toString());
                 }
             }
         }
@@ -135,16 +140,20 @@ export default class Block {
     private _addEvents(): void {
         const { events = {} } = this.props;
 
+        const targetedElement = this._drillTo ? this._element.querySelector(this._drillTo) : this._element;
+
         Object.keys(events).forEach(eventName => {
-            this._element.addEventListener(eventName, events[eventName]);
+            targetedElement?.addEventListener(eventName, events[eventName]);
         });
     }
 
     private _removeEvents(): void {
         const { events = {} } = this.props;
 
+        const targetedElement = this._drillTo ? this._element.querySelector(this._drillTo) : this._element;
+
         Object.keys(events).forEach(eventName => {
-            this._element.removeEventListener(eventName, events[eventName]);
+            targetedElement?.removeEventListener(eventName, events[eventName]);
         });
     }
 

@@ -9,6 +9,7 @@ import SignInPage from './pages/sign-in/sign-in';
 import "./vendor/styles.scss";
 import SignUpPage from './pages/sign-up/sign-up';
 import ChangePasswordPage from './pages/change-password/change-password';
+import ProfliePage from './pages/profile/profile';
 
 const routes: {[key: string]: Page} = {
     "/500": ServerError,
@@ -16,6 +17,7 @@ const routes: {[key: string]: Page} = {
     "/sign-in": SignInPage,
     "/sign-up": SignUpPage,
     "/change-password": ChangePasswordPage,
+    "/profile": ProfliePage,
 };
   
 window.onload = function (evt) {

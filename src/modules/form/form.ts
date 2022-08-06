@@ -8,9 +8,12 @@ export default class Form {
 
     private _rules: IValidationProperties = {};
 
-    constructor(handler: TFormHandler, rules: IValidationProperties) {
+    constructor(handler: TFormHandler, rules: IValidationProperties, defaultValues?: TFormValues) {
         this._rules = rules;
         this._handler = handler
+
+        // console.log(defaultValues);
+        this._values = defaultValues ?? {};
 
         this.isCurrentFieldValid = this.isCurrentFieldValid.bind(this);
         this.isValidForm = this.isValidForm.bind(this);
@@ -60,12 +63,14 @@ export default class Form {
 
     public handleChange(event: any) {
         const target = event?.currentTarget;
-        if (!target || !target?.value) return;
+
+        if (!target) return;
 
         this._values = {
             ...this._values,
             [target.name]: target.value,
         };
+
     }
 
     public onSubmit(evt: Event, callback?: (values: TFormValues) => void) {
