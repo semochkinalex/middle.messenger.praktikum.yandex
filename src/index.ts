@@ -8,12 +8,14 @@ import SignInPage from './pages/sign-in/sign-in';
 
 import "./vendor/styles.scss";
 import SignUpPage from './pages/sign-up/sign-up';
+import ChangePasswordPage from './pages/change-password/change-password';
 
 const routes: {[key: string]: Page} = {
     "/500": ServerError,
     "/404": PageNotFound,
     "/sign-in": SignInPage,
     "/sign-up": SignUpPage,
+    "/change-password": ChangePasswordPage,
 };
   
 window.onload = function (evt) {
