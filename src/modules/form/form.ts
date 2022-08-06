@@ -21,8 +21,8 @@ export default class Form {
 
     // function or regex
     public isValidField(value: string | number, name: string): boolean {
-                
-        const message = this._rules[name](value);
+        if (!this._rules[name]) return true;
+        const message = this._rules[name](value, this._values);
     
         if (!message) {
             console.log(message);
@@ -68,9 +68,9 @@ export default class Form {
         };
     }
 
-    public onSubmit(evt: Event) {
+    public onSubmit(evt: Event, callback?: (values: TFormValues) => void) {
         evt.preventDefault(); 
-        this._update();
+        if (callback) callback(this._values);
     }
 
     private _update() {

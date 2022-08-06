@@ -30,15 +30,13 @@ const rules = {
 
         // /^[А-Я][а-яА-Я]{2,19}/
         if (typeof value !== 'string') return "Input must be a string.";
-        if (!Boolean(new RegExp(/^[А-Я][а-яА-Я]{2,19}/).test(value))) return "Must have 3-20 characters with no special symbols in cyrillic";
-        console.log(value);
+        if (!Boolean(new RegExp(/^[А-Я][а-яА-Я]{2,19}/).test(value))) return "Name have 3-20 characters with no special symbols in cyrillic";
         return '';
     },
 
     password: (value: string) => {
         if (typeof value !== 'string') return "Input must be a string.";
         if (!Boolean(new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/).test(value))) return "Password should have at least 8 characters, one number, one uppercase letter and one lowercase letter.";
-
         return '';
     }
 };
@@ -51,8 +49,7 @@ const ErrorComponent = new Errors({
 
 const form = new Form((values, errors) => {
 
-    const hasErrors = Object.keys(errors).length ? true : false;
-    console.log(Object.keys(errors).length);
+    const hasErrors = Object.keys(errors).length ? true : false;    
 
     SubmitButton.setProps({
         attributes: {type: 'submit', disabled: hasErrors}    
@@ -65,7 +62,7 @@ const form = new Form((values, errors) => {
 
 const block = new SignInBlock({
     events: {
-        'submit': form.onSubmit,
+        'submit': (e) => form.onSubmit(e, console.log),
     },
     attributes: {noValidate: true}
 });

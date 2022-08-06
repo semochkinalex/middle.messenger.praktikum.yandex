@@ -56,13 +56,13 @@ export default class Block {
     }
 
     private _setAttributes() {
-        if (this.props.attributes && Object.keys(this.props.attributes).length > 0) {
+        if (this.props?.attributes && Object.keys(this.props?.attributes).length > 0) {
             for (const [attribute, value] of Object.entries(this.props.attributes)) {
                 if(value === false) {
                     // console.log(value);
                     this._element.removeAttribute(attribute);    
                 } else {
-                    this._element.setAttribute(attribute, value);
+                    this._element.setAttribute(attribute, value.toString());
                 }
             }
         }

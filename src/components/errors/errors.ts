@@ -4,7 +4,7 @@ import Block from "../../modules/view-modules/block";
 
 // @ts-ignore
 import * as styles from "./errors.module.scss";
-console.log(styles)
+
 import { IBlockProps } from "../../modules/types/types";
 
 interface IErrors extends IBlockProps {

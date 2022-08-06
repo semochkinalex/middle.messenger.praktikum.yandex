@@ -24,7 +24,7 @@ export interface IPageChildren {
 }
 
 export interface IValidationProperties {
-    [key: string]: (value: string | number) => string;
+    [key: string]: (value: string | number, values?: TFormValues) => string;
 }
 
 export type TFormValues = {[key: string]: string | number};

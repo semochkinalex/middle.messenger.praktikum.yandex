@@ -7,11 +7,13 @@ import PageNotFound from './pages/404/404';
 import SignInPage from './pages/sign-in/sign-in';
 
 import "./vendor/styles.scss";
+import SignUpPage from './pages/sign-up/sign-up';
 
 const routes: {[key: string]: Page} = {
     "/500": ServerError,
     "/404": PageNotFound,
     "/sign-in": SignInPage,
+    "/sign-up": SignUpPage,
 };
   
 window.onload = function (evt) {
