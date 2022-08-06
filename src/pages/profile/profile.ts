@@ -12,17 +12,7 @@ import { IBlockProps } from "../../modules/types/types";
 import Button from "../../components/button/button";
 import Link from "../../components/link/link";
 import Errors from "../../components/errors/errors";
-import FormComponent from "../../components/user-form/user-form";
-
-import ButtonTemplate from "../../components/button/button.tmpl";
-import LinkTemplate from "../../components/link/link.tmpl";
-import EditTemplate from "../../components/edit-input/edit-input.tmpl";
-import PopupTemplate from "../../components/popup/popup.tmpl";
 import EditInput from "../../components/edit-input/edit-input";
-Handlebars.registerPartial("link", LinkTemplate);
-Handlebars.registerPartial("edit", EditTemplate);
-Handlebars.registerPartial("popup", PopupTemplate);
-Handlebars.registerPartial("button", ButtonTemplate);
 
 class ProfileBlock extends Block {
     constructor(props: IBlockProps) {
@@ -104,7 +94,8 @@ const block = new ProfileBlock({
     events: {
         'submit': (e) => form.onSubmit(e, console.log),
     },
-    attributes: {noValidate: true}
+    attributes: {noValidate: true},
+    first_name: "Александр"
 });
 
 const ProfliePage = new Page(block, {

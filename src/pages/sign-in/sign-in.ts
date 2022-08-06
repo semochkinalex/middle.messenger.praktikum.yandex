@@ -13,7 +13,6 @@ import { IBlockProps } from "../../modules/types/types";
 import Button from "../../components/button/button";
 import Link from "../../components/link/link";
 import Errors from "../../components/errors/errors";
-import FormComponent from "../../components/user-form/user-form";
 
 class SignInBlock extends Block {
     constructor(props: IBlockProps) {

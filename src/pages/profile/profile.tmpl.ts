@@ -20,7 +20,7 @@ export default `
         <button class={{styles.return}}></button>
         </div>
         </main>
-        `;
+`;
         // {{> popup title="Сохранить изменения" button="Сохранить"}}
         
         // {{> edit name="Почта" currentValue="pochta@gmail.ru" fieldName="email" }}

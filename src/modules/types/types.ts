@@ -29,3 +29,13 @@ export interface IValidationProperties {
 
 export type TFormValues = {[key: string]: string | number};
 export type TFormErrors = {[key: string]: string};
+
+export interface IChatPreview extends IBlockProps {
+    username: string;
+    avatar: string;
+    timestamp: string;
+    latestMessage: string;
+    repliedTo?: boolean;
+    isSelected: boolean;
+    unreadMessagesCount: number;
+}

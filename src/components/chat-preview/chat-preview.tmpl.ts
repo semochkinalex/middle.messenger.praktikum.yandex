@@ -1,11 +1,6 @@
 import * as styles from "./chat-preview.module.scss";
 
 export default `
-    {{#if isSelected}}
-        <li class="${styles.chat} ${styles.selected}">
-    {{else}}
-        <li class="${styles.chat}">
-    {{/if}}
         {{#if avatar}}
             <img class="${styles.avatar}" alt="{{username}} avatar" src={{avatar}} />
         {{else}}
@@ -26,5 +21,4 @@ export default `
                 <p class="${styles.count}">{{unreadMessagesCount}}</p>
             {{/if}}
         </div>
-    </li>
 `;

@@ -1,5 +1,4 @@
 export default `
-    <main class={{styles.main}}>
         <nav class={{styles.navbar}}>
             <div class={{styles.profile}}>
                 <div class={{styles.credentials}}>
@@ -13,10 +12,7 @@ export default `
             </div>
             <input type="text" placeholder="Поиск" class={{styles.search}} />
             <div class={{styles.divider}}></div>
-            <ul class={{styles.list}}>
-                {{#each chats}}
-                    {{> chat}}
-                {{/each}}
+            <ul class="{{styles.list}} list">
             </ul>
         </nav>
         <section class={{styles.chat}}>
@@ -28,15 +24,14 @@ export default `
                     </div>
                     <button class={{styles.more}}></button>
                 </div>
-                {{> chatbox chat=selectedChat}}
-                <div class={{styles.handlebar}}>
+                <ul class="messages {{styles.messages}}"></ul>
+                <form class="{{styles.handlebar}} handlebar">
                     <button class={{styles.attatch}}></button>
-                    <input class={{styles.input}} name="message" placeholder="Сообщение" />
-                    <button class={{styles.send}}></button>
-                </div>
+                    <input class="input {{styles.input}}" name="message" placeholder="Сообщение" />
+                    <button class={{styles.send}} type="submit"></button>
+                </form>
             {{else}}
                 <p class={{styles.empty}}>Выберите чат чтобы отправить сообщение</p>
             {{/if}}
         </section>
-    </main>
 `;
