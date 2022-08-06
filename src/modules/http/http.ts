@@ -5,7 +5,7 @@ const enum METHODS {
     POST = 'POST',
     PUT = 'PUT',
     DELETE = 'DELETE',
-};
+}
 
 // Самая простая версия. Реализовать штучку со всеми проверками им предстоит в конце спринта
 // Необязательный метод
@@ -21,7 +21,7 @@ function queryStringify(data: Document | XMLHttpRequestBodyInit | null | undefin
     }, '?');
 }
 
-class HTTPTransport {
+export default class HTTPTransport {
     get = (url: string, options: IRequest = {}) => {
              
             return this.request(url, {...options, method: METHODS.GET}, options.timeout ?? 0);

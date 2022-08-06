@@ -1,9 +1,8 @@
-const Handlebars = require("handlebars");
-
+import Handlebars from "handlebars";
 
 import SignInTemplate from "./profile.tmpl";
 
-// @ts-ignore 
+ 
 import * as styles from "./profile.module.scss";
 import Block from "../../modules/view-modules/block";
 import { Page } from "../../modules/view-modules/page";
@@ -29,35 +28,35 @@ const rules = {
 
         // /^[А-Я][а-яА-Я]{2,19}/
         if (typeof value !== 'string') return "Input must be a string.";
-        if (!Boolean(new RegExp(/(?=.*[a-zA-Z])[a-zA-Z\_\-0-9]{2,19}/).test(value))) return "Login Must have 3-20 characters with no special symbols (only '_' and '-' accepted) in latin";
+        if (!new RegExp(/(?=.*[a-zA-Z])[a-zA-Z\_\-0-9]{2,19}/).test(value)) return "Login Must have 3-20 characters with no special symbols (only '_' and '-' accepted) in latin";
         return '';
     },
     display_name: (value: string) => {
         if (typeof value !== 'string') return "Input must be a string.";
-        if (!Boolean(new RegExp(/^[А-Я\_][а-яА-Я\_]{2,19}/).test(value))) return "First Name have 3-20 characters with no special symbols in cyrillic starting with a capital letter.";
+        if (!new RegExp(/^[А-Я\_][а-яА-Я\_]{2,19}/).test(value)) return "First Name have 3-20 characters with no special symbols in cyrillic starting with a capital letter.";
         return '';
     },
     first_name: (value: string) => {
         if (typeof value !== 'string') return "Input must be a string.";
-        if (!Boolean(new RegExp(/^[А-Я\_][а-яА-Я\_]{2,19}/).test(value))) return "First Name have 3-20 characters with no special symbols in cyrillic starting with a capital letter.";
+        if (!new RegExp(/^[А-Я\_][а-яА-Я\_]{2,19}/).test(value)) return "First Name have 3-20 characters with no special symbols in cyrillic starting with a capital letter.";
         return '';
     },
 
     second_name: (value: string) => {
         if (typeof value !== 'string') return "Input must be a string.";
-        if (!Boolean(new RegExp(/^[А-Я][а-яА-Я]{2,19}/).test(value))) return "Second Name have 3-20 characters with no special symbols in cyrillic starting with a capital letter.";
+        if (!new RegExp(/^[А-Я][а-яА-Я]{2,19}/).test(value)) return "Second Name have 3-20 characters with no special symbols in cyrillic starting with a capital letter.";
         return '';
     },
 
     email: (value: string) => {
         if (typeof value !== 'string') return "Input must be a string.";
-        if (!Boolean(new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(value))) return "Invalid email provided.";
+        if (!new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(value)) return "Invalid email provided.";
         return '';
     },
 
     phone: (value: string) => {
         if (typeof value !== 'string') return "Input must be a string.";
-        if (!Boolean(new RegExp(/^\+?\d{9,15}$/).test(value))) return "Phone number is invalid.";
+        if (!new RegExp(/^\+?\d{9,15}$/).test(value)) return "Phone number is invalid.";
         return '';
     },
 };

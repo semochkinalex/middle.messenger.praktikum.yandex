@@ -173,7 +173,7 @@ export default class Block {
         return this.element;
     }
 
-    public render() {};
+    public render() {}
 
     private _makePropsProxy(props: IBlockProps) {
         const proxyProps = new Proxy(props, {

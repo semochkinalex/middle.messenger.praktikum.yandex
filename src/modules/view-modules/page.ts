@@ -4,9 +4,9 @@ import { IPageChildren } from "../types/types";
 export class Page {
     private _parent: Block;
     private _children?: IPageChildren;
-    private _selector: string = '.body';
+    private _selector = '.body';
 
-    constructor(parent: Block, children?: IPageChildren, selector: string = '.body') {
+    constructor(parent: Block, children?: IPageChildren, selector = '.body') {
         this._parent = parent;
         this._children = children;
         this._selector = selector;

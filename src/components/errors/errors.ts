@@ -2,7 +2,7 @@ import Handlebars from 'handlebars';
 import Template from './errors.tmpl';
 import Block from "../../modules/view-modules/block";
 
-// @ts-ignore
+
 import * as styles from "./errors.module.scss";
 
 import { IBlockProps } from "../../modules/types/types";

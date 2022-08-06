@@ -2,9 +2,6 @@ import Template from './link.tmpl';
 import Handlebars from 'handlebars';
 import Block from "../../modules/view-modules/block";
 
-// @ts-ignore
-import * as styles from "./link.module.scss";
-
 import { IBlockProps } from "../../modules/types/types";
 
 export default class Link extends Block {

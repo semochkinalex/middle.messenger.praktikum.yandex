@@ -1,4 +1,4 @@
-const Handlebars = require("handlebars");
+import Handlebars from "handlebars";
 import ChatsTemplate from "./chats.tmpl";
 import * as styles from "./chats.module.scss";
 
@@ -7,8 +7,6 @@ import { IBlockProps, IChatPreview } from "../../modules/types/types";
 import { Page } from "../../modules/view-modules/page";
 import ChatPreview from "../../components/chat-preview/chat-preview";
 import Message from "../../components/message/message";
-
-const template = Handlebars.compile(ChatsTemplate);
 
 const chats = [
   {

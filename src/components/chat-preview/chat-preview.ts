@@ -2,7 +2,7 @@ import Handlebars from 'handlebars';
 import Template from './chat-preview.tmpl';
 import Block from "../../modules/view-modules/block";
 
-// @ts-ignore
+
 import * as styles from "./chat-preview.module.scss";
 import { IChatPreview } from '../../modules/types/types';
 

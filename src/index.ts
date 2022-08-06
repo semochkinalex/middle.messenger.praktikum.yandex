@@ -1,5 +1,3 @@
-// import SignInPage from "./pages/sign-in/sign-in.js";
-
 import {Page} from './modules/view-modules/page';
 
 import ServerError from './pages/500/500';
@@ -22,7 +20,7 @@ const routes: {[key: string]: Page} = {
     "/chats": ChatsPage,
 };
   
-window.onload = function (evt) {
+window.onload = function () {
   const path = window.location.pathname as string;
 
   if (Object.keys(routes).find((el) => el === path)) {

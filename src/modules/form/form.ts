@@ -1,4 +1,3 @@
-import Block from "../view-modules/block";
 import { IValidationProperties, TFormErrors, TFormHandler, TFormValues } from "../types/types";
 
 export default class Form {
@@ -56,19 +55,19 @@ export default class Form {
                 valid = false;
                 break;
             }
-        };
+        }
 
         return valid;
     }
 
-    public handleChange(event: any) {
+    public handleChange(event: Event) {
         const target = event?.currentTarget;
 
         if (!target) return;
 
         this._values = {
             ...this._values,
-            [target.name]: target.value,
+            [target?.name]: target?.value,
         };
 
     }

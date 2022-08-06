@@ -1,8 +1,7 @@
-const Handlebars = require("handlebars");
-
+import Handlebars from "handlebars";
 import ServerErrorTemplate from "./500.tmpl";
 
-// @ts-ignore 
+ 
 import * as styles from "./500.module.scss";
 import Block from "../../modules/view-modules/block";
 import { Page } from "../../modules/view-modules/page";

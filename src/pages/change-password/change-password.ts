@@ -1,9 +1,8 @@
-const Handlebars = require("handlebars");
-
+import Handlebars from "handlebars";
 
 import SignInTemplate from "./change-password.tmpl";
 
-// @ts-ignore 
+ 
 import * as styles from "./change-password.module.scss";
 import Input from "../../components/input/input";
 import Block from "../../modules/view-modules/block";
@@ -27,7 +26,7 @@ class ChangePassword extends Block {
 const rules = {
     password: (value: string) => {
         if (typeof value !== 'string') return "Input must be a string.";
-        if (!Boolean(new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/).test(value))) return "Password should have at least 8 characters, one number, one uppercase letter and one lowercase letter.";
+        if (!new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/).test(value)) return "Password should have at least 8 characters, one number, one uppercase letter and one lowercase letter.";
         return '';
     },
     password_repeat: (value: string, values: TFormValues) => {
@@ -37,7 +36,7 @@ const rules = {
     },
     new_password: (value: string) => {
         if (typeof value !== 'string') return "Input must be a string.";
-        if (!Boolean(new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/).test(value))) return "New Password should have at least 8 characters, one number, one uppercase letter and one lowercase letter.";
+        if (!new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/).test(value)) return "New Password should have at least 8 characters, one number, one uppercase letter and one lowercase letter.";
         return '';
     },
 };
