@@ -39,3 +39,11 @@ export interface IChatPreview extends IBlockProps {
     isSelected: boolean;
     unreadMessagesCount: number;
 }
+
+export interface IRequest {
+    [key: string]: unknown;
+    data?: Document | XMLHttpRequestBodyInit | null | undefined;
+    timeout?: number;
+    headers?: object;
+    method?: "GET" | "PUT" | "DELETE" | "POST" | "PATCH"
+}
