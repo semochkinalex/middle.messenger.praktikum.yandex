@@ -1,5 +1,5 @@
 import Handlebars from "handlebars";
-import Block from "../../modules/view-modules/block";
+import Block from "../../modules/core/block";
 
 import * as styles from "./edit-input.module.scss";
 
@@ -15,5 +15,3 @@ export default class EditInput extends Block {
     return Handlebars.compile(editInputTmpl)(this.props);
   }
 }
-
-// set component with children

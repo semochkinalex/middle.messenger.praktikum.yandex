@@ -73,7 +73,6 @@ export default class Block {
     ) {
       for (const [attribute, value] of Object.entries(this.props.attributes)) {
         if (value === false) {
-          // console.log(value);
           targetedElement?.removeAttribute(attribute);
         } else {
           targetedElement?.setAttribute(attribute, value.toString());

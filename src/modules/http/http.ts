@@ -7,8 +7,6 @@ const enum METHODS {
   DELETE = "DELETE",
 }
 
-// Самая простая версия. Реализовать штучку со всеми проверками им предстоит в конце спринта
-// Необязательный метод
 function queryStringify(
   data: Document | XMLHttpRequestBodyInit | null | undefined
 ) {
@@ -16,7 +14,6 @@ function queryStringify(
     throw new Error("Data must be object");
   }
 
-  // Здесь достаточно и [object Object] для объекта
   const keys = Object.keys(data);
   return keys.reduce((result, key, index) => {
     return `${result}${key}=${data[key as keyof typeof data]}${
@@ -30,7 +27,6 @@ export default class HTTPTransport {
     return this.request(
       url,
       { ...options, method: METHODS.GET },
-      options.timeout ?? 0
     );
   };
 
@@ -38,7 +34,6 @@ export default class HTTPTransport {
     return this.request(
       url,
       { ...options, method: METHODS.POST },
-      options.timeout ?? 0
     );
   };
 
@@ -46,7 +41,6 @@ export default class HTTPTransport {
     return this.request(
       url,
       { ...options, method: METHODS.PUT },
-      options.timeout ?? 0
     );
   };
 
@@ -54,12 +48,11 @@ export default class HTTPTransport {
     return this.request(
       url,
       { ...options, method: METHODS.DELETE },
-      options.timeout ?? 0
     );
   };
 
-  request = (url: string, options: IRequest = {}, timeout = 5000) => {
-    const { headers = {}, method, data } = options;
+  request = (url: string, options: IRequest = {}) => {
+    const { headers = {}, method, timeout = 5000, data } = options;
 
     return new Promise(function (resolve, reject) {
       if (!method) {

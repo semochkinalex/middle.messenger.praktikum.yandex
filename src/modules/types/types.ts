@@ -1,4 +1,4 @@
-import Block from "../view-modules/block";
+import Block from "../core/block";
 
 export type TFormHandler = (a: TFormValues, b: TFormErrors) => void;
 
@@ -43,7 +43,7 @@ export interface IChatPreview extends IBlockProps {
 export interface IRequest {
   [key: string]: unknown;
   data?: Document | XMLHttpRequestBodyInit | null | undefined;
-  timeout?: number;
   headers?: object;
+  timeout?: number;
   method?: "GET" | "PUT" | "DELETE" | "POST" | "PATCH";
 }

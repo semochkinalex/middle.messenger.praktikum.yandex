@@ -2,9 +2,9 @@ import Handlebars from "handlebars";
 import ChatsTemplate from "./chats.tmpl";
 import * as styles from "./chats.module.scss";
 
-import Block from "../../modules/view-modules/block";
+import Block from "../../modules/core/block";
 import { IBlockProps, IChatPreview } from "../../modules/types/types";
-import { Page } from "../../modules/view-modules/page";
+import { Page } from "../../modules/core/page";
 import ChatPreview from "../../components/chat-preview/chat-preview";
 import Message from "../../components/message/message";
 
@@ -44,7 +44,6 @@ const selectedChat = {
             1942, I take you back in that 'Rari`,
       timestamp: "18:19",
       isRecieved: true,
-      // isSeen: true
     },
     {
       message: `Okay, I pull up, hop out at the after party

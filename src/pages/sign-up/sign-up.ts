@@ -4,8 +4,8 @@ import SignInTemplate from "./sign-up.tmpl";
 import * as styles from "./sign-up.module.scss";
 
 import Input from "../../components/input/input";
-import Block from "../../modules/view-modules/block";
-import { Page } from "../../modules/view-modules/page";
+import Block from "../../modules/core/block";
+import { Page } from "../../modules/core/page";
 import Form from "../../modules/form/form";
 import { IBlockProps, TFormValues } from "../../modules/types/types";
 import Button from "../../components/button/button";
@@ -23,13 +23,7 @@ class SignUpBlock extends Block {
 }
 
 const rules = {
-  login: (value: string) => {
-    // /^[А-Я][а-яА-Я]{2,19}/
-    if (typeof value !== "string") return "Input must be a string.";
-    if (!new RegExp(/(?=.*[a-zA-Z])[a-zA-Z\_\-0-9]{2,19}/).test(value))
-      return "Login Must have 3-20 characters with no special symbols (only '_' and '-' accepted) in latin";
-    return "";
-  },
+
 
   first_name: (value: string) => {
     if (typeof value !== "string") return "Input must be a string.";

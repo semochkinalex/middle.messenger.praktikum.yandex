@@ -20,7 +20,6 @@ export default class Form {
     this._rules = rules;
     this._handler = handler;
 
-    // console.log(defaultValues);
     this._values = defaultValues ?? {};
 
     this.isCurrentFieldValid = this.isCurrentFieldValid.bind(this);
@@ -29,8 +28,7 @@ export default class Form {
     this.onSubmit = this.onSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-
-  // function or regex
+  
   public isValidField(value: string | number, name: string): boolean {
     if (!this._rules[name]) return true;
     const message = this._rules[name](value, this._values);

@@ -2,8 +2,8 @@ import Handlebars from "handlebars";
 import NotFoundTemplate from "./404.tmpl";
 
 import * as styles from "./404.module.scss";
-import Block from "../../modules/view-modules/block";
-import { Page } from "../../modules/view-modules/page";
+import Block from "../../modules/core/block";
+import { Page } from "../../modules/core/page";
 import Link from "../../components/link/link";
 
 class PageNotFoundBlock extends Block {

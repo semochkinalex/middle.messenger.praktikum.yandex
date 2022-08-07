@@ -1,6 +1,6 @@
 import Template from "./link.tmpl";
 import Handlebars from "handlebars";
-import Block from "../../modules/view-modules/block";
+import Block from "../../modules/core/block";
 
 import * as styles from './link.module.scss';
 

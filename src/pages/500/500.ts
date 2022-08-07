@@ -2,8 +2,8 @@ import Handlebars from "handlebars";
 import ServerErrorTemplate from "./500.tmpl";
 
 import * as styles from "./500.module.scss";
-import Block from "../../modules/view-modules/block";
-import { Page } from "../../modules/view-modules/page";
+import Block from "../../modules/core/block";
+import { Page } from "../../modules/core/page";
 import Link from "../../components/link/link";
 
 class ServerErrorBlock extends Block {

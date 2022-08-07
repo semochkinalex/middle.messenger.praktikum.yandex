@@ -1,6 +1,6 @@
 import Handlebars from "handlebars";
 import Template from "./errors.tmpl";
-import Block from "../../modules/view-modules/block";
+import Block from "../../modules/core/block";
 
 import * as styles from "./errors.module.scss";
 
@@ -19,5 +19,3 @@ export default class Errors extends Block {
     return Handlebars.compile(Template)({ ...this.props, styles });
   }
 }
-
-// set component with children

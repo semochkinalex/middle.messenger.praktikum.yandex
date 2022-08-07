@@ -58,34 +58,3 @@ export class Page {
     }
   }
 }
-
-// Page('.main', alert, {
-//  '.button': [boomer, button]
-// })
-
-// export const attachComponent = (element: Block | Block[], selector: string, parent?: Block) => {
-//     let target;
-
-//     if (parent) {
-//         parent.setChild(element, selector);
-//         target = parent.element;
-//     } else {
-//         target = document;
-//     }
-
-//     let content: DocumentFragment | HTMLElement;
-//     if (Array.isArray(element)) {
-//         content = document.createDocumentFragment();
-//         element.forEach(block => content.append(block.element));
-//     } else {
-//         content = element.element;
-//     }
-
-//     const root = target.querySelector(selector);
-
-//     if (root) {
-//         root.appendChild(content);
-//     } else {
-//         throw new Error(`Couldn't add ${selector}`);
-//     }
-// };

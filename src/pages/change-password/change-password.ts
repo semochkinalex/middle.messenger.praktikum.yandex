@@ -4,8 +4,8 @@ import SignInTemplate from "./change-password.tmpl";
 
 import * as styles from "./change-password.module.scss";
 import Input from "../../components/input/input";
-import Block from "../../modules/view-modules/block";
-import { Page } from "../../modules/view-modules/page";
+import Block from "../../modules/core/block";
+import { Page } from "../../modules/core/page";
 import Form from "../../modules/form/form";
 import { IBlockProps, TFormValues } from "../../modules/types/types";
 import Button from "../../components/button/button";

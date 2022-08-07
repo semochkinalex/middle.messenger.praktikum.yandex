@@ -1,5 +1,5 @@
 import Handlebars from "handlebars";
-import Block from "../../modules/view-modules/block";
+import Block from "../../modules/core/block";
 
 import * as styles from "./input.module.scss";
 
@@ -24,5 +24,3 @@ export default class Input extends Block {
     return Handlebars.compile("")(this.props);
   }
 }
-
-// set component with children

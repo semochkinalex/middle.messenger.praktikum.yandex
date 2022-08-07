@@ -3,8 +3,8 @@ import Handlebars from "handlebars";
 import SignInTemplate from "./profile.tmpl";
 
 import * as styles from "./profile.module.scss";
-import Block from "../../modules/view-modules/block";
-import { Page } from "../../modules/view-modules/page";
+import Block from "../../modules/core/block";
+import { Page } from "../../modules/core/page";
 import Form from "../../modules/form/form";
 import { IBlockProps } from "../../modules/types/types";
 import Button from "../../components/button/button";
@@ -24,7 +24,6 @@ class ProfileBlock extends Block {
 
 const rules = {
   login: (value: string) => {
-    // /^[А-Я][а-яА-Я]{2,19}/
     if (typeof value !== "string") return "Input must be a string.";
     if (!new RegExp(/(?=.*[a-zA-Z])[a-zA-Z\_\-0-9]{2,19}/).test(value))
       return "Login Must have 3-20 characters with no special symbols (only '_' and '-' accepted) in latin";

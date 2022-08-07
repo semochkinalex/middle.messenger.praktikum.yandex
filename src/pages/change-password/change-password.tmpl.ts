@@ -8,9 +8,3 @@ export default `
         </div>
         </form>
 `;
-// {{> input name="old_password" placeholder="Старый пароль" type="password" }}
-// {{> input name="password" placeholder="Новый пароль" type="password" }}
-// {{> input name="repeat_password" placeholder="Повторите новый пароль" type="password" }}
-
-// {{> button text="Поменять пароль"}}
-// {{> link text="Вернуться в профиль" className=styles.linker anchor="/profile" }}

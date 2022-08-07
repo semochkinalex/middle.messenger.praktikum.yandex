@@ -1,4 +1,4 @@
-import {Page} from './modules/view-modules/page';
+import {Page} from './modules/core/page';
 
 import ServerError from './pages/500/500';
 import PageNotFound from './pages/404/404';

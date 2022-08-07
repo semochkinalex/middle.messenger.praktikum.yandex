@@ -1,6 +1,6 @@
 import Handlebars from "handlebars";
 import Template from "./message.tmpl";
-import Block from "../../modules/view-modules/block";
+import Block from "../../modules/core/block";
 
 import * as styles from "./message.module.scss";
 import { IBlockProps } from "../../modules/types/types";
