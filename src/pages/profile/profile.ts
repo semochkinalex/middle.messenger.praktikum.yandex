@@ -11,6 +11,7 @@ import Button from "../../components/button/button";
 import Link from "../../components/link/link";
 import Errors from "../../components/errors/errors";
 import EditInput from "../../components/edit-input/edit-input";
+import { emailRegexp, firstNameRegexp, loginRegexp, phoneRegexp, secondNameRegexp } from "../../modules/helpers/regex";
 
 class ProfileBlock extends Block {
   constructor(props: IBlockProps) {
@@ -22,46 +23,46 @@ class ProfileBlock extends Block {
   }
 }
 
-const rules = {
-  login: (value: string) => {
+const errorMessages = {
+  login: (value: string): string => {
     if (typeof value !== "string") return "Input must be a string.";
-    if (!new RegExp(/(?=.*[a-zA-Z])[a-zA-Z\_\-0-9]{2,19}/).test(value))
+    if (!new RegExp(loginRegexp).test(value))
       return "Login Must have 3-20 characters with no special symbols (only '_' and '-' accepted) in latin";
     return "";
   },
-  display_name: (value: string) => {
+  display_name: (value: string): string => {
     if (typeof value !== "string") return "Input must be a string.";
-    if (!new RegExp(/^[А-Я\_][а-яА-Я\_]{2,19}/).test(value))
+    if (!new RegExp(firstNameRegexp).test(value))
       return "First Name have 3-20 characters with no special symbols in cyrillic starting with a capital letter.";
     return "";
   },
-  first_name: (value: string) => {
+  first_name: (value: string): string => {
     if (typeof value !== "string") return "Input must be a string.";
-    if (!new RegExp(/^[А-Я\_][а-яА-Я\_]{2,19}/).test(value))
+    if (!new RegExp(firstNameRegexp).test(value))
       return "First Name have 3-20 characters with no special symbols in cyrillic starting with a capital letter.";
     return "";
   },
 
-  second_name: (value: string) => {
+  second_name: (value: string): string => {
     if (typeof value !== "string") return "Input must be a string.";
-    if (!new RegExp(/^[А-Я][а-яА-Я]{2,19}/).test(value))
+    if (!new RegExp(secondNameRegexp).test(value))
       return "Second Name have 3-20 characters with no special symbols in cyrillic starting with a capital letter.";
     return "";
   },
 
-  email: (value: string) => {
+  email: (value: string): string => {
     if (typeof value !== "string") return "Input must be a string.";
     if (
-      !new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(value)
+      !new RegExp(emailRegexp).test(value)
     )
-      return "Invalid email provided.";
+    return "Invalid email provided.";
     return "";
   },
 
-  phone: (value: string) => {
+  phone: (value: string): string => {
     if (typeof value !== "string") return "Input must be a string.";
-    if (!new RegExp(/^\+?\d{9,15}$/).test(value))
-      return "Phone number is invalid.";
+    if (!new RegExp(phoneRegexp).test(value))
+    return "Phone number is invalid.";
     return "";
   },
 };
@@ -97,7 +98,7 @@ const form = new Form(
       errors: Object.values(errors),
     });
   },
-  rules,
+  errorMessages,
   defaultValues
 );
 

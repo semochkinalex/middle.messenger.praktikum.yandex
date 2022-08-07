@@ -12,7 +12,6 @@ export default class Button extends Block {
   }
 
   render() {
-    console.log;
     return Handlebars.compile(Template)(this.props);
   }
 }

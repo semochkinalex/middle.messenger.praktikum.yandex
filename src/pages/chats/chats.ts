@@ -86,7 +86,6 @@ const ChatsBlock = new Chats({
       const message = (<HTMLInputElement>document?.querySelector(".input"))
         .value;
       if (!message) return;
-      console.log(message);
     },
   },
 });

@@ -10,14 +10,14 @@ export default class Form {
   private _errors: TFormErrors;
   private _handler: TFormHandler;
 
-  private _rules: IValidationProperties = {};
+  private _errorMessages: IValidationProperties = {};
 
   constructor(
     handler: TFormHandler,
-    rules: IValidationProperties,
+    errorMessages: IValidationProperties,
     defaultValues?: TFormValues
   ) {
-    this._rules = rules;
+    this._errorMessages = errorMessages;
     this._handler = handler;
 
     this._values = defaultValues ?? {};
@@ -30,8 +30,8 @@ export default class Form {
   }
   
   public isValidField(value: string | number, name: string): boolean {
-    if (!this._rules[name]) return true;
-    const message = this._rules[name](value, this._values);
+    if (!this._errorMessages[name]) return true;
+    const message = this._errorMessages[name](value, this._values);
 
     if (!message) {
       console.log(message);

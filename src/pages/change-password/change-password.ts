@@ -22,11 +22,11 @@ class ChangePassword extends Block {
   }
 }
 
-const rules = {
-  password: (value: string) => {
+const errorMessages = {
+  password: (value: string): string => {
     if (typeof value !== "string") return "Input must be a string.";
     if (
-      !new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/).test(value)
+      !new RegExp(passwordRegexp).test(value)
     )
       return "Password should have at least 8 characters, one number, one uppercase letter and one lowercase letter.";
     return "";
@@ -37,10 +37,10 @@ const rules = {
       return "New passwords should match each other";
     return "";
   },
-  new_password: (value: string) => {
+  new_password: (value: string): string => {
     if (typeof value !== "string") return "Input must be a string.";
     if (
-      !new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/).test(value)
+      !new RegExp(passwordRegexp).test(value)
     )
       return "New Password should have at least 8 characters, one number, one uppercase letter and one lowercase letter.";
     return "";
@@ -66,7 +66,7 @@ const form = new Form((values, errors) => {
   ErrorComponent.setProps({
     errors: Object.values(errors),
   });
-}, rules);
+}, errorMessages);
 
 const block = new ChangePassword({
   events: {

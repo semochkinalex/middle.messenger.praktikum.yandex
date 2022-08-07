@@ -11,6 +11,7 @@ import { IBlockProps, TFormValues } from "../../modules/types/types";
 import Button from "../../components/button/button";
 import Link from "../../components/link/link";
 import Errors from "../../components/errors/errors";
+import { emailRegexp, firstNameRegexp, passwordRegexp, phoneRegexp, secondNameRegexp } from "../../modules/helpers/regex";
 
 class SignUpBlock extends Block {
   constructor(props: IBlockProps) {
@@ -22,45 +23,40 @@ class SignUpBlock extends Block {
   }
 }
 
-const rules = {
+const errorMessages = {
 
 
-  first_name: (value: string) => {
+  first_name: (value: string): string => {
     if (typeof value !== "string") return "Input must be a string.";
-    if (!new RegExp(/^[А-Я\_][а-яА-Я\_]{2,19}/).test(value))
+    if (!new RegExp(firstNameRegexp).test(value))
       return "First Name have 3-20 characters with no special symbols in cyrillic starting with a capital letter.";
     return "";
   },
 
-  second_name: (value: string) => {
+  second_name: (value: string): string => {
     if (typeof value !== "string") return "Input must be a string.";
-    if (!new RegExp(/^[А-Я][а-яА-Я]{2,19}/).test(value))
+    if (!new RegExp(secondNameRegexp).test(value))
       return "Second Name have 3-20 characters with no special symbols in cyrillic starting with a capital letter.";
     return "";
   },
 
-  email: (value: string) => {
+  email: (value: string): string => {
     if (typeof value !== "string") return "Input must be a string.";
-    if (
-      !new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(value)
-    )
-      return "Invalid email provided.";
+    if (!new RegExp(emailRegexp).test(value)) return "Invalid email provided.";
     return "";
   },
 
-  phone: (value: string) => {
+  phone: (value: string): string => {
     if (typeof value !== "string") return "Input must be a string.";
-    if (!new RegExp(/^\+?\d{9,15}$/).test(value))
+    if (!new RegExp(phoneRegexp).test(value))
       return "Phone number is invalid.";
     return "";
   },
 
-  password: (value: string) => {
+  password: (value: string): string => {
     if (typeof value !== "string") return "Input must be a string.";
-    if (
-      !new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/).test(value)
-    )
-      return "Password should have at least 8 characters, one number, one uppercase letter and one lowercase letter.";
+    if (!new RegExp(passwordRegexp).test(value))
+    return "Password should have at least 8 characters, one number, one uppercase letter and one lowercase letter.";
     return "";
   },
   password_repeat: (value: string, values: TFormValues) => {
@@ -89,7 +85,7 @@ const form = new Form((values, errors) => {
   ErrorComponent.setProps({
     errors: Object.values(errors),
   });
-}, rules);
+}, errorMessages);
 
 const block = new SignUpBlock({
   events: {
