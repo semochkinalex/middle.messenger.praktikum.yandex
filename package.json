@@ -2,9 +2,9 @@
   "name": "messenger",
   "version": "1.0.0",
   "description": "figma - https://www.figma.com/file/I0ni58kYsEFtFYpAyQmGcx/Chat_external_link-(Copy)?node-id=0%3A1",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "start": "node app.js",
+    "start": "ts-node app.ts",
     "dev": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -41,11 +41,21 @@
   "devDependencies": {
     "@parcel/transformer-css": "2.6.2",
     "@parcel/transformer-sass": "2.6.2",
+    "@types/express": "^4.17.13",
+    "@typescript-eslint/eslint-plugin": "5.32.0",
+    "@typescript-eslint/parser": "5.32.0",
     "cssnano": "5.1.12",
+    "eslint": "8.21.0",
+    "eslint-config-airbnb": "19.0.4",
     "parcel": "2.6.2",
     "postcss": "8.4.14",
     "postcss-cli": "10.0.0",
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "stylelint": "^14.9.1",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-scss": "^4.3.0",
+    "ts-node": "^10.9.1",
+    "typescript": "4.7.4"
   },
   "dependencies": {
     "express": "4.18.1",

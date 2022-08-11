@@ -70,12 +70,17 @@
   flex-direction: column;
   gap: 10px;
 }
-
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 .links {
   border-top: 1px solid $light-gray;
   display: flex;
   justify-content: flex-end;
   padding: 10px 0;
+  gap: 15px;
 }
 
 .link {
@@ -135,4 +140,23 @@
 
 .return:hover {
   cursor: pointer;
+}
+
+.save {
+  color: $blue;
+  width: fit-content;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  padding: 0;
+  width: fit-content;
+}
+.save:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+.save:disabled {
+  text-decoration: line-through;
+  background-color: transparent;
 }

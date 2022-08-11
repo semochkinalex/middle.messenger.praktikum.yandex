@@ -1,5 +1,15 @@
 @import "../../vendor/variables";
 
+.container {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .input {
   color: white;
   width: 100%;
@@ -8,4 +18,13 @@
   background-color: transparent;
   padding-bottom: 3px;
   border-bottom: 1px solid $blue;
+  height: 30px;
+}
+
+.text {
+  font-size: 12px;
+}
+
+.error {
+  color: #ff2f2f;
 }
