@@ -6,6 +6,8 @@ export class Page {
   private _children?: IPageChildren;
   private _selector = ".body";
 
+  public isHidden: boolean = false;
+
   constructor(parent: Block, children?: IPageChildren, selector = ".body") {
     this._parent = parent;
     this._children = children;
@@ -25,6 +27,17 @@ export class Page {
         }
       }
     }
+  }
+
+  public hide() {
+    this._parent.hide();
+    this.isHidden = true;
+  }
+  
+  public show() {
+    console.log('qwdqwd');
+    this._parent.show();
+    this.isHidden = false;
   }
 
   private _addElement(

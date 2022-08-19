@@ -9,6 +9,8 @@ import SignUpPage from './pages/sign-up/sign-up';
 import ChangePasswordPage from './pages/change-password/change-password';
 import ProfliePage from './pages/profile/profile';
 import ChatsPage from './pages/chats/chats';
+import Route from './modules/router/route';
+import Router from './modules/router/router';
 
 const routes: {[key: string]: Page} = {
     "/500": ServerError,
@@ -19,13 +21,21 @@ const routes: {[key: string]: Page} = {
     "/profile": ProfliePage,
     "/chats": ChatsPage,
 };
-  
-window.onload = function () {
-  const path = window.location.pathname as string;
 
-  if (Object.keys(routes).find((el) => el === path)) {
-      routes[path].render();
-  } else {
-      routes['/404'].render();
-  }
-};
+const router = new Router();
+
+for (const [path, route] of Object.entries(routes)) {
+    router.use(path, route);
+}
+
+router.start();
+// const x = new Route("/sign-in", SignInPage);
+// window.onload = function () {
+//   const path = window.location.pathname as string;
+
+//   if (Object.keys(routes).find((el) => el === path)) {
+//       routes[path].render();
+//   } else {
+//       routes['/404'].render();
+//   }
+// };

@@ -216,7 +216,7 @@ export default class Block {
   }
 
   public show(): void {
-    this._element.style.display = "block";
+    this._element.style.display = "flex";
   }
 
   public hide(): void {
