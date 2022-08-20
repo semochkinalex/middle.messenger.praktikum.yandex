@@ -8,10 +8,10 @@ export default class UserSignInAPI extends BaseAPI {
         super();
     }
 
-    public create(login: string, password: string) {
+    public async create(login: string, password: string) {
         return api.post('/auth/signin', {login, password}, {headers: {
             'Content-Type': 'application/json'
-        }});
+        }})
     }
 }
    

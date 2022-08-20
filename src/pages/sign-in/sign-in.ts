@@ -68,13 +68,14 @@ const api = new UserSignInAPI();
 const router = new Router();
 
 const handleSubmit = (values: TFormValues) => {
-  api.create(values.login, values.password)
+  api.create(values.login as string, values.password as string)
   .then((res) => {
-    router.go('/chats');
-    console.log('success', res);
+    console.log(res);
   })
   .catch((err) => {
-    console.log('err', err)
+    ErrorComponent.setProps({
+      errors: [err.reason]
+    })
   })
 }
 

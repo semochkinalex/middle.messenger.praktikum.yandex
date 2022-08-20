@@ -42,7 +42,7 @@ export default class HTTPTransport {
     return this.request(
       url,
       { ...options, method: METHODS.POST, data: JSON.stringify(body) },
-    );
+    ).then((res) => this._validateCode(res));
   };
 
   put = (url: string, options: IRequest = {}) => {
@@ -64,7 +64,6 @@ export default class HTTPTransport {
 
     if (this._baseURL) {
       url = `${this._baseURL}${url}`
-      console.log(url)
     }
 
     return new Promise(function (resolve, reject) {
@@ -75,7 +74,7 @@ export default class HTTPTransport {
 
       const xhr = new XMLHttpRequest();
       const isGet = method === METHODS.GET;
-      console.log(url);
+
       xhr.open(method, isGet && !!data ? `${url}${queryStringify(data)}` : url);
 
       Object.keys(headers).forEach((key: string) => {
@@ -99,4 +98,15 @@ export default class HTTPTransport {
       }
     });
   };
+
+  private async _validateCode(response: any): Promise<{status: number; responseText: string} | any> {
+    return new Promise((resolve,reject) => {
+      if (response.status.toString()[0] !== '2') {
+        console.log(response)
+        return reject({status: response.status, ...JSON.parse(response.responseText)});
+      } else {
+        return resolve(response);
+      }
+    })
+  }
 }

@@ -34,7 +34,6 @@ export default class Form {
     const message = this._errorMessages[name](value, this._values);
 
     if (!message) {
-      console.log(message);
       delete this._errors[name];
       this._update();
       return true;
