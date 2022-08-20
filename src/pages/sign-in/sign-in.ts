@@ -7,11 +7,13 @@ import Input from "../../components/input/input";
 import Block from "../../modules/core/block";
 import { Page } from "../../modules/core/page";
 import Form from "../../modules/form/form";
-import { IBlockProps } from "../../modules/types/types";
+import { IBlockProps, TFormValues } from "../../modules/types/types";
 import Button from "../../components/button/button";
 import Link from "../../components/link/link";
 import Errors from "../../components/errors/errors";
 import { loginRegexp, passwordRegexp } from "../../modules/helpers/regex";
+import UserSignInAPI from "./sign-in.api";
+import Router from "../../modules/router/router";
 
 class SignInBlock extends Block {
   constructor(props: IBlockProps) {
@@ -62,9 +64,23 @@ const form = new Form((values, errors) => {
   });
 }, errorMessages);
 
+const api = new UserSignInAPI();
+const router = new Router();
+
+const handleSubmit = (values: TFormValues) => {
+  api.create(values.login, values.password)
+  .then((res) => {
+    router.go('/chats');
+    console.log('success', res);
+  })
+  .catch((err) => {
+    console.log('err', err)
+  })
+}
+
 const block = new SignInBlock({
   events: {
-    submit: (e) => form.onSubmit(e, console.log),
+    submit: (e) => form.onSubmit(e, handleSubmit),
   },
   attributes: { noValidate: true },
 });

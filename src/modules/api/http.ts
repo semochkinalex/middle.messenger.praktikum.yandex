@@ -23,17 +23,25 @@ function queryStringify(
 }
 
 export default class HTTPTransport {
+  _baseURL: string;
+
+  constructor(baseURL: string) {
+    this._baseURL = baseURL;
+  }
+
+
   get = (url: string, options: IRequest = {}) => {
+    // console.log(url);
     return this.request(
       url,
       { ...options, method: METHODS.GET },
     );
   };
 
-  post = (url: string, options: IRequest = {}) => {
+  post = (url: string, body: object, options: IRequest = {}) => {
     return this.request(
       url,
-      { ...options, method: METHODS.POST },
+      { ...options, method: METHODS.POST, data: JSON.stringify(body) },
     );
   };
 
@@ -54,6 +62,11 @@ export default class HTTPTransport {
   request = (url: string, options: IRequest = {}) => {
     const { headers = {}, method, timeout = 5000, data } = options;
 
+    if (this._baseURL) {
+      url = `${this._baseURL}${url}`
+      console.log(url)
+    }
+
     return new Promise(function (resolve, reject) {
       if (!method) {
         reject("No method");
@@ -62,7 +75,7 @@ export default class HTTPTransport {
 
       const xhr = new XMLHttpRequest();
       const isGet = method === METHODS.GET;
-
+      console.log(url);
       xhr.open(method, isGet && !!data ? `${url}${queryStringify(data)}` : url);
 
       Object.keys(headers).forEach((key: string) => {

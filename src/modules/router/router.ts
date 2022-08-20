@@ -41,7 +41,7 @@ export default class Router {
       const route = this.getRoute(pathname);
       
       if (!route) {
-        return;
+        return this.go('/404')
       }
       if (this._currentRoute) {
         this._currentRoute.leave();
