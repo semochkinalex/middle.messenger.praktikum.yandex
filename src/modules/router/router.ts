@@ -1,3 +1,4 @@
+import AppState from "../app-state/app-state";
 import { Page } from "../core/page";
 import Route from "./route";
 
@@ -21,8 +22,8 @@ export default class Router {
         Router.__instance = this;
     }
 
-    use(pathname: string, page: Page) {
-        const route = new Route(pathname, page);
+    use(pathname: string, page: Page, isProtected: boolean) {
+        const route = new Route(pathname, page, isProtected);
         this.routes.push(route);
       
         return this;
@@ -43,12 +44,25 @@ export default class Router {
       if (!route) {
         return this.go('/404')
       }
+
       if (this._currentRoute) {
         this._currentRoute.leave();
       }
       
       route.render();
       this._currentRoute = route;
+    }
+
+    update() {
+      if (!this._currentRoute) return;
+      const appState = new AppState({});
+
+      if (this._currentRoute.getPathname() === '/404') return;
+      if (this._currentRoute.getPathname() === '/500') return;
+      
+      // console.log('UPDATE');
+      if (!appState.get()?.user && this._currentRoute.isProtected()) return this.go('/sign-in');
+      if (appState.get()?.user && !this._currentRoute.isProtected()) return this.go('/messenger');
     }
 
     go(pathname: string) {

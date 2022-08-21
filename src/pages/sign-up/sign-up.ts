@@ -12,6 +12,8 @@ import Button from "../../components/button/button";
 import Link from "../../components/link/link";
 import Errors from "../../components/errors/errors";
 import { emailRegexp, firstNameRegexp, passwordRegexp, phoneRegexp, secondNameRegexp } from "../../modules/helpers/regex";
+import UserSignUpAPI from "./sign-up.api";
+import Router from "../../modules/router/router";
 
 class SignUpBlock extends Block {
   constructor(props: IBlockProps) {
@@ -87,9 +89,25 @@ const form = new Form((values, errors) => {
   });
 }, errorMessages);
 
+const api = new UserSignUpAPI();
+const router = new Router();
+
+const handleSubmit = (values: TFormValues) => {
+  api.create(values.first_name as string, values.second_name as string, values.login as string, values.email as string, values.password as string, values.phone as string)
+  .then((res) => {
+    router.go('/messenger');
+    console.log(res);
+  })
+  .catch((err) => {
+    ErrorComponent.setProps({
+      errors: [err.reason]
+    })
+  })
+}
+
 const block = new SignUpBlock({
   events: {
-    submit: (e) => form.onSubmit(e, console.log),
+    submit: (e) => form.onSubmit(e, handleSubmit),
   },
   attributes: { noValidate: true },
 });

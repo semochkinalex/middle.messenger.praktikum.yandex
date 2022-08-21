@@ -5,9 +5,10 @@ export default `
                     <img class={{styles.avatar}} alt="Profile Avatar" src={{avatar}} />
                     <p class={{styles.username}}>{{username}}</p>
                 </div>
-                <div class={{styles.button}}>
-                    <button class="{{styles.actionIcon}} {{styles.settings}}"></button>
-                    <button class="{{styles.actionIcon}} {{styles.exit}}"></button>
+                <div class={{styles.buttons}}>
+                    <a class="{{styles.actionIcon}} {{styles.settings}}" href="/settings"></a>
+                    <div class="exit"></div>
+
                 </div>
             </div>
             <input type="text" placeholder="Поиск" class={{styles.search}} />

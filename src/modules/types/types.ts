@@ -47,3 +47,5 @@ export interface IRequest {
   timeout?: number;
   method?: "GET" | "PUT" | "DELETE" | "POST" | "PATCH";
 }
+
+export interface IAppStateProps {[key: string]: unknown};

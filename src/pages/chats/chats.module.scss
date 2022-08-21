@@ -60,6 +60,7 @@
   height: 24px;
   border: none;
   outline: none;
+  display: flex;
   box-sizing: content-box;
   padding: 3px;
   border-radius: 4px;
@@ -78,9 +79,6 @@
 
 .settings {
   background: url("../../assets/settings-icon.svg") no-repeat center;
-}
-.exit {
-  background: url("../../assets/exit-icon.svg") no-repeat center;
 }
 
 .search {

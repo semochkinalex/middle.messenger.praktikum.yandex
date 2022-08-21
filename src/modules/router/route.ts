@@ -4,19 +4,14 @@ import { isEqual } from "../helpers/helpers";
 import { IBlockProps } from "../types/types";
 
 export default class Route {
-    _pathname: string;
-    // _pageClass: Page;
     _page: Page;
-    
-    // _props: IPageProps;
+    _pathname: string;
+    _isProtected: boolean;
 
-    constructor(pathname: string, page: Page) {
-        // this._page = null;
+    constructor(pathname: string, page: Page, isProtected: boolean = false) {
         this._pathname = pathname;
         this._page = page;
-        // this._pageProps = pageProps;
-        // this._block = null;
-        // this._props = props;
+        this._isProtected = isProtected;
     }
 
     navigate(pathname: string) {
@@ -24,6 +19,14 @@ export default class Route {
             this._pathname = pathname;
             this.render();
         }
+    }
+
+    isProtected() {
+        return this._isProtected;
+    }
+
+    getPathname() {
+        return this._pathname;
     }
 
     leave() {

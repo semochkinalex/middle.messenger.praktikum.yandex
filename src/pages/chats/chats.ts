@@ -7,6 +7,7 @@ import { IBlockProps, IChatPreview } from "../../modules/types/types";
 import { Page } from "../../modules/core/page";
 import ChatPreview from "../../components/chat-preview/chat-preview";
 import Message from "../../components/message/message";
+import ExitButton from "../../components/exit-button/exit-button";
 
 const chats = [
   {
@@ -97,6 +98,7 @@ const ChatsPage = new Page(ChatsBlock, {
   ".messages": selectedChat.messages.map((message) => {
     return new Message(message);
   }),
+  ".exit": new ExitButton(),
 });
 
 export default ChatsPage;

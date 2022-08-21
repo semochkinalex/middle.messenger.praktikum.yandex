@@ -21,7 +21,7 @@ const PageNotFound = new Page(new PageNotFoundBlock(), {
     text: "Назад к чатам",
 
     attributes: {
-      href: "/chats",
+      href: "/messenger",
     },
   }),
 });

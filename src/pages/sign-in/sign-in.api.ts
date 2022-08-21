@@ -12,6 +12,15 @@ export default class UserSignInAPI extends BaseAPI {
         return api.post('/auth/signin', {login, password}, {headers: {
             'Content-Type': 'application/json'
         }})
+        .then((res) => {
+            api.get('/auth/user')
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        })
     }
 }
    

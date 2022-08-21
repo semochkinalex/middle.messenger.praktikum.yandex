@@ -38,7 +38,7 @@ export default class HTTPTransport {
     );
   };
 
-  post = (url: string, body: object, options: IRequest = {}) => {
+  post = (url: string, body: object = {}, options: IRequest = {}) => {
     return this.request(
       url,
       { ...options, method: METHODS.POST, data: JSON.stringify(body) },
@@ -75,6 +75,8 @@ export default class HTTPTransport {
       const xhr = new XMLHttpRequest();
       const isGet = method === METHODS.GET;
 
+      xhr.withCredentials = true;
+
       xhr.open(method, isGet && !!data ? `${url}${queryStringify(data)}` : url);
 
       Object.keys(headers).forEach((key: string) => {
@@ -96,17 +98,33 @@ export default class HTTPTransport {
       } else {
         xhr.send(data);
       }
-    });
+    })
+    .then((res) => {
+      return this._readBody(res);
+    })
   };
 
-  private async _validateCode(response: any): Promise<{status: number; responseText: string} | any> {
-    return new Promise((resolve,reject) => {
-      if (response.status.toString()[0] !== '2') {
-        console.log(response)
-        return reject({status: response.status, ...JSON.parse(response.responseText)});
-      } else {
+  private async _validateCode(response: any): Promise<{status: number; responseText: string} | any | void> {
+    return new Promise<void>((resolve,reject) => {
+      if (response === 'OK') {
+        return resolve();
+      } else if (response?.status?.toString()[0] &&  response?.status?.toString()[0] === '2') {
         return resolve(response);
+      } else {
+        return reject({status: response.status, ...JSON.parse(response.responseText)});
       }
     })
   }
+
+  private _readBody(xhr: XMLHttpRequest) {
+    var data;
+    if (!xhr.responseType || xhr.responseType === "text") {
+        data = xhr.responseText;
+    } else if (xhr.responseType === "document") {
+        data = xhr.responseXML;
+    } else {
+        data = xhr.response;
+    }
+    return data;
+}
 }

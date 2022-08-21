@@ -21,7 +21,7 @@ const ServerErrorPage = new Page(new ServerErrorBlock(), {
     text: "Назад к чатам",
 
     attributes: {
-      href: "/chats",
+      href: "/messenger",
     },
   }),
 });
