@@ -1,9 +1,12 @@
 import { isEqual } from "../helpers/helpers";
 import { IAppStateProps } from "../types/types";
 
+type callback = (state: IAppStateProps) => void;
+
 export default class AppState {
     static __instance: any;
 
+    private _listeners: callback[] = [];
     private _state: IAppStateProps = {};
 
     constructor(initialState: IAppStateProps) {
@@ -21,10 +24,17 @@ export default class AppState {
       if (isEqual(newState, this._state)) return;
       
       this._state = newState;
+      this._listeners.forEach((callback) => {
+        callback(newState);
+      })
     }
 
     public get() {
       return this._state;
+    }
+
+    public setListener(callback: callback) {
+      this._listeners.push(callback);
     }
 
     private _makePropsProxy(props: IAppStateProps) {

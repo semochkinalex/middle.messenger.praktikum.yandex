@@ -12,6 +12,8 @@
   border-bottom: 1px solid $light-gray;
 }
 
+
+
 .fieldset:last-of-type {
   border: none;
 }
@@ -25,9 +27,19 @@
   margin: 0;
   outline: none;
   border: none;
-  color: $light-white;
+  // color: $light-white;
   text-align: right;
+  color: rgb(118, 118, 118);
 }
+
+.currentValue::placeholder {
+  color: rgb(118, 118, 118);
+}
+
+.currentValue:focus {
+  color: white;
+}
+
 
 .group {
   display: flex;

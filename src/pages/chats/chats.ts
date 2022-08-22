@@ -8,6 +8,7 @@ import { Page } from "../../modules/core/page";
 import ChatPreview from "../../components/chat-preview/chat-preview";
 import Message from "../../components/message/message";
 import ExitButton from "../../components/exit-button/exit-button";
+import AppState from "../../modules/app-state/app-state";
 
 const chats = [
   {
@@ -75,8 +76,10 @@ class Chats extends Block {
   }
 }
 
+const appState = new AppState({});
+
 const ChatsBlock = new Chats({
-  username: "fennyflop",
+  username: "Username",
   avatar:
     "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_3x2.jpg",
   chats,
@@ -90,6 +93,16 @@ const ChatsBlock = new Chats({
     },
   },
 });
+
+appState.setListener((state) => {
+  const { user } = state;
+
+  if (!user || !Object.keys(user)) return;
+  ChatsBlock.setProps({
+    username: user?.displayName || user?.login || 'user',
+    avatar: user?.avatar || 'https://icon-library.com/images/no-user-image-icon/no-user-image-icon-27.jpg',
+  })
+})
 
 const ChatsPage = new Page(ChatsBlock, {
   ".list": chats.map((chat) => {

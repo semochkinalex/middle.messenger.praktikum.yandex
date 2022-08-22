@@ -12,6 +12,8 @@ import Link from "../../components/link/link";
 import Errors from "../../components/errors/errors";
 import EditInput from "../../components/edit-input/edit-input";
 import { emailRegexp, firstNameRegexp, loginRegexp, phoneRegexp, secondNameRegexp } from "../../modules/helpers/regex";
+import ExitButton from "../../components/exit-button/exit-button";
+import AppState from "../../modules/app-state/app-state";
 
 class ProfileBlock extends Block {
   constructor(props: IBlockProps) {
@@ -110,88 +112,111 @@ const block = new ProfileBlock({
   first_name: "Александр",
 });
 
+const email = new EditInput({
+  events: {
+    input: form.handleChange,
+    focus: form.isCurrentFieldValid,
+    blur: form.isCurrentFieldValid,
+  },
+  attributes: {
+    name: "email",
+    value: "fennyflop@gmail.com",
+    placeholder: "Почта",
+    required: true,
+  },
+})
+
+const login = new EditInput({
+  events: {
+    input: form.handleChange,
+    focus: form.isCurrentFieldValid,
+    blur: form.isCurrentFieldValid,
+  },
+  attributes: {
+    name: "login",
+    value: "fennyflop",
+    placeholder: "Логин",
+    required: true,
+  },
+});
+
+const first_name = new EditInput({
+  events: {
+    input: form.handleChange,
+    focus: form.isCurrentFieldValid,
+    blur: form.isCurrentFieldValid,
+  },
+  attributes: {
+    name: "first_name",
+    value: "Александр",
+    placeholder: "Имя",
+    required: true,
+  },
+});
+
+const second_name = new EditInput({
+  events: {
+    input: form.handleChange,
+    focus: form.isCurrentFieldValid,
+    blur: form.isCurrentFieldValid,
+  },
+  attributes: {
+    name: "second_name",
+    value: "Сёмочкин",
+    placeholder: "Фамилия",
+    required: true,
+  },
+});
+
+const display_name = new EditInput({
+  events: {
+    input: form.handleChange,
+    focus: form.isCurrentFieldValid,
+    blur: form.isCurrentFieldValid,
+  },
+  attributes: {
+    name: "display_name",
+    value: "Александр",
+    placeholder: "Имя в чате",
+    required: true,
+  },
+});
+
+const phone = new EditInput({
+  events: {
+    input: form.handleChange,
+    focus: form.isCurrentFieldValid,
+    blur: form.isCurrentFieldValid,
+  },
+  attributes: {
+    name: "phone",
+    value: "+79099673030",
+    placeholder: "Телефон",
+    required: true,
+  },
+});
+
+const appState = new AppState({});
+
+appState.setListener(({user}) => {
+  if (!user) return;
+
+  email.setProps({ attributes: { name: "email", placeholder: "Почта", required: true, value: user?.email, } })
+  login.setProps({ attributes: { name: "login", placeholder: "Логин", required: true, value: user?.login, } })
+  first_name.setProps({ attributes: { name: "fist_name", placeholder: "Имя", required: true, value: user?.fist_name || 'Имя', } })
+  second_name.setProps({ attributes: { name: "second_name", placeholder: "Фамилия", required: true, value: user?.second_name, } })
+  display_name.setProps({ attributes: { name: "display_name", placeholder: "Имя", required: true, value: user?.display_name || 'Имя в чате', } })
+  phone.setProps({ attributes: { name: "phone", placeholder: "Телефон", required: true, value: user?.phone || 'Имя', } })
+})
+
 const ProfliePage = new Page(block, {
   ".inputs": [
-    new EditInput({
-      events: {
-        input: form.handleChange,
-        focus: form.isCurrentFieldValid,
-        blur: form.isCurrentFieldValid,
-      },
-      attributes: {
-        name: "email",
-        value: "fennyflop@gmail.com",
-        placeholder: "Почта",
-        required: true,
-      },
-    }),
-
-    new EditInput({
-      events: {
-        input: form.handleChange,
-        focus: form.isCurrentFieldValid,
-        blur: form.isCurrentFieldValid,
-      },
-      attributes: {
-        name: "login",
-        value: "fennyflop",
-        placeholder: "Логин",
-        required: true,
-      },
-    }),
-
-    new EditInput({
-      events: {
-        input: form.handleChange,
-        focus: form.isCurrentFieldValid,
-        blur: form.isCurrentFieldValid,
-      },
-      attributes: {
-        name: "first_name",
-        value: "Александр",
-        placeholder: "Имя",
-        required: true,
-      },
-    }),
-    new EditInput({
-      events: {
-        input: form.handleChange,
-        focus: form.isCurrentFieldValid,
-        blur: form.isCurrentFieldValid,
-      },
-      attributes: {
-        name: "second_name",
-        value: "Сёмочкин",
-        placeholder: "Фамилия",
-        required: true,
-      },
-    }),
-    new EditInput({
-      events: {
-        input: form.handleChange,
-        focus: form.isCurrentFieldValid,
-        blur: form.isCurrentFieldValid,
-      },
-      attributes: {
-        name: "display_name",
-        value: "Александр",
-        placeholder: "Имя в чате",
-        required: true,
-      },
-    }),
-    new EditInput({
-      events: {
-        input: form.handleChange,
-        focus: form.isCurrentFieldValid,
-        blur: form.isCurrentFieldValid,
-      },
-      attributes: {
-        name: "phone",
-        value: "+79099673030",
-        placeholder: "Телефон",
-        required: true,
-      },
-    }),
+    email,
+    login,
+    first_name,
+    second_name,
+    display_name,
+    phone,
   ],
   ".errors": ErrorComponent,
   ".links": [
@@ -201,6 +226,7 @@ const ProfliePage = new Page(block, {
       attributes: { href: "/change-password" },
     }),
   ],
+  '.exit': new ExitButton(),
 });
 
 export default ProfliePage;

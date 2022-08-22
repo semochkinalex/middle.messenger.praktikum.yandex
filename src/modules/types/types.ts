@@ -48,4 +48,4 @@ export interface IRequest {
   method?: "GET" | "PUT" | "DELETE" | "POST" | "PATCH";
 }
 
-export interface IAppStateProps {[key: string]: unknown};
+export interface IAppStateProps {[key: string]: any};

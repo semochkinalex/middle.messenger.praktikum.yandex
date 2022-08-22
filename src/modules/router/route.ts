@@ -1,7 +1,4 @@
-import Block from "../core/block";
 import { Page } from "../core/page";
-import { isEqual } from "../helpers/helpers";
-import { IBlockProps } from "../types/types";
 
 export default class Route {
     _page: Page;

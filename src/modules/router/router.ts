@@ -60,7 +60,6 @@ export default class Router {
       if (this._currentRoute.getPathname() === '/404') return;
       if (this._currentRoute.getPathname() === '/500') return;
       
-      // console.log('UPDATE');
       if (!appState.get()?.user && this._currentRoute.isProtected()) return this.go('/sign-in');
       if (appState.get()?.user && !this._currentRoute.isProtected()) return this.go('/messenger');
     }

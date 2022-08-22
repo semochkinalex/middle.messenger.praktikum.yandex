@@ -13,7 +13,7 @@ export const getProfileData = async () => {
         if (res.indexOf('Cookie is not') > 0) throw new Error("Cookie not available");
 
         appState.set((oldState) => {
-            return {...oldState, user: res};
+            return {...oldState, user: JSON.parse(res)};
         });
     })
     .catch((err) => {

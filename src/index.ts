@@ -19,7 +19,7 @@ const routes: {[key: string]: [Page, boolean]} = {
     "/sign-in": [SignInPage, false],
     "/sign-up": [SignUpPage, false],
     "/change-password": [ChangePasswordPage, true],
-    "/profile": [ProfliePage, true],
+    "/settings": [ProfliePage, true],
     "/messenger": [ChatsPage, true],
 };
 
