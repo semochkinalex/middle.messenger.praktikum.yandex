@@ -23,7 +23,7 @@ export default class ExitButton extends Block {
                     appState.set(() => {
                       return {user: null};
                     })
-                    console.log(appState.get());  
+
                     router.update();
                 })
             }

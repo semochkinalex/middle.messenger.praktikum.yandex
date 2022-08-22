@@ -15,9 +15,6 @@ export class Page {
   }
 
   public render() {
-    const parent = document.querySelector(this._selector);
-    if (parent) parent.innerHTML = "";
-
     this._addElement(this._parent, this._selector);
 
     if (this._children) {
