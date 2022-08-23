@@ -32,7 +32,6 @@ export class Page {
   }
   
   public show() {
-    console.log('qwdqwd');
     this._parent.show();
     this.isHidden = false;
   }

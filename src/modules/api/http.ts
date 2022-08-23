@@ -45,11 +45,11 @@ export default class HTTPTransport {
     ).then((res) => this._validateCode(res));
   };
 
-  put = (url: string, options: IRequest = {}) => {
+  put = (url: string, body: object = {}, options: IRequest = {}) => {
     return this.request(
       url,
-      { ...options, method: METHODS.PUT },
-    );
+      { ...options, method: METHODS.PUT, data: JSON.stringify(body) },
+    ).then((res) => this._validateCode(res));
   };
 
   delete = (url: string, options: IRequest = {}) => {
@@ -111,7 +111,8 @@ export default class HTTPTransport {
       } else if (response?.status?.toString()[0] &&  response?.status?.toString()[0] === '2') {
         return resolve(response);
       } else {
-        return reject({status: response.status, ...JSON.parse(response.responseText)});
+        console.log(JSON.parse(response));
+        return reject({status: response.status, ...JSON.parse(response.responseText ? response.responseText : response   )});
       }
     })
   }

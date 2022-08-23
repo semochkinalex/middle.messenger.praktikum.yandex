@@ -75,7 +75,7 @@ export default class Block {
         if (value === false) {
           targetedElement?.removeAttribute(attribute);
         } else {
-          targetedElement?.setAttribute(attribute, value.toString());
+          targetedElement?.setAttribute(attribute, value?.toString());
         }
       }
     }

@@ -14,6 +14,8 @@ import EditInput from "../../components/edit-input/edit-input";
 import { emailRegexp, firstNameRegexp, loginRegexp, phoneRegexp, secondNameRegexp } from "../../modules/helpers/regex";
 import ExitButton from "../../components/exit-button/exit-button";
 import AppState from "../../modules/app-state/app-state";
+import ProfileAPI from "./profile.api";
+import { removeEmpty } from "../../modules/helpers/helpers";
 
 class ProfileBlock extends Block {
   constructor(props: IBlockProps) {
@@ -79,14 +81,17 @@ const ErrorComponent = new Errors({
   errors: [],
 });
 
+const appState = new AppState({});
+const state = appState?.get();
+
 const defaultValues = {
-  login: "fennyflop",
-  first_name: "Александр",
-  second_name: "Сёмочкин",
-  display_name: "Александр",
-  email: "fennyflop@gmail.com",
-  phone: "+79099673030",
-};
+  first_name: state.first_name,
+  second_name: state.second_name,
+  login: state.login,
+  phone: state.phone,
+  email: state.email,
+  display_name: state.display_name
+}
 
 const form = new Form(
   (values, errors) => {
@@ -101,12 +106,29 @@ const form = new Form(
     });
   },
   errorMessages,
-  defaultValues
+  defaultValues,
 );
+
+const api = new ProfileAPI();
+
+const handleSubmit = (values: any) => {
+  const filteredValues = removeEmpty(values);
+  const sendingData = {...appState.get().user, ...filteredValues};
+  console.log(sendingData);
+  api.update(sendingData)
+  .then((res) => {
+    appState.set(res);
+  })
+  .catch((err) => {
+    ErrorComponent.setProps({
+      errors: [err.reason],
+    })
+  })
+}
 
 const block = new ProfileBlock({
   events: {
-    submit: (e) => form.onSubmit(e, console.log),
+    submit: (e) => form.onSubmit(e, handleSubmit),
   },
   attributes: { noValidate: true },
   first_name: "Александр",
@@ -196,17 +218,19 @@ const phone = new EditInput({
   },
 });
 
-const appState = new AppState({});
-
 appState.setListener(({user}) => {
   if (!user) return;
 
   email.setProps({ attributes: { name: "email", placeholder: "Почта", required: true, value: user?.email, } })
   login.setProps({ attributes: { name: "login", placeholder: "Логин", required: true, value: user?.login, } })
-  first_name.setProps({ attributes: { name: "fist_name", placeholder: "Имя", required: true, value: user?.fist_name || 'Имя', } })
+  first_name.setProps({ attributes: { name: "fist_name", placeholder: "Имя", required: true, value: user?.fist_name, } })
   second_name.setProps({ attributes: { name: "second_name", placeholder: "Фамилия", required: true, value: user?.second_name, } })
-  display_name.setProps({ attributes: { name: "display_name", placeholder: "Имя", required: true, value: user?.display_name || 'Имя в чате', } })
-  phone.setProps({ attributes: { name: "phone", placeholder: "Телефон", required: true, value: user?.phone || 'Имя', } })
+  display_name.setProps({ attributes: { name: "display_name", placeholder: "Имя", required: true, value: user?.display_name, } })
+  phone.setProps({ attributes: { name: "phone", placeholder: "Телефон", required: true, value: user?.phone, } })
+  console.log(user.first_name);
+  block.setProps({
+    first_name: user.first_name
+  })
 })
 
 const ProfliePage = new Page(block, {

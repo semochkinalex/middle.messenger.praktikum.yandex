@@ -37,3 +37,11 @@ export function isEqual(a: PlainObject, b: PlainObject): boolean {
   }
   return true;
 }
+
+export function removeEmpty(obj: object): any {
+  return Object.fromEntries(
+    Object.entries(obj)
+      .filter(([_, v]) => v != null)
+      .map(([k, v]) => [k, v === Object(v) ? removeEmpty(v) : v])
+  );
+}

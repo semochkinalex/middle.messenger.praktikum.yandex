@@ -31,15 +31,25 @@ export default class Router {
 
     start() {
       // Реагируем на изменения в адресной строке и вызываем перерисовку
-      window.onpopstate = event => {
-          this._onRoute(event?.currentTarget?.location?.pathname);
-        };
+    window.onpopstate = event => {
+        this._onRoute(event?.currentTarget?.location?.pathname);
+    };
         
+    const state = new AppState();
+
       this._onRoute(window.location.pathname);
     }
   
     _onRoute(pathname: string) {
+      const appState = new AppState({});
+
+      if (this._currentRoute && this._currentRoute.getPathname() === '/404') pathname = '/404';
+      if (this._currentRoute && this._currentRoute.getPathname() === '/500') pathname = '/404';
+      
+      if (this._currentRoute && !appState.get()?.user && this._currentRoute.isProtected()) pathname = '/sign-in';
+      if (this._currentRoute && appState.get()?.user && !this._currentRoute.isProtected()) pathname = '/messenger';
       const route = this.getRoute(pathname);
+      
       
       if (!route) {
         return this.go('/404')

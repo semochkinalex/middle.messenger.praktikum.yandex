@@ -75,6 +75,7 @@ const handleSubmit = (values: TFormValues) => {
     getProfileData();
   })
   .catch((err) => {
+    console.log(err);
     ErrorComponent.setProps({
       errors: [err.reason]
     })
