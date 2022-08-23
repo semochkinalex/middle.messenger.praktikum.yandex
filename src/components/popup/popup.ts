@@ -26,7 +26,6 @@ export default class Popup extends Block {
   
   showPopup() {
     this.show();
-    console.log('qwdqwd');
   }
 
   render() {

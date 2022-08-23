@@ -17,6 +17,7 @@ import AppState from "../../modules/app-state/app-state";
 import ProfileAPI from "./profile.api";
 import { removeEmpty } from "../../modules/helpers/helpers";
 import Popup from "../../components/popup/popup";
+import AvatarEdit from "../../components/avatar-edit/avatar-edit";
 
 class ProfileBlock extends Block {
   constructor(props: IBlockProps) {
@@ -143,9 +144,10 @@ const popup = new Popup({
   isOpened: false,
 });
 
-setTimeout(() => {
-  popup.showPopup()
-}, 1000)
+const avatarChanger = new AvatarEdit({
+  avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1MfRF6ChZtAUk-ACxhXoW-PKVHvdvP0dH3TuEef2vWw&s',
+  events: {'click': () => popup.showPopup()}
+})
 
 const email = new EditInput({
   events: {
@@ -217,12 +219,12 @@ const display_name = new EditInput({
   },
 });
 
-const handleAvatar = () => {
-  console.log('qwdqwd');
-  block.setProps({
-    isOpened: true,
-  })
-}
+// const handleAvatar = () => {
+//   console.log('qwdqwd');
+//   block.setProps({
+//     isOpened: true,
+//   })
+// }
 
 const phone = new EditInput({
   events: {
@@ -274,6 +276,7 @@ const ProfliePage = new Page(block, {
   ],
   '.exit': new ExitButton(),
   '.popup': popup,
+  '.avatar': avatarChanger,
 });
 
 export default ProfliePage;

@@ -1,0 +1,43 @@
+.container {
+  width: 130px;
+  height: 130px;  
+}
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+  }
+  .change {
+    position: absolute;
+  
+    display: flex;
+    justify-content: center;
+  
+    z-index: 100;
+    top: -1px;
+    right: -1px;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background: none;
+  
+    transition: all 0.2s ease-in-out;
+    color: transparent;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+  }
+
+  .change:hover {
+    cursor: pointer;
+    z-index: 100;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
