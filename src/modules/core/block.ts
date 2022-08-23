@@ -105,7 +105,7 @@ export default class Block {
       return;
     }
     const newProps = Object.assign({}, this.props, nextProps);
-
+    
     if (!isEqual(this.props, newProps)) {
       Object.assign(this.props, nextProps);
       if (newProps.attributes) {

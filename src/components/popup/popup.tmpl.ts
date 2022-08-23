@@ -1,11 +1,10 @@
 import * as styles from "./popup.module.scss";
 
 export default `
-    <section class="${styles.popup}">
+
         <div class="${styles.content}">
             <h3 class="${styles.title}">{{title}}</h3>
-            {{> button text=button  }}
-            <button class="${styles.close}"></button>
+            <div class="children"></div>
+            <button class="${styles.close} close"></button>
         </div>
-    </section>
 `;

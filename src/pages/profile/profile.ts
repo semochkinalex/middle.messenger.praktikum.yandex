@@ -16,6 +16,7 @@ import ExitButton from "../../components/exit-button/exit-button";
 import AppState from "../../modules/app-state/app-state";
 import ProfileAPI from "./profile.api";
 import { removeEmpty } from "../../modules/helpers/helpers";
+import Popup from "../../components/popup/popup";
 
 class ProfileBlock extends Block {
   constructor(props: IBlockProps) {
@@ -134,7 +135,17 @@ const block = new ProfileBlock({
   },
   attributes: { noValidate: true },
   first_name: "Александр",
+  title: "Загрузите файл",
 });
+
+const popup = new Popup({
+  title: 'Загрузите файл',
+  isOpened: false,
+});
+
+setTimeout(() => {
+  popup.showPopup()
+}, 1000)
 
 const email = new EditInput({
   events: {
@@ -206,6 +217,13 @@ const display_name = new EditInput({
   },
 });
 
+const handleAvatar = () => {
+  console.log('qwdqwd');
+  block.setProps({
+    isOpened: true,
+  })
+}
+
 const phone = new EditInput({
   events: {
     input: form.handleChange,
@@ -222,7 +240,6 @@ const phone = new EditInput({
 
 appState.setListener(({user}) => {
   if (!user) return;
-  // console.log(user);
 
   form.setValues(user);
 
@@ -256,6 +273,7 @@ const ProfliePage = new Page(block, {
     }),
   ],
   '.exit': new ExitButton(),
+  '.popup': popup,
 });
 
 export default ProfliePage;
