@@ -16,9 +16,11 @@ export default class Popup extends Block {
       "section",
       `${styles.popup} ${props.isOpened ? "" : styles.hidden}`,
       {...props, 
-        events: {'click': () => {
-          this.hide();
-        }}
+        events: {
+          'click': () => {
+            this.hide();
+          },
+      }
       },
       ".close"
     );
@@ -26,6 +28,14 @@ export default class Popup extends Block {
   
   showPopup() {
     this.show();
+  }
+
+  form() {
+    return this.element.querySelector('.form');
+  }
+
+  input() {
+    return this.element.querySelector(".input");
   }
 
   render() {

@@ -48,3 +48,36 @@
 .close:hover {
   cursor: pointer;
 }
+
+
+.button {
+  color: white;
+  background-color: $blue;
+  width: 100%;
+  font-family: "Inter";
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: $blue-hover;
+}
+
+.button:disabled {
+  background-color: $blue-disabled;
+}
+.button:disabled:hover {
+  cursor: not-allowed;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  color: white; 
+}

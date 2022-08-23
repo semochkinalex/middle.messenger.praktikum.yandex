@@ -14,5 +14,9 @@ export default class ProfileAPI extends BaseAPI {
             'Content-Type': 'application/json'
         }});
     }
+
+    public create(data: FormData) {
+        return api.put('/user/profile/avatar', data);
+    }
 }
    

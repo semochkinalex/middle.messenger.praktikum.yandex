@@ -219,12 +219,18 @@ const display_name = new EditInput({
   },
 });
 
-// const handleAvatar = () => {
-//   console.log('qwdqwd');
-//   block.setProps({
-//     isOpened: true,
-//   })
-// }
+popup.form()?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const data = new FormData(e.srcElement)
+  api.create(data)
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+
+})
 
 const phone = new EditInput({
   events: {
