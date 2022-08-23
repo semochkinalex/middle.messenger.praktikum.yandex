@@ -71,7 +71,6 @@ const router = new Router();
 const handleSubmit = (values: TFormValues) => {
   api.create(values.login as string, values.password as string)
   .then(() => {
-    router.go('/messenger'); 
     getProfileData();
   })
   .catch((err) => {

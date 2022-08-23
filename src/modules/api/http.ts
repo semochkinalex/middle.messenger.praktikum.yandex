@@ -106,9 +106,12 @@ export default class HTTPTransport {
 
   private async _validateCode(response: any): Promise<{status: number; responseText: string} | any | void> {
     return new Promise<void>((resolve,reject) => {
+      console.log();
       if (response === 'OK') {
         return resolve();
-      } else if (response?.status?.toString()[0] &&  response?.status?.toString()[0] === '2' || JSON.parse(response)) {
+      } else if (response?.status?.toString()[0] &&  response?.status?.toString()[0] === '2') {
+        return resolve(response);
+      } else if (!('reason' in JSON.parse(response))) {
         return resolve(response);
       } else {
         return reject({status: response.status, ...JSON.parse(response.responseText ? response.responseText : response   )});

@@ -11,6 +11,7 @@ import { IBlockProps, TFormValues } from "../../modules/types/types";
 import Button from "../../components/button/button";
 import Link from "../../components/link/link";
 import Errors from "../../components/errors/errors";
+import { passwordRegexp } from "../../modules/helpers/regex";
 
 class ChangePassword extends Block {
   constructor(props: IBlockProps) {

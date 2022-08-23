@@ -78,6 +78,10 @@ export default class Form {
     };
   }
 
+  public setValues(newValues: TFormValues) {
+    this._values = newValues;
+  }
+
   public onSubmit(evt: Event, callback?: (values: TFormValues) => void) {
     evt.preventDefault();
     if (callback) callback(this._values);

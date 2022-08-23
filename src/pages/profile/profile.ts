@@ -74,7 +74,7 @@ const errorMessages = {
 const SubmitButton = new Button({
   className: styles.save,
   text: "Cохранить изменения",
-  attributes: { type: "submit", disabled: true },
+  attributes: { type: "submit", disabled: false },
 });
 
 const ErrorComponent = new Errors({
@@ -83,7 +83,6 @@ const ErrorComponent = new Errors({
 
 const appState = new AppState({});
 const state = appState?.get();
-
 const defaultValues = {
   first_name: state.first_name,
   second_name: state.second_name,
@@ -97,6 +96,7 @@ const form = new Form(
   (values, errors) => {
     const hasErrors = Object.keys(errors).length ? true : false;
 
+    console.log(errors);
     SubmitButton.setProps({
       attributes: { type: "submit", disabled: hasErrors },
     });
@@ -114,7 +114,7 @@ const api = new ProfileAPI();
 const handleSubmit = (values: any) => {
   const filteredValues = removeEmpty(values);
   const sendingData = {...appState.get().user, ...filteredValues};
-  console.log(sendingData);
+
   api.update(sendingData)
   .then((res) => {
     appState.set(() => {
@@ -122,7 +122,6 @@ const handleSubmit = (values: any) => {
     });
   })
   .catch((err) => {
-
     ErrorComponent.setProps({
       errors: [err.reason],
     })
@@ -223,14 +222,17 @@ const phone = new EditInput({
 
 appState.setListener(({user}) => {
   if (!user) return;
+  // console.log(user);
+
+  form.setValues(user);
 
   email.setProps({ attributes: { name: "email", placeholder: "Почта", required: true, value: user?.email, } })
   login.setProps({ attributes: { name: "login", placeholder: "Логин", required: true, value: user?.login, } })
-  first_name.setProps({ attributes: { name: "fist_name", placeholder: "Имя", required: true, value: user?.first_name, } })
+  first_name.setProps({ attributes: { name: "first_name", placeholder: "Имя", required: true, value: user?.first_name, } })
   second_name.setProps({ attributes: { name: "second_name", placeholder: "Фамилия", required: true, value: user?.second_name, } })
   display_name.setProps({ attributes: { name: "display_name", placeholder: "Имя в чате", required: true, value: user?.display_name || user?.first_name, } })
   phone.setProps({ attributes: { name: "phone", placeholder: "Телефон", required: true, value: user?.phone, } })
-  console.log(user.first_name);
+
   block.setProps({
     first_name: user.first_name
   })

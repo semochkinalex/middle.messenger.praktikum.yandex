@@ -213,7 +213,7 @@ const SignUpPage = new Page(block, {
   ".errors": ErrorComponent,
   ".buttons": [
     SubmitButton,
-    new Link({ text: "Есть аккаунт? Войти", attributes: { href: "/sign-up" } }),
+    new Link({ text: "Есть аккаунт? Войти", attributes: { href: "/sign-in" } }),
   ],
 });
 
