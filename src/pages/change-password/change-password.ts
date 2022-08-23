@@ -12,6 +12,8 @@ import Button from "../../components/button/button";
 import Link from "../../components/link/link";
 import Errors from "../../components/errors/errors";
 import { passwordRegexp } from "../../modules/helpers/regex";
+import PasswordAPI from "./change-password.api";
+import Router from "../../modules/router/router";
 
 class ChangePassword extends Block {
   constructor(props: IBlockProps) {
@@ -69,9 +71,27 @@ const form = new Form((values, errors) => {
   });
 }, errorMessages);
 
+const api = new PasswordAPI();
+const router = new Router();
+
+const handleSubmit = (values: TFormValues) => {
+  api.update({
+    oldPassword: values.password,
+    newPassword: values.new_password,
+  })
+  .then((res) => {
+    router.go('/settings');
+  })
+  .catch((err) => {
+    ErrorComponent.setProps({
+      errors: [err.reason]
+    })
+  })
+}
+
 const block = new ChangePassword({
   events: {
-    submit: (e) => form.onSubmit(e, console.log),
+    submit: (e) => form.onSubmit(e, handleSubmit),
   },
   attributes: { noValidate: true },
 });
@@ -127,7 +147,7 @@ const ChangePasswordPage = new Page(block, {
     SubmitButton,
     new Link({
       text: "Вернуться в профилть",
-      attributes: { href: "/profile" },
+      attributes: { href: "/settings" },
     }),
   ],
 });

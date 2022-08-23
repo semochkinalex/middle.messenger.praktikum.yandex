@@ -18,8 +18,8 @@ export default `
         <div class="{{styles.links}} links">
         </div>
         </form>
-        <div class={{styles.sidebar}}>
+        <a class={{styles.sidebar}} href="/messenger">
         <button class={{styles.return}}></button>
-        </div>
+        </a>
         </main>
 `;
