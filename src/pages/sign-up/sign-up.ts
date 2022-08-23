@@ -14,6 +14,7 @@ import Errors from "../../components/errors/errors";
 import { emailRegexp, firstNameRegexp, passwordRegexp, phoneRegexp, secondNameRegexp } from "../../modules/helpers/regex";
 import UserSignUpAPI from "./sign-up.api";
 import Router from "../../modules/router/router";
+import { getProfileData } from "../../modules/helpers/auth";
 
 class SignUpBlock extends Block {
   constructor(props: IBlockProps) {
@@ -95,10 +96,10 @@ const router = new Router();
 const handleSubmit = (values: TFormValues) => {
   api.create(values.first_name as string, values.second_name as string, values.login as string, values.email as string, values.password as string, values.phone as string)
   .then((res) => {
-    router.go('/messenger');
-    console.log(res);
+    getProfileData();
   })
   .catch((err) => {
+    console.log(err);
     ErrorComponent.setProps({
       errors: [err.reason]
     })

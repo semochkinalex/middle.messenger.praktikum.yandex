@@ -108,10 +108,9 @@ export default class HTTPTransport {
     return new Promise<void>((resolve,reject) => {
       if (response === 'OK') {
         return resolve();
-      } else if (response?.status?.toString()[0] &&  response?.status?.toString()[0] === '2') {
+      } else if (response?.status?.toString()[0] &&  response?.status?.toString()[0] === '2' || JSON.parse(response)) {
         return resolve(response);
       } else {
-        console.log(JSON.parse(response));
         return reject({status: response.status, ...JSON.parse(response.responseText ? response.responseText : response   )});
       }
     })

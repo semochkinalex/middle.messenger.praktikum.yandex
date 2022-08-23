@@ -117,9 +117,12 @@ const handleSubmit = (values: any) => {
   console.log(sendingData);
   api.update(sendingData)
   .then((res) => {
-    appState.set(res);
+    appState.set(() => {
+      return res
+    });
   })
   .catch((err) => {
+
     ErrorComponent.setProps({
       errors: [err.reason],
     })
@@ -142,7 +145,7 @@ const email = new EditInput({
   },
   attributes: {
     name: "email",
-    value: "fennyflop@gmail.com",
+    value: "example@mail.com",
     placeholder: "Почта",
     required: true,
   },
@@ -156,7 +159,7 @@ const login = new EditInput({
   },
   attributes: {
     name: "login",
-    value: "fennyflop",
+    value: "Username",
     placeholder: "Логин",
     required: true,
   },
@@ -170,7 +173,7 @@ const first_name = new EditInput({
   },
   attributes: {
     name: "first_name",
-    value: "Александр",
+    value: "First Name",
     placeholder: "Имя",
     required: true,
   },
@@ -184,7 +187,7 @@ const second_name = new EditInput({
   },
   attributes: {
     name: "second_name",
-    value: "Сёмочкин",
+    value: "Surname",
     placeholder: "Фамилия",
     required: true,
   },
@@ -198,7 +201,7 @@ const display_name = new EditInput({
   },
   attributes: {
     name: "display_name",
-    value: "Александр",
+    value: "Display Name",
     placeholder: "Имя в чате",
     required: true,
   },
@@ -223,9 +226,9 @@ appState.setListener(({user}) => {
 
   email.setProps({ attributes: { name: "email", placeholder: "Почта", required: true, value: user?.email, } })
   login.setProps({ attributes: { name: "login", placeholder: "Логин", required: true, value: user?.login, } })
-  first_name.setProps({ attributes: { name: "fist_name", placeholder: "Имя", required: true, value: user?.fist_name, } })
+  first_name.setProps({ attributes: { name: "fist_name", placeholder: "Имя", required: true, value: user?.first_name, } })
   second_name.setProps({ attributes: { name: "second_name", placeholder: "Фамилия", required: true, value: user?.second_name, } })
-  display_name.setProps({ attributes: { name: "display_name", placeholder: "Имя", required: true, value: user?.display_name, } })
+  display_name.setProps({ attributes: { name: "display_name", placeholder: "Имя в чате", required: true, value: user?.display_name || user?.first_name, } })
   phone.setProps({ attributes: { name: "phone", placeholder: "Телефон", required: true, value: user?.phone, } })
   console.log(user.first_name);
   block.setProps({
