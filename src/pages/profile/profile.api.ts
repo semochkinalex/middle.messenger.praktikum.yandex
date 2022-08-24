@@ -16,7 +16,7 @@ export default class ProfileAPI extends BaseAPI {
     }
 
     public create(data: FormData) {
-        return api.put('/user/profile/avatar', data);
+        return api.put('/user/profile/avatar', data, );
     }
 }
    

@@ -146,7 +146,7 @@ const popup = new Popup({
 
 const avatarChanger = new AvatarEdit({
   avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1MfRF6ChZtAUk-ACxhXoW-PKVHvdvP0dH3TuEef2vWw&s',
-  events: {'click': () => popup.showPopup()}
+  events: {'click': () => popup.showPopup()},
 })
 
 const email = new EditInput({
@@ -221,15 +221,19 @@ const display_name = new EditInput({
 
 popup.form()?.addEventListener('submit', (e) => {
   e.preventDefault();
-  const data = new FormData(e.srcElement)
-  api.create(data)
+  
+  const input = document.querySelector('input[type=file]').files[0];
+  const formEl = new FormData();
+
+  formEl.append('avatar', input);
+
+  api.create(formEl)
   .then((res) => {
     console.log(res);
   })
   .catch((err) => {
-    console.log(err);
+    popup.setProps({error: err.reason})
   })
-
 })
 
 const phone = new EditInput({
@@ -257,6 +261,7 @@ appState.setListener(({user}) => {
   second_name.setProps({ attributes: { name: "second_name", placeholder: "Фамилия", required: true, value: user?.second_name, } })
   display_name.setProps({ attributes: { name: "display_name", placeholder: "Имя в чате", required: true, value: user?.display_name || user?.first_name, } })
   phone.setProps({ attributes: { name: "phone", placeholder: "Телефон", required: true, value: user?.phone, } })
+  avatarChanger.setProps({avatar: `https://ya-praktikum.tech/api/v2/resources/${user.avatar}`})
 
   block.setProps({
     first_name: user.first_name

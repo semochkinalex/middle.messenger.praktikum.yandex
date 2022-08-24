@@ -48,7 +48,7 @@ export default class HTTPTransport {
   put = (url: string, body: object = {}, options: IRequest = {}) => {
     return this.request(
       url,
-      { ...options, method: METHODS.PUT, data: JSON.stringify(body) },
+      { ...options, method: METHODS.PUT, data: body instanceof FormData ? body : JSON.stringify(body) },
     ).then((res) => this._validateCode(res));
   };
 
@@ -112,6 +112,7 @@ export default class HTTPTransport {
       } else if (response?.status?.toString()[0] &&  response?.status?.toString()[0] === '2') {
         return resolve(response);
       } else if (!('reason' in JSON.parse(response))) {
+        console.log(JSON.parse(response));
         return resolve(response);
       } else {
         return reject({status: response.status, ...JSON.parse(response.responseText ? response.responseText : response   )});

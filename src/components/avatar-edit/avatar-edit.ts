@@ -7,6 +7,7 @@ import { IBlockProps } from "../../modules/types/types";
 
 interface IAvatarEdit extends IBlockProps {
     avatar: string;
+    // src: string;
 }
 
 export default class AvatarEdit extends Block {
